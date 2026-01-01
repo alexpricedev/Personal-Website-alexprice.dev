@@ -1,0 +1,113 @@
+import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { join } from "node:path";
+import matter from "gray-matter";
+import { marked } from "marked";
+
+export type ArticlePillar = "scaling" | "fundraising" | "ai" | "war-stories";
+
+export type ArticleMeta = {
+  slug: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  pillar?: ArticlePillar;
+  readingTime: number;
+};
+
+export type Article = ArticleMeta & {
+  content: string; // HTML content
+};
+
+type Frontmatter = {
+  title: string;
+  date: Date | string;
+  excerpt: string;
+  pillar?: ArticlePillar;
+};
+
+const CONTENT_DIR = join(process.cwd(), "content", "insights");
+const WORDS_PER_MINUTE = 200;
+
+/**
+ * Format a date as "15 Jan 2024"
+ */
+function formatDate(date: Date | string): string {
+  const d = typeof date === "string" ? new Date(date) : date;
+  const day = d.getDate();
+  const month = d.toLocaleString("en-US", { month: "short" });
+  const year = d.getFullYear();
+  return `${day} ${month} ${year}`;
+}
+
+/**
+ * Calculate reading time based on word count (200 words per minute)
+ */
+function calculateReadingTime(content: string): number {
+  const wordCount = content.trim().split(/\s+/).length;
+  return Math.ceil(wordCount / WORDS_PER_MINUTE);
+}
+
+/**
+ * Parse a markdown file and extract metadata and content
+ */
+function parseArticle(filePath: string, slug: string): Article {
+  const fileContent = readFileSync(filePath, "utf-8");
+  const { data, content } = matter(fileContent);
+  const frontmatter = data as Frontmatter;
+
+  const htmlContent = marked(content) as string;
+  const readingTime = calculateReadingTime(content);
+
+  return {
+    slug,
+    title: frontmatter.title,
+    date: formatDate(frontmatter.date),
+    excerpt: frontmatter.excerpt,
+    pillar: frontmatter.pillar,
+    readingTime,
+    content: htmlContent,
+  };
+}
+
+/**
+ * Get metadata for all articles, sorted by date (newest first)
+ * Returns empty array if directory doesn't exist
+ */
+export function getAllArticles(): ArticleMeta[] {
+  if (!existsSync(CONTENT_DIR)) {
+    return [];
+  }
+
+  const files = readdirSync(CONTENT_DIR).filter((file) => file.endsWith(".md"));
+
+  const articles = files.map((file) => {
+    const slug = file.replace(/\.md$/, "");
+    const filePath = join(CONTENT_DIR, file);
+    const article = parseArticle(filePath, slug);
+
+    // Return only metadata (exclude content)
+    const { content: _, ...meta } = article;
+    return meta;
+  });
+
+  // Sort by date (newest first)
+  return articles.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB.getTime() - dateA.getTime();
+  });
+}
+
+/**
+ * Get a single article by its slug
+ * Returns null if not found
+ */
+export function getArticleBySlug(slug: string): Article | null {
+  const filePath = join(CONTENT_DIR, `${slug}.md`);
+
+  if (!existsSync(filePath)) {
+    return null;
+  }
+
+  return parseArticle(filePath, slug);
+}
