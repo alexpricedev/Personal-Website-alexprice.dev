@@ -6,12 +6,17 @@ export const Home = () => (
   <Layout title="Home" name="home">
     {/* Hero */}
     <div className="hero min-h-[70vh] bg-base-100">
-      <div className="hero-content text-center flex-col">
-        <div className="max-w-3xl">
+      <div className="hero-content flex-col lg:flex-row-reverse gap-12 lg:gap-16 max-w-6xl">
+        <div className="avatar placeholder">
+          <div className="bg-base-300 text-base-content/50 w-64 h-80 lg:w-80 lg:h-96 rounded-lg">
+            <span className="text-sm">Headshot</span>
+          </div>
+        </div>
+        <div className="text-center lg:text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
             Fractional CTO who builds things that don't need him
           </h1>
-          <p className="py-6 text-lg text-base-content/70 max-w-2xl mx-auto">
+          <p className="py-6 text-lg text-base-content/70 max-w-xl">
             Hiring a full-time CTO is expensive, slow, and high-risk. I'll tell
             you the hard truths, move fast, and either hire my replacement or
             make the role unnecessary. Then I leave.
@@ -19,11 +24,6 @@ export const Home = () => (
           <a href={CALENDLY_URL} className="btn btn-primary btn-lg">
             Book a call
           </a>
-        </div>
-        <div className="avatar placeholder mt-8">
-          <div className="bg-base-300 text-base-content/50 w-32 rounded-full">
-            <span className="text-sm">Headshot</span>
-          </div>
         </div>
       </div>
     </div>
