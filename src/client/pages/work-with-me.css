@@ -1,0 +1,207 @@
+/*
+  Work With Me Page Styles
+  - Engagement types
+  - What to expect
+  - Not for everyone callout
+  - CTA section
+*/
+
+/* ==========================================================================
+   Work Header
+   ========================================================================== */
+
+.work-header {
+  text-align: center;
+  padding: var(--space-3xl) 0 var(--space-2xl);
+}
+
+.work-header h1 {
+  margin-bottom: var(--space-md);
+}
+
+.work-header p {
+  font-size: var(--text-lg);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Work Sections
+   ========================================================================== */
+
+.work-section {
+  padding: var(--space-2xl) 0;
+}
+
+.work-section h2 {
+  margin-bottom: var(--space-xl);
+}
+
+/* ==========================================================================
+   What to Expect List (placed before engagement cards due to specificity)
+   ========================================================================== */
+
+.expect-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.expect-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-lg) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.expect-list li:last-child {
+  border-bottom: none;
+}
+
+.expect-list li::before {
+  content: "\2713";
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: var(--accent);
+  color: var(--bg-primary);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  border-radius: var(--radius-full);
+}
+
+.expect-list strong {
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.expect-list p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Not For Everyone Callout (placed before engagement cards due to specificity)
+   ========================================================================== */
+
+.not-for-everyone {
+  margin: var(--space-2xl) 0;
+  padding: var(--space-xl);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--text-muted);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.not-for-everyone h3 {
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+
+.not-for-everyone p {
+  margin-bottom: var(--space-md);
+}
+
+.not-for-everyone p:last-child {
+  margin-bottom: 0;
+}
+
+.not-for-everyone ul {
+  margin: 0;
+  padding-left: var(--space-xl);
+}
+
+.not-for-everyone li {
+  margin-bottom: var(--space-sm);
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Engagement Cards (higher specificity selectors)
+   ========================================================================== */
+
+.engagement-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .engagement-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .engagement-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.engagement-cards .card {
+  display: flex;
+  flex-direction: column;
+}
+
+.engagement-cards .card h3 {
+  color: var(--accent);
+  margin-bottom: var(--space-md);
+}
+
+.engagement-cards .card p {
+  flex: 1;
+  margin-bottom: var(--space-lg);
+}
+
+.engagement-cards .card ul {
+  margin: 0;
+  padding-left: var(--space-lg);
+  list-style: none;
+}
+
+.engagement-cards .card li {
+  position: relative;
+  padding-left: var(--space-md);
+  margin-bottom: var(--space-sm);
+  color: var(--text-muted);
+}
+
+.engagement-cards .card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 4px;
+  height: 4px;
+  background-color: var(--accent);
+  border-radius: var(--radius-full);
+}
+
+/* ==========================================================================
+   Work CTA Section
+   ========================================================================== */
+
+.work-cta {
+  text-align: center;
+  padding: var(--space-section) 0;
+  margin-top: var(--space-xl);
+}
+
+.work-cta h2 {
+  margin-bottom: var(--space-md);
+}
+
+.work-cta p {
+  font-size: var(--text-lg);
+  max-width: 500px;
+  margin: 0 auto var(--space-xl);
+}
+
+.work-cta .btn {
+  min-width: 200px;
+}
