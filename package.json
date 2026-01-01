@@ -1,0 +1,27 @@
+{
+  "name": "speedloaf",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "bun build ./src/client/main.ts --outdir ./dist/assets",
+    "start": "bun run src/server/main.ts",
+    "dev": "bun run dev:client & bun run dev:server",
+    "dev:client": "bun --watch build ./src/client/main.ts --outdir ./dist/assets",
+    "dev:server": "bun --watch run src/server/main.ts",
+    "commit": "git add --all && git commit",
+    "check": "bunx @biomejs/biome@beta check src",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "marked": "^17.0.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.0.5",
+    "@types/bun": "1.2.21",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "19.1.9",
+    "husky": "9.1.7"
+  }
+}
