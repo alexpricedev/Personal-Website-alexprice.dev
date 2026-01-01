@@ -10,17 +10,19 @@ const ctaLink = {
 };
 
 export const Nav = ({ page }: { page: string }) => (
-  <nav aria-label="Main navigation">
-    <a href="/" className="nav-wordmark">
-      Alex Price
-    </a>
-    <div className="nav-links">
-      <ul>
+  <div className="navbar bg-base-100 px-4 lg:px-8 max-w-7xl mx-auto">
+    <div className="navbar-start">
+      <a href="/" className="btn btn-ghost text-xl font-bold">
+        Alex Price
+      </a>
+    </div>
+    <div className="navbar-center hidden lg:flex">
+      <ul className="menu menu-horizontal px-1 gap-2">
         {navLinks.map(({ href, label, name }) => (
           <li key={name}>
             <a
               href={href}
-              className={page === name ? "active" : undefined}
+              className={page === name ? "active" : ""}
               aria-current={page === name ? "page" : undefined}
             >
               {label}
@@ -28,9 +30,11 @@ export const Nav = ({ page }: { page: string }) => (
           </li>
         ))}
       </ul>
-      <a href={ctaLink.href} className="btn btn-primary nav-cta">
+    </div>
+    <div className="navbar-end">
+      <a href={ctaLink.href} className="btn btn-primary">
         {ctaLink.label}
       </a>
     </div>
-  </nav>
+  </div>
 );

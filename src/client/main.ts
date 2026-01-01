@@ -1,5 +1,3 @@
 // Main client entry point
-// Currently minimal - add interactivity as needed
-
-// Global styles
-import "./style.css";
+// CSS is built separately via Tailwind CLI
+// Add client-side interactivity here as needed

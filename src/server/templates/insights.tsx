@@ -18,45 +18,61 @@ export const Insights = ({ articles }: InsightsProps) => (
     description="Lessons from scaling teams, raising funds, and making mistakes."
     name="insights"
   >
-    <div className="container-narrow section">
-      <header className="insights-header">
-        <h1>Insights</h1>
-        <p className="text-muted">
+    <div className="max-w-3xl mx-auto px-4 py-16">
+      <header className="mb-12">
+        <h1 className="text-4xl font-bold mb-4">Insights</h1>
+        <p className="text-base-content/70">
           Lessons from scaling teams, raising funds, and making mistakes.
         </p>
       </header>
 
       {articles.length === 0 ? (
-        <p className="empty-state">
-          First post coming soon. In the meantime, find me on{" "}
-          <a href="https://linkedin.com/in/alexpricecto">LinkedIn</a>.
-        </p>
+        <div className="text-center py-16 text-base-content/60">
+          <p>
+            First post coming soon. In the meantime, find me on{" "}
+            <a
+              href="https://linkedin.com/in/alexpricecto"
+              className="link link-primary"
+            >
+              LinkedIn
+            </a>
+            .
+          </p>
+        </div>
       ) : (
-        <ul className="insights-list">
+        <div className="space-y-8">
           {articles.map((article) => (
-            <li key={article.slug}>
-              <article className="article-card">
-                <h2>
-                  <a href={`/insights/${article.slug}`}>{article.title}</a>
+            <article
+              key={article.slug}
+              className="card bg-base-200 hover:bg-base-300 transition-colors"
+            >
+              <div className="card-body">
+                <h2 className="card-title">
+                  <a
+                    href={`/insights/${article.slug}`}
+                    className="hover:text-primary transition-colors"
+                  >
+                    {article.title}
+                  </a>
                 </h2>
-                <p className="article-meta">
+                <p className="text-sm text-base-content/60">
                   {article.date} · {article.readingTime} min read
                   {article.pillar && (
                     <>
                       {" · "}
-                      <span className="pillar">
+                      <span className="badge badge-primary badge-sm">
                         {pillarLabels[article.pillar] || article.pillar}
                       </span>
                     </>
                   )}
                 </p>
                 {article.excerpt && (
-                  <p className="article-excerpt">{article.excerpt}</p>
+                  <p className="text-base-content/70">{article.excerpt}</p>
                 )}
-              </article>
-            </li>
+              </div>
+            </article>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   </Layout>

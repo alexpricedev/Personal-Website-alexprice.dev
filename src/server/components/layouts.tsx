@@ -18,7 +18,7 @@ export function Layout({ title, description, name, children }: LayoutProps) {
     "Fractional CTO for Series A startups. Senior technical leadership without the cost and risk of a full-time hire.";
 
   return (
-    <html lang="en">
+    <html lang="en" data-theme="coffee">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -26,13 +26,9 @@ export function Layout({ title, description, name, children }: LayoutProps) {
         <title>{fullTitle}</title>
         <link rel="stylesheet" href="/assets/main.css" />
       </head>
-      <body data-page={name}>
-        <header className="site-header">
-          <div className="container">
-            <Nav page={name} />
-          </div>
-        </header>
-        <main>{children}</main>
+      <body className="min-h-screen bg-base-100" data-page={name}>
+        <Nav page={name} />
+        <main className="min-h-[calc(100vh-200px)]">{children}</main>
         <Footer />
         <script type="module" src="/assets/main.js" />
       </body>

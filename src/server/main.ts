@@ -2,7 +2,7 @@ import { apiRoutes } from "./routes/api";
 import { viewRoutes } from "./routes/views";
 
 const server = Bun.serve({
-  port: process.env.PORT || 3000,
+  port: process.env.PORT || 3030,
   idleTimeout: 30, // 30 second timeout
   routes: {
     ...viewRoutes,

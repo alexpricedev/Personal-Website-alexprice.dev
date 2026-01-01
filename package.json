@@ -2,10 +2,13 @@
   "name": "speedloaf",
   "version": "0.1.0",
   "scripts": {
-    "build": "bun build ./src/client/main.ts --outdir ./dist/assets",
+    "build": "bun run build:css && bun run build:js",
+    "build:js": "bun build ./src/client/main.ts --outdir ./dist/assets",
+    "build:css": "bunx @tailwindcss/cli -i ./src/client/style.css -o ./dist/assets/main.css --minify",
     "start": "bun run src/server/main.ts",
-    "dev": "bun run dev:client & bun run dev:server",
-    "dev:client": "bun --watch build ./src/client/main.ts --outdir ./dist/assets",
+    "dev": "bun run dev:css & bun run dev:js & bun run dev:server",
+    "dev:js": "bun --watch build ./src/client/main.ts --outdir ./dist/assets",
+    "dev:css": "bunx @tailwindcss/cli -i ./src/client/style.css -o ./dist/assets/main.css --watch",
     "dev:server": "bun --watch run src/server/main.ts",
     "commit": "git add --all && git commit",
     "check": "bunx @biomejs/biome@beta check src",
@@ -19,9 +22,12 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.5",
+    "@tailwindcss/cli": "^4.1.18",
     "@types/bun": "1.2.21",
     "@types/react": "^19.1.12",
     "@types/react-dom": "19.1.9",
-    "husky": "9.1.7"
+    "daisyui": "^5.5.14",
+    "husky": "9.1.7",
+    "tailwindcss": "^4.1.18"
   }
 }

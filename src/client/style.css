@@ -1,309 +1,42 @@
-/*
-  Main CSS entry point
-  - Dark theme design system
-  - CSS variables for colors, typography, spacing
-  - Base element styles
-  - Utility classes
-  - Import component and page styles
-*/
-
-/* ==========================================================================
-   Component & Page Style Imports
-   Must be at the top per CSS specification
-   ========================================================================== */
-
-/* Component styles */
-@import "./components/layout.css";
-@import "./components/nav.css";
-
-/* Page styles */
-@import "./pages/home.css";
-@import "./pages/insights.css";
-@import "./pages/work-with-me.css";
-
-/* ==========================================================================
-   CSS Custom Properties (Design Tokens)
-   ========================================================================== */
-
-:root {
-  /* Colors - Dark Theme */
-  --bg-primary: #0a0a0a;
-  --bg-secondary: #141414;
-  --text-primary: #f5f5f5;
-  --text-muted: #888888;
-  --accent: #22c55e;
-  --accent-hover: #16a34a;
-  --border: #262626;
-
-  /* Typography */
-  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
-    "Liberation Mono", monospace;
-
-  /* Responsive Font Sizes */
-  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
-  --text-base: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
-  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.375rem);
-  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.625rem);
-  --text-2xl: clamp(1.5rem, 1.25rem + 1.25vw, 2.25rem);
-  --text-3xl: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
-  --text-4xl: clamp(2.5rem, 1.75rem + 3.75vw, 5rem);
-
-  /* Spacing */
-  --max-width-content: 680px;
-  --max-width-page: 1200px;
-  --space-section: 6rem;
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
-
-  /* Borders & Radius */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-full: 9999px;
-
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-base: 200ms ease;
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: coffee --default;
 }
 
-/* ==========================================================================
-   Base Reset & Element Styles
-   ========================================================================== */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Custom styles for article content */
+.article-content h2 {
+  @apply text-2xl font-bold mt-8 mb-4;
 }
 
-html {
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.article-content h3 {
+  @apply text-xl font-semibold mt-6 mb-3;
 }
 
-body {
-  font-family: var(--font-main);
-  font-size: var(--text-base);
-  line-height: 1.6;
-  color: var(--text-primary);
-  background-color: var(--bg-primary);
-  min-height: 100vh;
+.article-content p {
+  @apply mb-4 leading-relaxed;
 }
 
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 600;
-  line-height: 1.2;
-  color: var(--text-primary);
-  margin-bottom: var(--space-md);
+.article-content ul,
+.article-content ol {
+  @apply mb-4 pl-6;
 }
 
-h1 {
-  font-size: var(--text-3xl);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+.article-content li {
+  @apply mb-2;
 }
 
-h2 {
-  font-size: var(--text-2xl);
-  letter-spacing: -0.01em;
+.article-content blockquote {
+  @apply border-l-4 border-primary pl-4 my-6 italic opacity-80;
 }
 
-h3 {
-  font-size: var(--text-xl);
+.article-content code {
+  @apply bg-base-300 px-1.5 py-0.5 rounded text-sm;
 }
 
-h4 {
-  font-size: var(--text-lg);
+.article-content pre {
+  @apply bg-base-300 p-4 rounded-lg overflow-x-auto my-6;
 }
 
-/* Paragraphs */
-p {
-  margin-bottom: var(--space-lg);
-  color: var(--text-muted);
-}
-
-p:last-child {
-  margin-bottom: 0;
-}
-
-/* Links */
-a {
-  color: var(--accent);
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-a:hover,
-a:focus {
-  color: var(--accent-hover);
-  text-decoration: underline;
-}
-
-/* Images */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Lists */
-ul,
-ol {
-  margin-bottom: var(--space-lg);
-  padding-left: var(--space-xl);
-  color: var(--text-muted);
-}
-
-li {
-  margin-bottom: var(--space-sm);
-}
-
-/* Code */
-code {
-  font-family: var(--font-mono);
-  font-size: 0.9em;
-  background-color: var(--bg-secondary);
-  padding: 0.2em 0.4em;
-  border-radius: var(--radius-sm);
-}
-
-pre {
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  background-color: var(--bg-secondary);
-  padding: var(--space-lg);
-  border-radius: var(--radius-md);
-  overflow-x: auto;
-  margin-bottom: var(--space-lg);
-}
-
-pre code {
-  background: none;
-  padding: 0;
-}
-
-/* Horizontal Rule */
-hr {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: var(--space-2xl) 0;
-}
-
-/* ==========================================================================
-   Buttons
-   ========================================================================== */
-
-button {
-  font-family: inherit;
-  font-size: var(--text-base);
-  cursor: pointer;
-  border: none;
-  background: none;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-sm);
-  padding: var(--space-md) var(--space-xl);
-  font-size: var(--text-base);
-  font-weight: 500;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  background-color: transparent;
-  color: var(--text-primary);
-  text-decoration: none;
-  transition: all var(--transition-fast);
-  cursor: pointer;
-}
-
-.btn:hover,
-.btn:focus {
-  background-color: var(--bg-secondary);
-  text-decoration: none;
-}
-
-.btn-primary {
-  background-color: var(--accent);
-  border-color: var(--accent);
-  color: var(--bg-primary);
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: var(--accent-hover);
-  border-color: var(--accent-hover);
-}
-
-/* ==========================================================================
-   Cards
-   ========================================================================== */
-
-.card {
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: var(--space-xl);
-}
-
-/* ==========================================================================
-   Layout Utilities
-   ========================================================================== */
-
-.container {
-  width: 100%;
-  max-width: var(--max-width-page);
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
-}
-
-.container-narrow {
-  width: 100%;
-  max-width: var(--max-width-content);
-  margin: 0 auto;
-  padding: 0 var(--space-lg);
-}
-
-.section {
-  padding: var(--space-section) 0;
-}
-
-.divider {
-  border: none;
-  border-top: 1px solid var(--border);
-  margin: var(--space-section) 0;
-}
-
-/* ==========================================================================
-   Typography Utilities
-   ========================================================================== */
-
-.text-muted {
-  color: var(--text-muted);
-}
-
-.text-small {
-  font-size: var(--text-sm);
-}
-
-.text-center {
-  text-align: center;
+.article-content pre code {
+  @apply bg-transparent p-0;
 }

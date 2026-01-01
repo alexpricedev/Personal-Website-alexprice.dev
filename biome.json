@@ -29,9 +29,11 @@
     "indentStyle": "space"
   },
   "css": {
+    "linter": {
+      "enabled": false
+    },
     "formatter": {
-      "enabled": true,
-      "indentStyle": "space"
+      "enabled": false
     }
   }
 }

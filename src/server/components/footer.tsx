@@ -5,18 +5,13 @@ const socialLinks = [
 ];
 
 export const Footer = () => (
-  <footer className="site-footer">
-    <div className="container">
-      <div className="footer-links">
-        {socialLinks.map((link, index) => (
-          <span key={link.label}>
-            <a href={link.href}>{link.label}</a>
-            {index < socialLinks.length - 1 && (
-              <span className="footer-separator"> · </span>
-            )}
-          </span>
-        ))}
-      </div>
-    </div>
+  <footer className="footer footer-center bg-base-200 text-base-content p-8">
+    <nav className="flex flex-wrap justify-center gap-4">
+      {socialLinks.map((link) => (
+        <a key={link.label} href={link.href} className="link link-hover">
+          {link.label}
+        </a>
+      ))}
+    </nav>
   </footer>
 );
