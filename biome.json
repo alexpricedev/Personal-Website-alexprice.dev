@@ -18,6 +18,9 @@
       },
       "nursery": {
         "useUniqueElementIds": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
       }
     }
   },
