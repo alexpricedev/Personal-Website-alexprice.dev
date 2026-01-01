@@ -20,7 +20,16 @@ export const Insights = ({ articles }: InsightsProps) => (
   >
     <div className="max-w-3xl mx-auto px-4 py-16">
       <header className="mb-12">
-        <h1 className="text-4xl font-bold mb-4">Insights</h1>
+        <div className="flex items-center gap-4 mb-6">
+          <div className="avatar placeholder shrink-0">
+            <div className="bg-base-300 text-base-content/50 w-14 h-14 rounded-full flex items-center justify-center">
+              <span className="text-xs">AP</span>
+            </div>
+          </div>
+          <div>
+            <h1 className="text-3xl font-bold">Insights</h1>
+          </div>
+        </div>
         <p className="text-base-content/70">
           Lessons from scaling teams, raising funds, and making mistakes.
         </p>

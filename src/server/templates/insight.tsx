@@ -18,10 +18,20 @@ export const Insight = ({ article }: InsightProps) => (
       </a>
 
       <header className="mb-12">
-        <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
-        <p className="text-sm text-base-content/60">
-          {article.date} · {article.readingTime} min read
-        </p>
+        <h1 className="text-4xl font-bold mb-6">{article.title}</h1>
+        <div className="flex items-center gap-3">
+          <div className="avatar placeholder shrink-0">
+            <div className="bg-base-300 text-base-content/50 w-10 h-10 rounded-full flex items-center justify-center">
+              <span className="text-xs">AP</span>
+            </div>
+          </div>
+          <div>
+            <p className="text-sm font-medium">Alex Price</p>
+            <p className="text-xs text-base-content/60">
+              {article.date} · {article.readingTime} min read
+            </p>
+          </div>
+        </div>
       </header>
 
       <div
@@ -33,11 +43,22 @@ export const Insight = ({ article }: InsightProps) => (
 
       <div className="divider" />
 
-      <div className="text-center py-8">
-        <p className="mb-4 text-base-content/70">Want to talk about this?</p>
-        <a href={CALENDLY_URL} className="btn btn-primary">
-          Book a call
-        </a>
+      <div className="py-8">
+        <div className="flex flex-col sm:flex-row items-center gap-5">
+          <div className="avatar placeholder shrink-0">
+            <div className="bg-base-300 text-base-content/50 w-16 h-16 rounded-full flex items-center justify-center">
+              <span className="text-xs">Photo</span>
+            </div>
+          </div>
+          <div className="text-center sm:text-left">
+            <p className="text-base-content/70 mb-3">
+              Want to talk about this?
+            </p>
+            <a href={CALENDLY_URL} className="btn btn-primary btn-sm">
+              Book a call
+            </a>
+          </div>
+        </div>
       </div>
     </article>
   </Layout>

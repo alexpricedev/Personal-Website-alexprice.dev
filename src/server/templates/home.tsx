@@ -82,27 +82,36 @@ export const Home = () => (
 
     {/* How This Works */}
     <section className="py-24 lg:py-32 px-6 bg-base-200">
-      <div className="max-w-3xl mx-auto">
-        <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-10">
-          How this works
-        </h2>
-        <div className="space-y-6 text-xl text-base-content/70 leading-relaxed">
-          <p>
-            From one day a week to a three-month transformation. I embed with
-            your team, figure out what's actually broken, and fix it – or hire
-            someone brilliant who will.
-          </p>
-          <p>
-            No dependency. No extended retainers. Success means I'm no longer
-            needed.
-          </p>
-        </div>
-        <div className="mt-12 border-l-4 border-primary pl-6 py-2">
-          <p className="text-lg italic text-base-content/60 leading-relaxed">
-            If you want someone to nod along or move cautiously, I'm not your
-            person. This works best with founders who want speed and can handle
-            direct feedback.
-          </p>
+      <div className="max-w-5xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
+          <div className="lg:w-1/2">
+            <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-10">
+              How this works
+            </h2>
+            <div className="space-y-6 text-xl text-base-content/70 leading-relaxed">
+              <p>
+                From one day a week to a three-month transformation. I embed
+                with your team, figure out what's actually broken, and fix it –
+                or hire someone brilliant who will.
+              </p>
+              <p>
+                No dependency. No extended retainers. Success means I'm no
+                longer needed.
+              </p>
+            </div>
+            <div className="mt-12 border-l-4 border-primary pl-6 py-2">
+              <p className="text-lg italic text-base-content/60 leading-relaxed">
+                If you want someone to nod along or move cautiously, I'm not
+                your person. This works best with founders who want speed and
+                can handle direct feedback.
+              </p>
+            </div>
+          </div>
+          <div className="lg:w-1/2">
+            <div className="bg-base-300 text-base-content/50 w-full aspect-[4/3] rounded-xl flex items-center justify-center">
+              <span className="text-sm">Working photo</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
