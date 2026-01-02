@@ -21,9 +21,13 @@ export const Insights = ({ articles }: InsightsProps) => (
     <div className="max-w-3xl mx-auto px-4 py-16">
       <header className="mb-12">
         <div className="flex items-center gap-4 mb-6">
-          <div className="avatar placeholder shrink-0">
-            <div className="bg-base-300 text-base-content/50 w-14 h-14 rounded-full flex items-center justify-center">
-              <span className="text-xs">AP</span>
+          <div className="avatar shrink-0">
+            <div className="w-14 h-14 rounded-full overflow-hidden">
+              <img
+                src="/headshot2.webp"
+                alt="Alex Price"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           <div>

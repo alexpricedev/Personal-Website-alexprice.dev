@@ -69,30 +69,49 @@ export const WorkWithMe = () => (
         <h2 className="text-2xl lg:text-3xl font-bold tracking-tight mb-6">
           What to expect
         </h2>
-        <ul className="space-y-4">
+        <ul className="space-y-5">
           <li className="flex gap-3">
-            <span className="text-primary">✓</span>
+            <span className="text-primary shrink-0">✓</span>
+            <div>
+              <span className="text-base text-base-content/70">
+                Someone who's done this before:
+              </span>
+              <ul className="mt-2 ml-1 space-y-1">
+                <li className="flex gap-2 text-base-content/60">
+                  <span className="text-base-content/40">–</span>
+                  Scaled multiple businesses
+                </li>
+                <li className="flex gap-2 text-base-content/60">
+                  <span className="text-base-content/40">–</span>
+                  Raised multiple rounds
+                </li>
+                <li className="flex gap-2 text-base-content/60">
+                  <span className="text-base-content/40">–</span>
+                  Hired hundreds of staff
+                </li>
+                <li className="flex gap-2 text-base-content/60">
+                  <span className="text-base-content/40">–</span>
+                  Exited multiple businesses
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li className="flex gap-3">
+            <span className="text-primary shrink-0">✓</span>
             <span className="text-base text-base-content/70">
               Direct feedback on what's working and what isn't
             </span>
           </li>
           <li className="flex gap-3">
-            <span className="text-primary">✓</span>
+            <span className="text-primary shrink-0">✓</span>
             <span className="text-base text-base-content/70">
               Hands-on help with architecture, hiring, and team structure
             </span>
           </li>
           <li className="flex gap-3">
-            <span className="text-primary">✓</span>
+            <span className="text-primary shrink-0">✓</span>
             <span className="text-base text-base-content/70">
-              Someone who's done this before – 3 to 80+ engineers, funding
-              rounds, exit
-            </span>
-          </li>
-          <li className="flex gap-3">
-            <span className="text-primary">✓</span>
-            <span className="text-base text-base-content/70">
-              No dependency – I measure success by how quickly I'm not needed
+              A clear exit plan – not an open-ended engagement
             </span>
           </li>
         </ul>
@@ -100,19 +119,17 @@ export const WorkWithMe = () => (
 
       {/* Not for Everyone */}
       <section className="mb-14">
-        <h2 className="text-2xl lg:text-3xl font-bold tracking-tight mb-6">
+        <h2 className="text-2xl lg:text-3xl font-bold tracking-tight mb-4">
           Not for everyone
         </h2>
-        <div className="border-l-4 border-primary pl-5 py-1">
-          <p className="text-base text-base-content/80 leading-relaxed mb-3">
-            This works best with founders who want speed, can handle direct
-            feedback, and are ready to act on it.
-          </p>
-          <p className="text-base text-base-content/60 leading-relaxed italic">
-            If you're looking for someone to validate decisions you've already
-            made or move cautiously, I'm not your person.
-          </p>
-        </div>
+        <p className="text-base text-base-content/70 leading-relaxed mb-3">
+          This works best with founders who want speed, can handle direct
+          feedback, and are ready to act on it.
+        </p>
+        <p className="text-base text-base-content/70 leading-relaxed">
+          If you're looking for someone to validate decisions you've already
+          made or move cautiously, I'm not your person.
+        </p>
       </section>
 
       {/* Investment */}
@@ -121,8 +138,8 @@ export const WorkWithMe = () => (
           Investment
         </h2>
         <p className="text-base text-base-content/70 leading-relaxed">
-          Pricing depends on scope and time commitment. Book a call and we'll
-          figure out what makes sense.
+          Starts at £10k/month for embedded work. Day-rate for shorter sprints.
+          Book a call and we'll figure out what fits.
         </p>
       </section>
 
@@ -130,9 +147,13 @@ export const WorkWithMe = () => (
       <div className="divider" />
       <section className="py-12 lg:py-16">
         <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
-          <div className="avatar placeholder shrink-0">
-            <div className="bg-base-300 text-base-content/50 w-20 h-20 rounded-full flex items-center justify-center">
-              <span className="text-xs">Photo</span>
+          <div className="avatar shrink-0">
+            <div className="w-28 h-28 rounded-full overflow-hidden">
+              <img
+                src="/headshot2.webp"
+                alt="Alex Price"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           <div className="text-center sm:text-left">
@@ -142,9 +163,23 @@ export const WorkWithMe = () => (
             <p className="text-base text-base-content/70 mb-4">
               30 minutes to see if there's a fit. No pitch, no pressure.
             </p>
-            <a href={CALENDLY_URL} className="btn btn-primary">
-              Book a call
-            </a>
+            <div className="flex flex-wrap items-center gap-3">
+              <a href={CALENDLY_URL} className="btn btn-primary">
+                Book a call
+              </a>
+              <span className="text-base-content/40 text-sm hidden min-[375px]:inline">
+                or
+              </span>
+              <a
+                href="https://wa.me/447356066058"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn bg-[#1da851] hover:bg-[#178f45] text-white border-none"
+              >
+                <img src="/WhatsApp.webp" alt="" className="w-5 h-5" />
+                WhatsApp me
+              </a>
+            </div>
           </div>
         </div>
       </section>
