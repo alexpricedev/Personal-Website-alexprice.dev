@@ -125,8 +125,8 @@ export const Home = () => (
     {/* How This Works */}
     <section className="py-24 lg:py-32 px-6 bg-base-200">
       <div className="max-w-5xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-          <div className="lg:w-1/2">
+        <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-center">
+          <div className="md:w-1/2">
             <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-10">
               How this works
             </h2>
@@ -152,10 +152,12 @@ export const Home = () => (
               </div>
             </div>
           </div>
-          <div className="lg:w-1/2">
-            <div className="bg-base-300 text-base-content/50 w-full aspect-[4/3] rounded-xl flex items-center justify-center">
-              <span className="text-sm">Working photo</span>
-            </div>
+          <div className="md:w-1/2">
+            <img
+              src="/alex-working.webp"
+              alt="Alex Price in a meeting"
+              className="w-full aspect-[4/3] rounded-xl object-cover"
+            />
           </div>
         </div>
       </div>
@@ -166,9 +168,19 @@ export const Home = () => (
       <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-8">
         Let's scale this thing
       </h2>
-      <a href={CALENDLY_URL} className="btn btn-primary btn-lg text-lg px-8">
-        Book a call
-      </a>
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href={CALENDLY_URL} className="btn btn-primary btn-lg text-lg px-8">
+          Book a call
+        </a>
+        <span className="text-base-content/40 hidden sm:inline">or</span>
+        <a
+          href="/work-with-me"
+          className="link text-lg text-base-content/70 hover:text-primary"
+          style={{ textUnderlineOffset: "4px" }}
+        >
+          Learn how it works →
+        </a>
+      </div>
     </section>
   </Layout>
 );
