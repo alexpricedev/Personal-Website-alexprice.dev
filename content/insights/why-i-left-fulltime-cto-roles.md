@@ -1,13 +1,13 @@
 ---
 title: "Why I Left Full-Time CTO Roles"
-date: 2024-01-15
-excerpt: "After two exits and scaling teams from 3 to 80+ engineers, I realized the best thing I could do was stop staying."
+date: 2025-01-02
+excerpt: "After two exits and scaling teams from 3 to 80+ FTEs, I realised the best thing I could do was stop staying."
 pillar: war-stories
 ---
 
 The first time I made myself unnecessary, it felt like failure.
 
-I'd spent 18 months building the engineering org at Ecologi. We'd gone from 3 engineers to over 80. We had a real platform, real customers, and a team that could ship without me in every room.
+I'd spent 18 months building the engineering org at Ecologi. We'd gone from 3 staff to over 80. We had a real platform, real customers, and a team that could ship without me in every room.
 
 And that's when I knew it was time to go.
 

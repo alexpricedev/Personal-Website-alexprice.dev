@@ -8,7 +8,7 @@ const socialLinks = [
 ];
 
 export const Footer = () => (
-  <footer className="footer flex-col bg-base-200 text-base-content p-8 items-center">
+  <footer className="bg-base-200 text-base-content p-8 flex flex-col lg:flex-row items-center lg:justify-between gap-4">
     <nav className="flex flex-wrap justify-center gap-4">
       {socialLinks.map((link) => (
         <a
@@ -22,7 +22,7 @@ export const Footer = () => (
         </a>
       ))}
     </nav>
-    <p className="text-base-content/40 text-sm text-center">
+    <p className="text-base-content/40 text-sm text-center lg:text-right">
       Based in Sheffield, UK – working with founders globally
     </p>
   </footer>

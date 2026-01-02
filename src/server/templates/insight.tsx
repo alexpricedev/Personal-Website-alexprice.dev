@@ -20,9 +20,9 @@ export const Insight = ({ article }: InsightProps) => (
       <header className="mb-12">
         <h1 className="text-4xl font-bold mb-6">{article.title}</h1>
         <div className="flex items-center gap-3">
-          <div className="avatar placeholder shrink-0">
-            <div className="bg-base-300 text-base-content/50 w-10 h-10 rounded-full flex items-center justify-center">
-              <span className="text-xs">AP</span>
+          <div className="avatar shrink-0">
+            <div className="w-10 h-10 rounded-full">
+              <img src="/headshot2.webp" alt="Alex Price" />
             </div>
           </div>
           <div>
@@ -45,9 +45,9 @@ export const Insight = ({ article }: InsightProps) => (
 
       <div className="py-8">
         <div className="flex flex-col sm:flex-row items-center gap-5">
-          <div className="avatar placeholder shrink-0">
-            <div className="bg-base-300 text-base-content/50 w-16 h-16 rounded-full flex items-center justify-center">
-              <span className="text-xs">Photo</span>
+          <div className="avatar shrink-0">
+            <div className="w-16 h-16 rounded-full">
+              <img src="/headshot2.webp" alt="Alex Price" />
             </div>
           </div>
           <div className="text-center sm:text-left">
