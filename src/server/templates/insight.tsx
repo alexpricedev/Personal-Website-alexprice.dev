@@ -1,14 +1,21 @@
 import { Layout } from "@server/components/layouts";
+import { CALENDLY_URL } from "@server/config";
 import type { Article } from "@server/services/articles";
 
 type InsightProps = {
   article: Article;
 };
 
-const CALENDLY_URL = "https://calendly.com/alexprice";
-
 export const Insight = ({ article }: InsightProps) => (
-  <Layout title={article.title} description={article.excerpt} name="insight">
+  <Layout
+    title={article.title}
+    description={article.excerpt}
+    name="insight"
+    path={`/insights/${article.slug}`}
+    ogType="article"
+    ogImage={article.image}
+    publishedTime={article.isoDate}
+  >
     <article className="max-w-3xl mx-auto px-4 py-16">
       <a
         href="/insights"

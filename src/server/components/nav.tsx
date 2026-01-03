@@ -1,3 +1,5 @@
+import { CALENDLY_URL } from "@server/config";
+
 const navLinks = [
   { href: "/", label: "Home", name: "home" },
   { href: "/insights", label: "Insights", name: "insights" },
@@ -5,7 +7,7 @@ const navLinks = [
 ];
 
 const ctaLink = {
-  href: "https://calendly.com/alexprice",
+  href: CALENDLY_URL,
   label: "Book a call",
 };
 

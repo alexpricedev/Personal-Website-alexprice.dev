@@ -1,6 +1,5 @@
 import { Layout } from "@server/components/layouts";
-
-const CALENDLY_URL = "https://calendly.com/alexprice";
+import { CALENDLY_URL } from "@server/config";
 
 export const WorkWithMe = () => (
   <Layout

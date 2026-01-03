@@ -9,8 +9,10 @@ export type ArticleMeta = {
   slug: string;
   title: string;
   date: string;
+  isoDate: string;
   excerpt: string;
   pillar?: ArticlePillar;
+  image?: string;
   readingTime: number;
 };
 
@@ -23,6 +25,7 @@ type Frontmatter = {
   date: Date | string;
   excerpt: string;
   pillar?: ArticlePillar;
+  image?: string;
 };
 
 const CONTENT_DIR = join(process.cwd(), "content", "insights");
@@ -37,6 +40,14 @@ function formatDate(date: Date | string): string {
   const month = d.toLocaleString("en-US", { month: "short" });
   const year = d.getFullYear();
   return `${day} ${month} ${year}`;
+}
+
+/**
+ * Format a date as ISO 8601 string for SEO
+ */
+function formatIsoDate(date: Date | string): string {
+  const d = typeof date === "string" ? new Date(date) : date;
+  return d.toISOString();
 }
 
 /**
@@ -62,8 +73,10 @@ function parseArticle(filePath: string, slug: string): Article {
     slug,
     title: frontmatter.title,
     date: formatDate(frontmatter.date),
+    isoDate: formatIsoDate(frontmatter.date),
     excerpt: frontmatter.excerpt,
     pillar: frontmatter.pillar,
+    image: frontmatter.image,
     readingTime,
     content: htmlContent,
   };

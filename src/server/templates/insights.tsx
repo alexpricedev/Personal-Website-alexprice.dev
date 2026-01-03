@@ -19,7 +19,7 @@ export const Insights = ({ articles }: InsightsProps) => (
     name="insights"
   >
     <div className="max-w-3xl mx-auto px-4 py-16">
-      <header className="mb-12">
+      <header className="mb-8">
         <div className="flex items-center gap-4 mb-6">
           <div className="avatar shrink-0">
             <div className="w-14 h-14 rounded-full overflow-hidden">
@@ -31,7 +31,7 @@ export const Insights = ({ articles }: InsightsProps) => (
             </div>
           </div>
           <div>
-            <h1 className="text-3xl font-bold">Insights</h1>
+            <h1 className="text-3xl font-bold">CTOx Insights</h1>
           </div>
         </div>
         <p className="text-base-content/70">
@@ -55,19 +55,13 @@ export const Insights = ({ articles }: InsightsProps) => (
       ) : (
         <div className="space-y-8">
           {articles.map((article) => (
-            <article
+            <a
               key={article.slug}
-              className="card bg-base-200 hover:bg-base-300 transition-colors"
+              href={`/insights/${article.slug}`}
+              className="card bg-base-200 hover:bg-base-300 transition-colors block"
             >
               <div className="card-body">
-                <h2 className="card-title">
-                  <a
-                    href={`/insights/${article.slug}`}
-                    className="hover:text-primary transition-colors"
-                  >
-                    {article.title}
-                  </a>
-                </h2>
+                <h2 className="card-title">{article.title}</h2>
                 <p className="text-sm text-base-content/60">
                   {article.date} · {article.readingTime} min read
                   {article.pillar && (
@@ -80,10 +74,10 @@ export const Insights = ({ articles }: InsightsProps) => (
                   )}
                 </p>
                 {article.excerpt && (
-                  <p className="text-base-content/70">{article.excerpt}</p>
+                  <p className="text-base-content/70">{article.excerpt}...</p>
                 )}
               </div>
-            </article>
+            </a>
           ))}
         </div>
       )}
