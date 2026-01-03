@@ -20,6 +20,7 @@ COPY --from=build /app/content ./content
 COPY --from=build /app/src ./src
 COPY --from=build /app/node_modules ./node_modules
 COPY --from=build /app/package.json ./
+COPY --from=build /app/tsconfig.json ./
 
 ENV NODE_ENV=production
 ENV PORT=3000
