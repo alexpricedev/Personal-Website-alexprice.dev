@@ -79,6 +79,9 @@ export const Insights = ({ articles }: InsightsProps) => (
               </div>
             </a>
           ))}
+          <p className="text-center text-base-content/50 text-sm pt-4">
+            This area is new! More coming soon.
+          </p>
         </div>
       )}
     </div>
