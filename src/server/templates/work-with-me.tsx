@@ -6,6 +6,7 @@ export const WorkWithMe = () => (
     title="Work with me"
     description="Fractional CTO for Series A startups who need to move fast and get it right."
     name="work-with-me"
+    path="/work-with-me"
   >
     <div className="max-w-3xl mx-auto px-6 py-16 lg:py-24">
       <header className="mb-12">

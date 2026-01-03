@@ -17,6 +17,7 @@ export const Insights = ({ articles }: InsightsProps) => (
     title="Insights"
     description="Lessons from scaling teams, raising funds, and making mistakes."
     name="insights"
+    path="/insights"
   >
     <div className="max-w-3xl mx-auto px-4 py-16">
       <header className="mb-8">
