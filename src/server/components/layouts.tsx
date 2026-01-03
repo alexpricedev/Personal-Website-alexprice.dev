@@ -3,7 +3,7 @@ import type React from "react";
 import { Footer } from "./footer";
 import { Nav } from "./nav";
 
-const DEFAULT_OG_IMAGE = `${SITE_URL}/headshot2.webp`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 type LayoutProps = {
   title: string;
