@@ -163,7 +163,7 @@ export const WorkWithMe = () => (
             <p className="text-base text-base-content/70 mb-4">
               30 minutes to see if there's a fit. No pitch, no pressure.
             </p>
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3">
               <a href={CALENDLY_URL} className="btn btn-primary">
                 Book a call
               </a>
