@@ -1,5 +1,6 @@
 import type { JSX } from "react";
 import { renderToString } from "react-dom/server";
+import { withTracking } from "../services/analytics";
 import { getAllArticles, getArticleBySlug } from "../services/articles";
 import { Home } from "../templates/home";
 import { Insight } from "../templates/insight";
@@ -14,12 +15,12 @@ const render = (element: JSX.Element): Response =>
 const notFound = (): Response => new Response("Not found", { status: 404 });
 
 export const viewRoutes = {
-  "/": () => render(<Home />),
-  "/insights": () => {
+  "/": withTracking(() => render(<Home />)),
+  "/insights": withTracking(() => {
     const articles = getAllArticles();
     return render(<Insights articles={articles} />);
-  },
-  "/insights/:slug": (req: Request) => {
+  }),
+  "/insights/:slug": withTracking((req: Request) => {
     const url = new URL(req.url);
     const slug = url.pathname.replace("/insights/", "");
     const article = getArticleBySlug(slug);
@@ -27,6 +28,6 @@ export const viewRoutes = {
       return notFound();
     }
     return render(<Insight article={article} />);
-  },
-  "/work-with-me": () => render(<WorkWithMe />),
+  }),
+  "/work-with-me": withTracking(() => render(<WorkWithMe />)),
 };
