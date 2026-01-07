@@ -123,12 +123,15 @@ export const WorkWithMe = () => (
           Not for everyone
         </h2>
         <p className="text-base text-base-content/70 leading-relaxed mb-3">
-          This works best with founders who want speed, can handle direct
-          feedback, and are ready to act on it.
+          This works best with founders who are{" "}
+          <strong>ready to move at speed</strong>, thrive on{" "}
+          <strong>clear and direct feedback</strong>, and show a{" "}
+          <strong>strong bias to action</strong>.
         </p>
         <p className="text-base text-base-content/70 leading-relaxed">
           If you're looking for someone to validate decisions you've already
-          made or move cautiously, I'm not your person.
+          made—or to move cautiously instead of authoritatively—I'm not your
+          person.
         </p>
       </section>
 

@@ -5,23 +5,29 @@ export const Home = () => (
   <Layout title="Home" name="home">
     {/* Hero */}
     <div className="hero min-h-[80vh] bg-base-100 py-16 lg:py-24">
-      <div className="hero-content flex-col lg:flex-row-reverse gap-12 lg:gap-20 max-w-7xl px-6">
+      <div className="hero-content flex-col lg:flex-row-reverse gap-12 lg:gap-20 px-6">
         <img
           src="/headshot.webp"
           alt="Alex Price"
           className="shrink-0 w-72 h-[22rem] lg:w-96 lg:h-[28rem] rounded-xl object-cover object-top border-2 border-base-800"
         />
         <div className="text-center lg:text-left max-w-2xl">
-          <p className="text-sm uppercase tracking-widest text-primary font-medium mb-4">
-            For Series A founders
-          </p>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
-            Fractional CTO who builds teams that don't need him
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+            I'm a fractional CTO who specialises in engineering himself out of
+            the job.
           </h1>
-          <p className="mt-8 text-xl lg:text-2xl text-base-content/70 leading-relaxed">
-            Hiring a full-time CTO takes months and might not work out. I'll
-            tell you what nobody else will, then either hire my replacement or
-            make the role unnecessary.
+          <p className="mt-8 text-lg lg:text-xl text-base-content/70 leading-relaxed">
+            Hiring a full-time CTO takes months... and often ends up looking
+            like a shotgun marriage. Let's not take your Series A startup down
+            that road.
+          </p>
+          <p className="mt-4 text-lg lg:text-xl leading-relaxed">
+            <strong>I'm the alternative.</strong>
+          </p>
+          <p className="mt-1 text-lg lg:text-xl text-base-content/70 leading-relaxed">
+            I'll help you to use my extensive startup and exit experience to
+            leverage your startup success, then I’ll help you find my optimal
+            replacement (or even make the role unnecessary).
           </p>
           <div className="mt-10">
             <a
@@ -131,21 +137,48 @@ export const Home = () => (
             </h2>
             <div className="space-y-6 text-xl text-base-content/70 leading-relaxed">
               <p>
-                Need ongoing senior tech leadership? I embed one or two days a
-                week until you're ready to hire permanently.
+                <strong className="text-base-content/90">
+                  Need ongoing senior tech leadership?
+                </strong>
+                <br />I embed one or two days a week until you're ready to hire
+                permanently.
               </p>
-              <p>
-                Need a specific problem solved? I run focused three-month
-                transformations – team structure, hiring, tech strategy – then
-                hand it off.
+              <p className="mb-0">
+                <strong className="text-base-content/90">
+                  Need a specific problem solved?
+                </strong>
+                <br /> I run focused three-month transformations covering:
               </p>
+              <ul className="list-disc pl-6">
+                <li>Team structure</li>
+                <li>Hiring</li>
+                <li>Tech strategy</li>
+              </ul>
+              <p>I then cleanly hand off to your strengthened team.</p>
             </div>
             <div className="card bg-base-300 mt-12 border-2 border-primary">
               <div className="card-body p-6">
                 <p className="text-lg text-base-content leading-relaxed">
+                  <svg
+                    className="inline-block mr-1 text-primary relative -top-px"
+                    fill="none"
+                    height={24}
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>Alert icon</title>
+                    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+                    <path d="M12 9v4" />
+                    <path d="M12 17h.01" />
+                  </svg>
                   If you want someone to tell you what you want to hear or move
                   cautiously, I'm not your guy. I work best with founders who
-                  want <strong>speed</strong> and can handle{" "}
+                  are ready for velocity and thrive on{" "}
                   <strong>direct feedback</strong>.
                 </p>
               </div>
