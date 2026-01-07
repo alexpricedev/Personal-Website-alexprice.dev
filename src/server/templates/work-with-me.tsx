@@ -10,111 +10,80 @@ export const WorkWithMe = () => (
   >
     <div className="max-w-3xl mx-auto px-6 py-16 lg:py-24">
       <header className="mb-12">
-        <h1 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-          Work with me
-        </h1>
-        <p className="text-xl text-base-content/70 leading-relaxed">
-          Fractional CTO for Series A startups who need to move fast and get it
-          right.
+        <p className="text-sm font-semibold text-primary uppercase tracking-wide mb-3">
+          For Series A Founders
         </p>
+        <h1 className="text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+          I'm a fractional CTO who specializes in engineering himself out of the
+          job.
+        </h1>
       </header>
 
       {/* The Problem */}
       <section className="mb-14">
+        <p className="text-lg text-base-content/80 leading-relaxed mb-4">
+          Hiring a full-time CTO takes months… and often ends up looking like a
+          shotgun marriage. Let's not take your Series A startup down that road.
+        </p>
         <p className="text-lg text-base-content/80 leading-relaxed">
-          You need senior technical leadership but hiring a full-time CTO is
-          expensive, slow, and risky. You might not even need one permanently –
-          you need the right decisions made now.
+          I'm the alternative. I'll use my extensive startup and exit experience
+          to leverage your startup success, then I'll help you find my optimal
+          replacement (or even make the role unnecessary).
         </p>
       </section>
 
-      {/* How I Can Help */}
+      {/* Transformation Projects */}
       <section className="mb-14">
-        <h2 className="text-2xl lg:text-3xl font-bold tracking-tight mb-3">
-          How I can help
+        <h2 className="text-2xl lg:text-3xl font-bold tracking-tight mb-4">
+          Focused three-month transformations
         </h2>
-        <p className="text-base text-base-content/60 mb-8">
-          Two ways to work together:
+        <p className="text-base text-base-content/70 leading-relaxed mb-6">
+          Need a specific problem solved? I run focused three-month
+          transformations:
         </p>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="card bg-base-200">
-            <div className="card-body p-6">
-              <h3 className="text-xl font-semibold text-primary mb-2">
-                Embedded support
-              </h3>
-              <p className="text-base text-base-content/70 leading-relaxed">
-                One to two days per week. I join your team, attend the meetings
-                that matter, and help you make better technical and hiring
-                decisions. Ongoing until you don't need me.
-              </p>
-            </div>
-          </div>
-          <div className="card bg-base-200">
-            <div className="card-body p-6">
-              <h3 className="text-xl font-semibold text-primary mb-2">
-                Transformation project
-              </h3>
-              <p className="text-base text-base-content/70 leading-relaxed">
-                A focused 3-month engagement. We identify what's broken, fix it,
-                and either hire your permanent CTO or build systems that don't
-                require one. Clear scope, clear exit.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* What to Expect */}
-      <section className="mb-14">
-        <h2 className="text-2xl lg:text-3xl font-bold tracking-tight mb-6">
-          What to expect
-        </h2>
-        <ul className="space-y-5">
+        <ul className="space-y-3 mb-6">
           <li className="flex gap-3">
-            <span className="text-primary shrink-0">✓</span>
-            <div>
-              <span className="text-base text-base-content/70">
-                Someone who's done this before:
-              </span>
-              <ul className="mt-2 ml-1 space-y-1">
-                <li className="flex gap-2 text-base-content/60">
-                  <span className="text-base-content/40">–</span>
-                  Scaled multiple businesses
-                </li>
-                <li className="flex gap-2 text-base-content/60">
-                  <span className="text-base-content/40">–</span>
-                  Raised multiple rounds
-                </li>
-                <li className="flex gap-2 text-base-content/60">
-                  <span className="text-base-content/40">–</span>
-                  Hired hundreds of staff
-                </li>
-                <li className="flex gap-2 text-base-content/60">
-                  <span className="text-base-content/40">–</span>
-                  Exited multiple businesses
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li className="flex gap-3">
-            <span className="text-primary shrink-0">✓</span>
+            <span className="text-primary shrink-0">•</span>
             <span className="text-base text-base-content/70">
-              Direct feedback on what's working and what isn't
+              Team structure
             </span>
           </li>
           <li className="flex gap-3">
-            <span className="text-primary shrink-0">✓</span>
-            <span className="text-base text-base-content/70">
-              Hands-on help with architecture, hiring, and team structure
-            </span>
+            <span className="text-primary shrink-0">•</span>
+            <span className="text-base text-base-content/70">Hiring</span>
           </li>
           <li className="flex gap-3">
-            <span className="text-primary shrink-0">✓</span>
-            <span className="text-base text-base-content/70">
-              A clear exit plan – not an open-ended engagement
-            </span>
+            <span className="text-primary shrink-0">•</span>
+            <span className="text-base text-base-content/70">Tech strategy</span>
           </li>
         </ul>
+        <p className="text-base text-base-content/70 leading-relaxed">
+          I then cleanly hand off to your strengthened team.
+        </p>
+      </section>
+
+      {/* Warning */}
+      <section className="mb-14">
+        <div className="alert bg-warning/10 border border-warning/30">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="stroke-warning shrink-0 h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+            />
+          </svg>
+          <span className="text-base text-base-content/80">
+            If you want someone to tell you what you want to hear or move
+            cautiously, I'm not your guy. I work best with founders who are
+            ready for velocity and can thrive on direct feedback.
+          </span>
+        </div>
       </section>
 
       {/* Not for Everyone */}
@@ -123,23 +92,13 @@ export const WorkWithMe = () => (
           Not for everyone
         </h2>
         <p className="text-base text-base-content/70 leading-relaxed mb-3">
-          This works best with founders who want speed, can handle direct
-          feedback, and are ready to act on it.
+          This works best with founders who are ready to move at speed, thrive
+          on clear and direct feedback, and show a strong bias to action.
         </p>
         <p className="text-base text-base-content/70 leading-relaxed">
           If you're looking for someone to validate decisions you've already
-          made or move cautiously, I'm not your person.
-        </p>
-      </section>
-
-      {/* Investment */}
-      <section className="mb-14">
-        <h2 className="text-2xl lg:text-3xl font-bold tracking-tight mb-4">
-          Investment
-        </h2>
-        <p className="text-base text-base-content/70 leading-relaxed">
-          Starts at £10k/month for embedded work. Day-rate for shorter sprints.
-          Book a call and we'll figure out what fits.
+          made—or to move cautiously instead of authoritatively—I'm not your
+          person.
         </p>
       </section>
 
