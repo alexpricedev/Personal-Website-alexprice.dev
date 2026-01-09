@@ -2,7 +2,7 @@
 title: "What Makes Software Defensible in an AI World?"
 date: 2026-01-09
 excerpt: "If an AI can generate your core offering from scratch every time a user needs it, you don't have a product. You have a prompt."
-pillar: scaling
+pillar: AI
 ---
 
 The recent discourse around Tailwind's future is mostly the usual "open source is dead" stuff. But there's something deeper here worth sitting with.
