@@ -45,3 +45,7 @@
 .article-content img {
   @apply rounded-lg my-6;
 }
+
+.article-content hr {
+  @apply my-10 border-base-content/20;
+}
