@@ -105,8 +105,8 @@ export function getAllArticles(): ArticleMeta[] {
 
   // Sort by date (newest first)
   return articles.sort((a, b) => {
-    const dateA = new Date(a.date);
-    const dateB = new Date(b.date);
+    const dateA = new Date(a.isoDate);
+    const dateB = new Date(b.isoDate);
     return dateB.getTime() - dateA.getTime();
   });
 }

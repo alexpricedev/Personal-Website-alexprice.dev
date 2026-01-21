@@ -1,6 +1,6 @@
 ---
 title: "Strategy Should Compound"
-date: 2025-01-06
+date: 2026-01-06
 excerpt: "The best strategies aren't about hitting targets. They're about making future targets easier to hit."
 pillar: scaling
 ---
