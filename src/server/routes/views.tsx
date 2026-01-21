@@ -16,6 +16,7 @@ const notFound = (): Response => new Response("Not found", { status: 404 });
 
 export const viewRoutes = {
   "/": withTracking(() => render(<Home />)),
+  "/in": withTracking(() => Response.redirect("/", 302), "linkedin"),
   "/insights": withTracking(() => {
     const articles = getAllArticles();
     return render(<Insights articles={articles} />);

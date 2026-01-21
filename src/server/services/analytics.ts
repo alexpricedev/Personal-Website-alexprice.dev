@@ -43,7 +43,10 @@ export function trackPageView(
 
 type RouteHandler = (req: Request) => Response | Promise<Response>;
 
-export function withTracking(handler: RouteHandler): RouteHandler {
+export function withTracking(
+  handler: RouteHandler,
+  sourceOverride?: string,
+): RouteHandler {
   return async (req: Request) => {
     const url = new URL(req.url);
     const adminParam = url.searchParams.get("admin") === "1";
@@ -56,8 +59,10 @@ export function withTracking(handler: RouteHandler): RouteHandler {
         req.headers.get("referer"),
         req.headers.get("user-agent"),
         {
-          source: url.searchParams.get("utm_source"),
-          medium: url.searchParams.get("utm_medium"),
+          source: sourceOverride ?? url.searchParams.get("utm_source"),
+          medium: sourceOverride
+            ? "profile"
+            : url.searchParams.get("utm_medium"),
           campaign: url.searchParams.get("utm_campaign"),
         },
       );
