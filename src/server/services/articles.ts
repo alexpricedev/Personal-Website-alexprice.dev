@@ -3,7 +3,13 @@ import { join } from "node:path";
 import matter from "gray-matter";
 import { marked } from "marked";
 
-export type ArticlePillar = "scaling" | "fundraising" | "ai" | "war-stories";
+export type ArticlePillar =
+  | "scaling"
+  | "fundraising"
+  | "ai"
+  | "war-stories"
+  | "startups"
+  | "leadership";
 
 export type ArticleMeta = {
   slug: string;

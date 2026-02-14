@@ -10,6 +10,8 @@ const pillarLabels: Record<string, string> = {
   fundraising: "Fundraising",
   ai: "AI",
   "war-stories": "War Stories",
+  startups: "Startups",
+  leadership: "Leadership",
 };
 
 export const Insights = ({ articles }: InsightsProps) => (
