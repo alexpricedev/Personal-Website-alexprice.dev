@@ -195,6 +195,41 @@ export const Home = () => (
       </div>
     </section>
 
+    {/* Testimonial */}
+    <section className="py-12 lg:py-16 px-6 bg-base-300">
+      <div className="max-w-2xl mx-auto flex items-start gap-5">
+        <img
+          src="/dennis-hettema.webp"
+          alt="Dennis Hettema"
+          className="w-12 h-12 rounded-full object-cover shrink-0"
+        />
+        <div>
+          <blockquote className="text-base text-base-content/70 leading-relaxed italic">
+            "Alex helped me cut through the noise when I was building
+            HelloRevenue. Through regular strategy calls he gave me clear,
+            honest technical guidance that took us from early-stage uncertainty
+            to production readiness. If you're a non-technical founder who needs
+            a technical partner you can trust, Alex is your guy."
+          </blockquote>
+          <p className="mt-3 text-sm font-semibold text-base-content">
+            Dennis Hettema{" "}
+            <span className="font-normal text-base-content/50">
+              CEO,{" "}
+              <a
+                href="https://hellorevenue.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link"
+                style={{ textUnderlineOffset: "3px" }}
+              >
+                HelloRevenue
+              </a>
+            </span>
+          </p>
+        </div>
+      </div>
+    </section>
+
     {/* Final CTA */}
     <section className="py-24 lg:py-32 px-6 text-center">
       <h2 className="text-4xl lg:text-5xl font-bold tracking-tight mb-8">
