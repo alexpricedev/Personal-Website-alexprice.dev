@@ -117,6 +117,57 @@ export const WorkWithMe = () => (
         </ul>
       </section>
 
+      {/* Testimonial */}
+      <section className="mb-14">
+        <div className="card bg-base-200">
+          <div className="card-body p-8">
+            <svg
+              className="text-primary opacity-30 mb-2"
+              width="36"
+              height="36"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Quote</title>
+              <path d="M11 7.05C9.14 8.46 8 10.34 8 13.07V19h6V13H9c0-3.39 1.92-5.12 4-6.2L11 7.05zM20 7.05c-1.86 1.41-3 3.29-3 6.02V19h6V13h-5c0-3.39 1.92-5.12 4-6.2L20 7.05z" />
+            </svg>
+            <blockquote className="text-base lg:text-lg text-base-content/80 leading-relaxed italic">
+              "We brought Alex in as fractional CTO to extend our technical
+              leadership as Naitiv scaled. He slotted straight into the team,
+              brought rigour to our architecture and delivery, and freed us up
+              to focus on clients and strategy. If you need senior technical
+              leadership without the overhead of a full-time hire, Alex is your
+              guy."
+            </blockquote>
+            <div className="mt-4 flex items-center gap-3">
+              <img
+                src="/andrew-black.webp"
+                alt="Andrew Black"
+                className="w-11 h-11 rounded-full object-cover shrink-0"
+              />
+              <div>
+                <p className="font-semibold text-sm text-base-content">
+                  Andrew Black
+                </p>
+                <p className="text-xs text-base-content/50">
+                  CEO,{" "}
+                  <a
+                    href="https://www.wearenaitiv.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link"
+                    style={{ textUnderlineOffset: "3px" }}
+                  >
+                    Naitiv
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Not for Everyone */}
       <section className="mb-14">
         <h2 className="text-2xl lg:text-3xl font-bold tracking-tight mb-4">
