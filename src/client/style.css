@@ -5,8 +5,7 @@
    Design System Tokens (from DESIGN.md)
    ========================================== */
 
-/* Dark mode (default) */
-[data-theme="dark"] {
+:root {
   --surface-base: #0C0C0C;
   --surface-1: #161616;
   --surface-2: #1E1E1E;
@@ -19,22 +18,6 @@
   --accent-subtle: rgba(201, 169, 110, 0.12);
   --border: rgba(232, 227, 221, 0.06);
   --border-hover: rgba(232, 227, 221, 0.12);
-}
-
-/* Light mode */
-[data-theme="light"] {
-  --surface-base: #FAF8F5;
-  --surface-1: #F0EDE8;
-  --surface-2: #E8E4DF;
-  --surface-3: #DDD8D2;
-  --text-primary: #1A1817;
-  --text-secondary: #6B6560;
-  --text-muted: #9B958E;
-  --accent: #A88840;
-  --accent-dim: #967A38;
-  --accent-subtle: rgba(168, 136, 64, 0.1);
-  --border: rgba(26, 24, 23, 0.08);
-  --border-hover: rgba(26, 24, 23, 0.15);
 }
 
 /* ==========================================
@@ -54,8 +37,6 @@
   --color-accent-subtle: var(--accent-subtle);
   --color-border: var(--border);
   --color-border-hover: var(--border-hover);
-  --color-whatsapp: #1da851;
-  --color-whatsapp-hover: #178f45;
 
   --font-display: "Instrument Serif", serif;
   --font-body: "Instrument Sans", sans-serif;
