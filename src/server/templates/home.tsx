@@ -146,7 +146,7 @@ export const Home = () => (
           </div>
           <div className="bg-surface-1 rounded-[12px] border border-border p-9 hover:border-border-hover transition-colors duration-300">
             <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
-              Optimizing Leadership
+              Optimising Leadership
             </span>
             <h3 className="font-display text-[24px] leading-[1.25] tracking-[-0.01em] mb-4">
               You have a CTO
