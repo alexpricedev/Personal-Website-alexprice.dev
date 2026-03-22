@@ -12,7 +12,7 @@ export const Nav = ({ page }: { page: string }) => (
       {/* Brand monogram */}
       <a
         href="/"
-        className="font-display text-[22px] tracking-[-0.03em] text-text-primary hover:text-accent transition-colors duration-200"
+        className="font-display text-[22px] tracking-[-0.03em] text-text-primary hover:text-accent transition-colors duration-200 py-2 px-1"
       >
         <span className="text-accent">A</span>P
       </a>
@@ -23,7 +23,7 @@ export const Nav = ({ page }: { page: string }) => (
           <a
             key={name}
             href={href}
-            className={`text-sm font-body font-medium transition-colors duration-200 ${
+            className={`text-sm font-body font-medium py-3 transition-colors duration-200 ${
               page === name
                 ? "text-accent"
                 : "text-text-secondary hover:text-text-primary"
