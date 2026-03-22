@@ -191,7 +191,9 @@ export const Home = () => (
               {/* Step 02 */}
               <div className="flex gap-6">
                 <div className="shrink-0">
-                  <span className="font-display text-accent text-[20px]">02</span>
+                  <span className="font-display text-accent text-[20px]">
+                    02
+                  </span>
                 </div>
                 <div>
                   <h4 className="font-display text-[22px] mb-3">
