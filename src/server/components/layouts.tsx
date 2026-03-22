@@ -70,7 +70,7 @@ export function Layout({
         };
 
   return (
-    <html lang="en" data-theme="sunset">
+    <html lang="en" style={{ colorScheme: "dark" }}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -87,9 +87,15 @@ export function Layout({
         <meta property="og:site_name" content="Alex Price" />
         <meta property="og:type" content={ogType} />
         <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={fullTitle} />
         <meta property="og:locale" content="en_GB" />
         {ogType === "article" && publishedTime && (
-          <meta property="article:published_time" content={publishedTime} />
+          <>
+            <meta property="article:published_time" content={publishedTime} />
+            <meta property="article:author" content="Alex Price" />
+          </>
         )}
 
         {/* Twitter Card */}
@@ -97,6 +103,7 @@ export function Layout({
         <meta name="twitter:title" content={fullTitle} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={ogImageUrl} />
+        <meta name="twitter:image:alt" content={fullTitle} />
 
         {/* Favicons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -115,6 +122,17 @@ export function Layout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
+
         <link rel="stylesheet" href="/assets/main.css" />
 
         {/* JSON-LD Structured Data */}
@@ -123,7 +141,10 @@ export function Layout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen bg-base-100" data-page={name}>
+      <body
+        className="min-h-screen bg-surface-base text-text-primary font-body antialiased"
+        data-page={name}
+      >
         <Nav page={name} />
         <main className="min-h-[calc(100vh-200px)]">{children}</main>
         <Footer />

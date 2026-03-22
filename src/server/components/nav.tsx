@@ -6,97 +6,97 @@ const navLinks = [
   { href: "/work-with-me", label: "Work with me", name: "work-with-me" },
 ];
 
-const ctaLink = {
-  href: CALENDLY_URL,
-  label: "Book a call",
-};
-
-const BurgerMenu = ({ page }: { page: string }) => (
-  <div className="dropdown dropdown-end">
-    <button type="button" tabIndex={0} className="btn btn-ghost">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        aria-hidden="true"
+export const Nav = ({ page }: { page: string }) => (
+  <nav className="fixed top-0 w-full z-50 bg-surface-base/80 backdrop-blur-xl border-b border-border">
+    <div className="flex justify-between items-center max-w-[1200px] mx-auto px-6 lg:px-10 h-16">
+      {/* Brand monogram */}
+      <a
+        href="/"
+        className="font-display text-[22px] tracking-[-0.03em] text-text-primary hover:text-accent transition-colors duration-200 py-2 px-1"
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M4 6h16M4 12h16M4 18h16"
-        />
-      </svg>
-      <span className="sr-only">Menu</span>
-    </button>
-    <ul className="menu dropdown-content bg-base-200 rounded-box mt-2 z-10 w-52 p-2 shadow">
-      {navLinks.map(({ href, label, name }) => (
-        <li key={name}>
+        <span className="text-accent">A</span>P
+      </a>
+
+      {/* Desktop links */}
+      <div className="hidden md:flex items-center gap-8">
+        {navLinks.map(({ href, label, name }) => (
           <a
+            key={name}
             href={href}
-            className={page === name ? "active" : ""}
+            className={`text-sm font-body font-medium py-3 transition-colors duration-200 ${
+              page === name
+                ? "text-accent"
+                : "text-text-secondary hover:text-text-primary"
+            }`}
             aria-current={page === name ? "page" : undefined}
           >
             {label}
           </a>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
-
-export const Nav = ({ page }: { page: string }) => (
-  <div className="navbar bg-base-100 px-4 lg:px-8 max-w-7xl mx-auto">
-    {/* Tiny screens (<375px): Book a call left, burger right */}
-    <div className="navbar-start min-[375px]:hidden">
-      <a href={ctaLink.href} className="btn btn-primary">
-        {ctaLink.label}
-      </a>
-    </div>
-    <div className="navbar-end min-[375px]:hidden">
-      <BurgerMenu page={page} />
-    </div>
-
-    {/* Tablet (375px to lg): Alex Price left, burger + Book a call right */}
-    <div className="navbar-start hidden min-[375px]:flex lg:hidden">
-      <a href="/" className="btn btn-ghost text-xl font-bold">
-        Alex Price
-      </a>
-    </div>
-    <div className="navbar-end hidden min-[375px]:flex lg:hidden gap-2">
-      <BurgerMenu page={page} />
-      <a href={ctaLink.href} className="btn btn-primary">
-        {ctaLink.label}
-      </a>
-    </div>
-
-    {/* Desktop (lg+): Full nav */}
-    <div className="navbar-start hidden lg:flex">
-      <a href="/" className="btn btn-ghost text-xl font-bold">
-        Alex Price
-      </a>
-    </div>
-    <div className="navbar-center hidden lg:flex">
-      <ul className="menu menu-horizontal px-1 gap-2">
-        {navLinks.map(({ href, label, name }) => (
-          <li key={name}>
-            <a
-              href={href}
-              className={page === name ? "active" : ""}
-              aria-current={page === name ? "page" : undefined}
-            >
-              {label}
-            </a>
-          </li>
         ))}
-      </ul>
+      </div>
+
+      {/* Right side: CTA + mobile burger */}
+      <div className="flex items-center gap-4">
+        <a
+          href={CALENDLY_URL}
+          className="hidden min-[375px]:inline-flex items-center bg-accent text-[#0C0C0C] font-body font-semibold text-sm px-5 py-2 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
+        >
+          Book a call
+        </a>
+
+        {/* Mobile burger */}
+        <button
+          type="button"
+          className="md:hidden p-2 text-text-secondary hover:text-text-primary bg-surface-1/60 rounded-lg transition-colors duration-200"
+          aria-label="Toggle menu"
+          data-menu-toggle
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
     </div>
-    <div className="navbar-end hidden lg:flex">
-      <a href={ctaLink.href} className="btn btn-primary">
-        {ctaLink.label}
-      </a>
+
+    {/* Mobile menu (hidden by default, toggled via JS) */}
+    <div
+      className="hidden md:hidden border-t border-border bg-surface-1 relative z-50"
+      data-mobile-menu
+    >
+      <div className="px-6 py-4 flex flex-col gap-3">
+        {navLinks.map(({ href, label, name }) => (
+          <a
+            key={name}
+            href={href}
+            className={`text-sm font-body font-medium py-2 transition-colors duration-200 ${
+              page === name
+                ? "text-accent"
+                : "text-text-secondary hover:text-text-primary"
+            }`}
+            aria-current={page === name ? "page" : undefined}
+          >
+            {label}
+          </a>
+        ))}
+        <a
+          href={CALENDLY_URL}
+          className="min-[375px]:hidden inline-flex items-center justify-center bg-accent text-[#0C0C0C] font-body font-semibold text-sm px-5 py-2.5 rounded-full mt-2"
+        >
+          Book a call
+        </a>
+      </div>
     </div>
-  </div>
+  </nav>
 );

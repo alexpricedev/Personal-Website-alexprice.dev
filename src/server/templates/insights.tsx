@@ -21,34 +21,23 @@ export const Insights = ({ articles }: InsightsProps) => (
     name="insights"
     path="/insights"
   >
-    <div className="max-w-3xl mx-auto px-4 py-16">
-      <header className="mb-8">
-        <div className="flex items-center gap-4 mb-6">
-          <div className="avatar shrink-0">
-            <div className="w-14 h-14 rounded-full overflow-hidden">
-              <img
-                src="/headshot2.webp"
-                alt="Alex Price"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          <div>
-            <h1 className="text-3xl font-bold">CTOx Insights</h1>
-          </div>
-        </div>
-        <p className="text-base-content/70">
+    <div className="max-w-[700px] mx-auto px-6 pt-28 pb-20">
+      <header className="mb-14">
+        <h1 className="font-display text-[40px] leading-[1.15] tracking-[-0.02em] mb-4">
+          Insights
+        </h1>
+        <p className="text-text-secondary leading-[1.7]">
           Lessons from scaling teams, raising funds, and making mistakes.
         </p>
       </header>
 
       {articles.length === 0 ? (
-        <div className="text-center py-16 text-base-content/60">
+        <div className="text-center py-16 text-text-muted">
           <p>
             First post coming soon. In the meantime, find me on{" "}
             <a
               href="https://linkedin.com/in/alexpricecto"
-              className="link link-primary"
+              className="text-accent hover:text-accent-dim transition-colors duration-200"
             >
               LinkedIn
             </a>
@@ -56,35 +45,35 @@ export const Insights = ({ articles }: InsightsProps) => (
           </p>
         </div>
       ) : (
-        <div className="space-y-8">
-          {articles.map((article) => (
+        <div>
+          {articles.map((article, index) => (
             <a
               key={article.slug}
               href={`/insights/${article.slug}`}
-              className="card bg-base-200 hover:bg-base-300 transition-colors block"
+              className={`block py-8 group ${
+                index < articles.length - 1 ? "border-b border-border" : ""
+              }`}
             >
-              <div className="card-body">
-                <h2 className="card-title">{article.title}</h2>
-                <p className="text-sm text-base-content/60">
-                  {article.date} · {article.readingTime} min read
-                  {article.pillar && (
-                    <>
-                      {" · "}
-                      <span className="badge badge-primary badge-sm">
-                        {pillarLabels[article.pillar] || article.pillar}
-                      </span>
-                    </>
-                  )}
-                </p>
-                {article.excerpt && (
-                  <p className="text-base-content/70">{article.excerpt}...</p>
+              <div className="flex items-center gap-3 mb-3">
+                {article.pillar && (
+                  <span className="font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3 py-1 rounded-full">
+                    {pillarLabels[article.pillar] || article.pillar}
+                  </span>
                 )}
+                <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-text-muted">
+                  {article.date} · {article.readingTime} min read
+                </span>
               </div>
+              <h2 className="font-display text-[28px] leading-[1.2] mb-3 group-hover:text-accent transition-colors duration-200">
+                {article.title}
+              </h2>
+              {article.excerpt && (
+                <p className="text-text-secondary text-sm leading-[1.65]">
+                  {article.excerpt}...
+                </p>
+              )}
             </a>
           ))}
-          <p className="text-center text-base-content/50 text-sm pt-4">
-            This area is new! More coming soon.
-          </p>
         </div>
       )}
     </div>
