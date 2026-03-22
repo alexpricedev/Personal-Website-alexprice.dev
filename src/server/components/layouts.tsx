@@ -87,9 +87,15 @@ export function Layout({
         <meta property="og:site_name" content="Alex Price" />
         <meta property="og:type" content={ogType} />
         <meta property="og:image" content={ogImageUrl} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content={fullTitle} />
         <meta property="og:locale" content="en_GB" />
         {ogType === "article" && publishedTime && (
-          <meta property="article:published_time" content={publishedTime} />
+          <>
+            <meta property="article:published_time" content={publishedTime} />
+            <meta property="article:author" content="Alex Price" />
+          </>
         )}
 
         {/* Twitter Card */}
@@ -97,6 +103,7 @@ export function Layout({
         <meta name="twitter:title" content={fullTitle} />
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={ogImageUrl} />
+        <meta name="twitter:image:alt" content={fullTitle} />
 
         {/* Favicons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />

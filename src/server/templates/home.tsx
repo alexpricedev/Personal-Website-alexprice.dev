@@ -2,7 +2,11 @@ import { Layout } from "@server/components/layouts";
 import { CALENDLY_URL } from "@server/config";
 
 export const Home = () => (
-  <Layout title="Home" name="home">
+  <Layout
+    title="Home"
+    description="Fractional CTO for Series A startups. Senior technical leadership without the cost and risk of a full-time hire."
+    name="home"
+  >
     {/* Hero */}
     <section className="min-h-screen flex items-center pt-28 md:pt-16 px-6">
       <div className="max-w-[1200px] mx-auto w-full grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
