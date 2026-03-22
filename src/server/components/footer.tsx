@@ -14,7 +14,7 @@ export const Footer = () => (
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-text-muted hover:text-accent text-sm font-body transition-colors duration-200"
+            className="text-text-muted hover:text-accent text-sm font-body transition-colors duration-200 py-2"
           >
             {link.label}
           </a>
