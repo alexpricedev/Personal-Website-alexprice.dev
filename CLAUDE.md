@@ -80,3 +80,9 @@ This file contains essential context and guidelines for Claude instances working
 - View routes: `(req) => Response` (after fetching data from services)
 - Avoid circular dependencies between routes (don't fetch API routes from view routes)
 - Use services to share logic between different route types
+
+## Design System
+Always read DESIGN.md before making any visual or UI decisions.
+All font choices, colors, spacing, and aesthetic direction are defined there.
+Do not deviate without explicit user approval.
+In QA mode, flag any code that doesn't match DESIGN.md.

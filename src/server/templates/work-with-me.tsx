@@ -30,7 +30,7 @@ export const WorkWithMe = () => (
 
       {/* Engagement Models */}
       <section className="mb-16">
-        <h2 className="font-display text-[28px] leading-[1.2] tracking-[-0.02em] mb-3">
+        <h2 className="font-display text-[clamp(2rem,5vw,2.5rem)] leading-[1.15] tracking-[-0.02em] mb-3">
           How I can help
         </h2>
         <p className="text-text-muted mb-8">Two ways to work together:</p>
@@ -39,7 +39,7 @@ export const WorkWithMe = () => (
             <span className="inline-block self-start font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
               Embedded
             </span>
-            <h3 className="font-display text-[24px] leading-[1.2] mb-3">
+            <h3 className="font-display text-[24px] leading-[1.25] tracking-[-0.01em] mb-3">
               Fractional CTO
             </h3>
             <p className="text-text-secondary text-sm leading-[1.65] mb-6 flex-1">
@@ -70,7 +70,7 @@ export const WorkWithMe = () => (
             <span className="inline-block self-start font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
               Project
             </span>
-            <h3 className="font-display text-[24px] leading-[1.2] mb-3">
+            <h3 className="font-display text-[24px] leading-[1.25] tracking-[-0.01em] mb-3">
               Technical Advisory
             </h3>
             <p className="text-text-secondary text-sm leading-[1.65] mb-6 flex-1">
@@ -107,7 +107,21 @@ export const WorkWithMe = () => (
         </h2>
         <ul className="space-y-5 max-w-[700px]">
           <li className="flex gap-3">
-            <span className="text-accent shrink-0">✓</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-accent shrink-0 mt-0.5"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
             <div>
               <span className="text-text-secondary">
                 Someone who's done this before:
@@ -133,19 +147,61 @@ export const WorkWithMe = () => (
             </div>
           </li>
           <li className="flex gap-3">
-            <span className="text-accent shrink-0">✓</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-accent shrink-0 mt-0.5"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
             <span className="text-text-secondary">
               Direct feedback on what's working and what isn't
             </span>
           </li>
           <li className="flex gap-3">
-            <span className="text-accent shrink-0">✓</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-accent shrink-0 mt-0.5"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
             <span className="text-text-secondary">
               Hands-on help with architecture, hiring, and team structure
             </span>
           </li>
           <li className="flex gap-3">
-            <span className="text-accent shrink-0">✓</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-accent shrink-0 mt-0.5"
+              aria-hidden="true"
+            >
+              <path d="M20 6 9 17l-5-5" />
+            </svg>
             <span className="text-text-secondary">
               A clear exit plan – not an open-ended engagement
             </span>
@@ -156,7 +212,7 @@ export const WorkWithMe = () => (
       {/* Testimonial */}
       <section className="mb-16">
         <div className="bg-surface-1 rounded-[12px] border border-border p-9">
-          <blockquote className="font-display text-[clamp(1.125rem,2.5vw,1.375rem)] leading-[1.4] italic text-text-primary mb-8">
+          <blockquote className="text-[clamp(1.25rem,2.5vw,1.5rem)] leading-[1.6] italic text-text-primary mb-8">
             "We brought Alex in as fractional CTO to extend our technical
             leadership as Naitiv scaled. He slotted straight into the team,
             brought rigour to our architecture and delivery, and freed us up to
@@ -253,9 +309,25 @@ export const WorkWithMe = () => (
                 href="https://wa.me/447356066058"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-whatsapp hover:bg-whatsapp-hover text-white font-semibold text-sm px-6 py-2.5 rounded-full transition-all duration-200"
+                className="inline-flex items-center gap-2 text-text-secondary border border-border-hover font-semibold text-sm px-6 py-2.5 rounded-full hover:text-text-primary hover:border-text-muted transition-all duration-200"
               >
-                <img src="/WhatsApp.webp" alt="" className="w-5 h-5" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719" />
+                  <path d="M8 12h.01" />
+                  <path d="M12 12h.01" />
+                  <path d="M16 12h.01" />
+                </svg>
                 WhatsApp me
               </a>
             </div>

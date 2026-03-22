@@ -6,9 +6,8 @@ const socialLinks = [
 
 export const Footer = () => (
   <footer className="border-t border-border">
-    <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-10 flex flex-col md:flex-row items-center md:justify-between gap-6">
-      <span className="font-display text-text-primary text-lg">Alex Price</span>
-      <nav className="flex flex-wrap justify-center gap-6">
+    <div className="max-w-[1200px] mx-auto px-6 lg:px-10 py-10 flex flex-col sm:flex-row items-start sm:items-center sm:justify-between gap-4 sm:gap-6">
+      <nav className="flex flex-wrap gap-6">
         {socialLinks.map((link) => (
           <a
             key={link.label}

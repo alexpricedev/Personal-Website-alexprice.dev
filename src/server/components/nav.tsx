@@ -9,12 +9,12 @@ const navLinks = [
 export const Nav = ({ page }: { page: string }) => (
   <nav className="fixed top-0 w-full z-50 bg-surface-base/80 backdrop-blur-xl border-b border-border">
     <div className="flex justify-between items-center max-w-[1200px] mx-auto px-6 lg:px-10 h-16">
-      {/* Brand */}
+      {/* Brand monogram */}
       <a
         href="/"
-        className="font-display text-xl text-text-primary hover:text-accent transition-colors duration-200"
+        className="font-display text-[22px] tracking-[-0.03em] text-text-primary hover:text-accent transition-colors duration-200"
       >
-        Alex Price
+        <span className="text-accent">A</span>P
       </a>
 
       {/* Desktop links */}
@@ -47,7 +47,7 @@ export const Nav = ({ page }: { page: string }) => (
         {/* Mobile burger */}
         <button
           type="button"
-          className="md:hidden p-2 text-text-secondary hover:text-text-primary transition-colors duration-200"
+          className="md:hidden p-2 text-text-secondary hover:text-text-primary bg-surface-1/60 rounded-lg transition-colors duration-200"
           aria-label="Toggle menu"
           data-menu-toggle
         >
@@ -72,7 +72,7 @@ export const Nav = ({ page }: { page: string }) => (
 
     {/* Mobile menu (hidden by default, toggled via JS) */}
     <div
-      className="hidden md:hidden border-t border-border bg-surface-1"
+      className="hidden md:hidden border-t border-border bg-surface-1 relative z-50"
       data-mobile-menu
     >
       <div className="px-6 py-4 flex flex-col gap-3">
