@@ -113,13 +113,13 @@ function buildHTML(articles: Article[]): string {
       top: 48px;
       left: 72px;
       font-family: 'Geist Mono', monospace;
-      font-size: 18px;
+      font-size: 24px;
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: #C9A96E;
       background: rgba(201, 169, 110, 0.12);
-      padding: 10px 24px;
+      padding: 12px 28px;
       border-radius: 999px;
     }
 
@@ -147,20 +147,20 @@ function buildHTML(articles: Article[]): string {
 
     .og-footer .author {
       font-family: 'Instrument Sans', sans-serif;
-      font-size: 26px;
+      font-size: 34px;
       font-weight: 600;
       color: #E8E3DD;
     }
 
     .og-footer .sep {
-      width: 1px;
-      height: 20px;
+      width: 2px;
+      height: 24px;
       background: rgba(232, 227, 221, 0.15);
     }
 
     .og-footer .site {
       font-family: 'Instrument Sans', sans-serif;
-      font-size: 24px;
+      font-size: 32px;
       font-weight: 600;
       letter-spacing: 0.05em;
       text-transform: uppercase;
