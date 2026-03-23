@@ -11,6 +11,7 @@
     "dev:css": "bun run scripts/watch-css.ts",
     "dev:server": "bun --watch run src/server/main.ts",
     "commit": "git add --all && git commit",
+    "generate:og": "bun run tools/generate-og-images.ts",
     "check": "bunx @biomejs/biome@beta check src",
     "prepare": "husky"
   },
@@ -27,6 +28,7 @@
     "@types/react": "^19.1.12",
     "@types/react-dom": "19.1.9",
     "husky": "9.1.7",
+    "puppeteer-core": "^24.40.0",
     "tailwindcss": "^4.1.18"
   }
 }

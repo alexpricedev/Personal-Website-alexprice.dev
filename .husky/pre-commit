@@ -1,2 +1,4 @@
+bun run generate:og
+git add public/insight-images/ content/insights/
 bun run build
 bun run check
