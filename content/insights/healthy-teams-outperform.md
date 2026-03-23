@@ -3,7 +3,7 @@ title: "Healthy Teams Outperform"
 date: 2026-01-03
 excerpt: "So much of workplace performance comes from physical health. Good sleep. Proper hydration. Controlled blood sugar. These aren't wellness buzzwords."
 pillar: scaling
-image: /insights-images/o2-chamber.webp
+image: /insights-images/healthy-teams-outperform.png
 ---
 
 ![Inside the hyperbaric oxygen chamber](/insights-images/o2-chamber.webp)
