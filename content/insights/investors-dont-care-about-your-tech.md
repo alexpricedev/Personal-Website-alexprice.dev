@@ -3,6 +3,7 @@ title: "Investors Don't Care About Your Tech"
 date: 2026-01-21
 excerpt: "They care about your insight into the market. Your experience navigating it. Your judgment on where it's heading."
 pillar: fundraising
+image: /insight-images/investors-dont-care-about-your-tech.png
 ---
 
 Investors don't care about your tech.

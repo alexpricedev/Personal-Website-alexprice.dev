@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LinkedIn Banner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Instrument Sans', sans-serif;
+      color: #8A8580;
+      padding: 40px;
+    }
+
+    .hint {
+      margin-bottom: 24px;
+      font-size: 13px;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .hint strong { color: #E8E3DD; }
+
+    /* Banner at actual LinkedIn dimensions */
+    .banner {
+      width: 1584px;
+      height: 396px;
+      background: #0C0C0C;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .banner-text {
+      position: absolute;
+      right: 60px;
+      top: 50%;
+      transform: translateY(-58%);
+      text-align: right;
+    }
+
+    .banner-text .quote {
+      font-family: 'Instrument Serif', serif;
+      font-size: 52px;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #E8E3DD;
+      font-weight: 400;
+      white-space: nowrap;
+    }
+
+    .banner-text .quote em {
+      color: #C9A96E;
+      font-style: italic;
+    }
+
+    .banner-meta {
+      position: absolute;
+      right: 60px;
+      bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .banner-meta .role {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #5C5955;
+    }
+
+    .banner-meta .divider {
+      width: 1px;
+      height: 16px;
+      background: rgba(232, 227, 221, 0.15);
+    }
+
+    .banner-meta .url {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #C9A96E;
+    }
+
+    .banner-rule {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, #C9A96E 40%, #C9A96E 60%, transparent 100%);
+      opacity: 0.35;
+    }
+
+    .note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #5C5955;
+    }
+  </style>
+</head>
+<body>
+
+  <p class="hint">
+    <strong>Right-click the banner → Capture node screenshot.</strong><br>
+    For retina: DevTools → device toolbar → set DPR to 2 before screenshotting.
+  </p>
+
+  <div class="banner" id="banner">
+    <div class="banner-text">
+      <div class="quote">Engineering myself out of <em>the job.</em></div>
+    </div>
+    <div class="banner-meta">
+      <span class="role">Fractional CTO</span>
+      <span class="divider"></span>
+      <span class="url">alexprice.dev</span>
+    </div>
+    <div class="banner-rule"></div>
+  </div>
+
+  <p class="note">1584 &times; 396px &mdash; actual LinkedIn banner dimensions</p>
+
+</body>
+</html>
