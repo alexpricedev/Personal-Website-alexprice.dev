@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OG Image Generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Instrument Sans', sans-serif;
+      color: #8A8580;
+      padding: 40px;
+      gap: 40px;
+    }
+
+    .hint {
+      font-size: 13px;
+      text-align: center;
+      line-height: 1.6;
+      max-width: 600px;
+    }
+    .hint strong { color: #E8E3DD; }
+
+    /* OG image: 1200x630 */
+    .og {
+      width: 1200px;
+      height: 630px;
+      background: #0C0C0C;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    /* Subtle warm radial glow */
+    .og::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 30% 60%, rgba(201, 169, 110, 0.04) 0%, transparent 70%);
+    }
+
+    .og-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, #C9A96E 0%, transparent 80%);
+      opacity: 0.6;
+    }
+
+    .og-pillar {
+      position: absolute;
+      top: 56px;
+      left: 72px;
+      font-family: 'Geist Mono', monospace;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #C9A96E;
+      background: rgba(201, 169, 110, 0.12);
+      padding: 8px 20px;
+      border-radius: 999px;
+    }
+
+    .og-title {
+      position: absolute;
+      left: 72px;
+      right: 72px;
+      bottom: 140px;
+      font-family: 'Instrument Serif', serif;
+      font-size: 72px;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #E8E3DD;
+      font-weight: 400;
+    }
+
+    .og-footer {
+      position: absolute;
+      left: 72px;
+      bottom: 56px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .og-footer .author {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #E8E3DD;
+    }
+
+    .og-footer .sep {
+      width: 1px;
+      height: 16px;
+      background: rgba(232, 227, 221, 0.15);
+    }
+
+    .og-footer .site {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #C9A96E;
+    }
+
+    .label {
+      font-size: 12px;
+      color: #5C5955;
+      align-self: flex-start;
+      margin-left: calc(50% - 600px);
+    }
+
+    hr {
+      width: 1200px;
+      border: none;
+      border-top: 1px solid rgba(232, 227, 221, 0.06);
+    }
+  </style>
+</head>
+<body>
+
+  <p class="hint">
+    <strong>Right-click each image &rarr; Capture node screenshot.</strong><br>
+    Save as <code>public/insights-images/{slug}.png</code> then add <code>image: /insights-images/{slug}.png</code> to the article frontmatter.<br>
+    LinkedIn Featured: use "Add a link" and paste the insight URL. LinkedIn will pull these OG images automatically.
+  </p>
+
+  <!-- 1 -->
+  <div class="label">the-rebuild-is-the-strategy.png</div>
+  <div class="og">
+    <div class="og-accent"></div>
+    <div class="og-pillar">Leadership</div>
+    <div class="og-title">The Rebuild Is<br>The Strategy</div>
+    <div class="og-footer">
+      <span class="author">Alex Price</span>
+      <span class="sep"></span>
+      <span class="site">alexprice.dev</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 2 -->
+  <div class="label">investors-dont-care-about-your-tech.png</div>
+  <div class="og">
+    <div class="og-accent"></div>
+    <div class="og-pillar">Fundraising</div>
+    <div class="og-title">Investors Don't Care<br>About Your Tech</div>
+    <div class="og-footer">
+      <span class="author">Alex Price</span>
+      <span class="sep"></span>
+      <span class="site">alexprice.dev</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 3 -->
+  <div class="label">strategy-should-compound.png</div>
+  <div class="og">
+    <div class="og-accent"></div>
+    <div class="og-pillar">Scaling</div>
+    <div class="og-title">Strategy Should<br>Compound</div>
+    <div class="og-footer">
+      <span class="author">Alex Price</span>
+      <span class="sep"></span>
+      <span class="site">alexprice.dev</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 4 -->
+  <div class="label">restraint-is-a-superpower.png</div>
+  <div class="og">
+    <div class="og-accent"></div>
+    <div class="og-pillar">Startups</div>
+    <div class="og-title">Restraint Is a<br>Superpower</div>
+    <div class="og-footer">
+      <span class="author">Alex Price</span>
+      <span class="sep"></span>
+      <span class="site">alexprice.dev</span>
+    </div>
+  </div>
+
+</body>
+</html>
