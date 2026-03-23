@@ -3,7 +3,7 @@ title: "Strategy Should Compound"
 date: 2026-01-06
 excerpt: "The best strategies aren't about hitting targets. They're about making future targets easier to hit."
 pillar: scaling
-image: /insight-images/strategy-should-compound.png
+image: /insights-images/strategy-should-compound.png
 ---
 
 The best strategies aren't about hitting targets. They're about making future targets easier to hit.
