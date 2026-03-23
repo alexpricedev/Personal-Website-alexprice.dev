@@ -3,6 +3,7 @@ title: "The Engineers Who Thrive With AI"
 date: 2026-01-28
 excerpt: "If your engineers are threatened by AI tooling, you've got the wrong engineers. The best startup engineers thrive with it — because they already understood something most people are only now figuring out: the code was never the point."
 pillar: ai
+image: /insights-images/engineers-who-thrive-with-ai.png
 ---
 
 If your engineers are threatened by AI tooling, you've got the wrong engineers.

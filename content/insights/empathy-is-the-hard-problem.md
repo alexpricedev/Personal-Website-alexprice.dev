@@ -3,6 +3,7 @@ title: "Empathy Is The Hard Problem"
 date: 2026-03-04
 excerpt: "Philip K. Dick saw it in 1968. Intelligence was never the hard problem. Empathy was."
 pillar: ai
+image: /insights-images/empathy-is-the-hard-problem.png
 ---
 
 Philip K. Dick wrote _Do Androids Dream of Electric Sheep_ in 1968. Let that sink in for a second.
