@@ -45,7 +45,7 @@ export const Insights = ({ articles }: InsightsProps) => (
           </p>
         </div>
       ) : (
-        <div>
+        <div data-animate="fade-list">
           {articles.map((article, index) => (
             <a
               key={article.slug}

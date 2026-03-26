@@ -91,8 +91,10 @@ One warm accent + warm neutrals. Gold is used sparingly — rare = precious.
 - **Approach:** Minimal-functional — only transitions that aid comprehension
 - **Easing:** enter(ease-out) exit(ease-in) move(ease-in-out)
 - **Duration:** micro(50-100ms) short(150-250ms) medium(250-400ms)
-- **What gets motion:** Hover states (color, border, transform), focus states. Nothing else.
-- **What doesn't:** No entrance animations, no scroll effects, no parallax. Stillness = confidence.
+- **What gets motion:** Hover states (color, border, transform), focus states, scroll-triggered section reveals (home page).
+- **Scroll reveals:** Below-fold sections fade in with 24px upward translate on first scroll into view. 350ms, ease-out. Stagger at 80ms for grouped items. Hero: never animated.
+- **What doesn't:** No parallax, no continuous/looping animations, no animated backgrounds. Restraint remains the default.
+- **Reduced motion:** All scroll animations disabled when prefers-reduced-motion: reduce is active.
 
 ## Component Patterns
 
@@ -141,3 +143,4 @@ One warm accent + warm neutrals. Gold is used sparingly — rare = precious.
 | 2026-03-22 | Serif display font (Instrument Serif) | Deliberate risk — serifs are rare in tech advisory. Communicates intellectual authority and editorial weight to founder audience. |
 | 2026-03-22 | Warm gold accent (#C9A96E) instead of neon | Deliberate risk — signals "established premium" rather than "tech startup." Less techy, more consultancy. |
 | 2026-03-22 | Zero decorative effects | Deliberate risk — no glass, gradients, or glow. Typography and whitespace are timeless. Confidence through restraint. |
+| 2026-03-26 | Added scroll-triggered section reveals | Subtle fade+translate animations for below-fold home page sections. GSAP ScrollTrigger for performance. Respects prefers-reduced-motion. Restraint preserved — no parallax, no looping animations. |

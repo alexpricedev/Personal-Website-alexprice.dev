@@ -1,3 +1,5 @@
+import { initScrollAnimations } from "./animations";
+
 const toggle = document.querySelector("[data-menu-toggle]");
 const menu = document.querySelector("[data-mobile-menu]");
 
@@ -30,3 +32,5 @@ if (toggle && menu) {
 }
 
 scrim.addEventListener("click", closeMenu);
+
+initScrollAnimations();
