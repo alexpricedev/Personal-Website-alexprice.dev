@@ -30,6 +30,46 @@ function initCharAnimation(): void {
   );
 }
 
+export function initHoverParallax(): void {
+  const containers = document.querySelectorAll<HTMLElement>("[data-parallax]");
+
+  for (const container of containers) {
+    const bg = container.querySelector<HTMLElement>(
+      '[data-parallax-layer="bg"]',
+    );
+    const fg = container.querySelector<HTMLElement>(
+      '[data-parallax-layer="fg"]',
+    );
+    if (!bg || !fg) continue;
+
+    const BG_STRENGTH = 20;
+    const FG_STRENGTH = 10;
+
+    container.addEventListener("mousemove", (e: MouseEvent) => {
+      const rect = container.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+      gsap.to(bg, {
+        x: x * BG_STRENGTH,
+        y: y * BG_STRENGTH,
+        duration: 0.6,
+        ease: "power2.out",
+      });
+      gsap.to(fg, {
+        x: x * -FG_STRENGTH,
+        y: y * -FG_STRENGTH,
+        duration: 0.6,
+        ease: "power2.out",
+      });
+    });
+
+    container.addEventListener("mouseleave", () => {
+      gsap.to([bg, fg], { x: 0, y: 0, duration: 0.6, ease: "power2.out" });
+    });
+  }
+}
+
 export function initScrollAnimations(): void {
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     // Still show the chars if reduced motion

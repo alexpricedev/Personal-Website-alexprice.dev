@@ -54,11 +54,21 @@ export const Home = () => (
           </div>
         </div>
         <div className="relative">
-          <div className="rounded-xl overflow-hidden bg-surface-1 border border-border">
+          <div
+            data-parallax="hero"
+            className="rounded-xl overflow-hidden bg-surface-1 border border-border relative aspect-[3/4] cursor-default"
+          >
             <img
-              src="/headshot.webp"
+              src="/hero-bg.png"
+              alt=""
+              data-parallax-layer="bg"
+              className="absolute inset-[-30px] w-[calc(100%+60px)] h-[calc(100%+60px)] object-cover"
+            />
+            <img
+              src="/hero-subject.png"
               alt="Alex Price"
-              className="w-full aspect-[3/4] object-cover object-top"
+              data-parallax-layer="fg"
+              className="absolute inset-[-15px] w-[calc(100%+30px)] h-[calc(100%+30px)] object-cover"
             />
           </div>
         </div>
