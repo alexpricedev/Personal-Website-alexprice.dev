@@ -29,12 +29,12 @@ export const WorkWithMe = () => (
       </section>
 
       {/* Engagement Models */}
-      <section className="mb-16">
+      <section data-animate="section" className="mb-16">
         <h2 className="font-display text-[clamp(2rem,5vw,2.5rem)] leading-[1.15] tracking-[-0.02em] mb-3">
           How I can help
         </h2>
         <p className="text-text-muted mb-8">Two ways to work together:</p>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div data-animate="stagger" className="grid md:grid-cols-2 gap-6">
           <div className="bg-surface-1 rounded-[12px] border border-border p-9 flex flex-col">
             <span className="inline-block self-start font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
               Embedded
@@ -101,11 +101,14 @@ export const WorkWithMe = () => (
       </section>
 
       {/* What to Expect */}
-      <section className="mb-16">
-        <h2 className="font-display text-[28px] leading-[1.2] tracking-[-0.02em] mb-8">
+      <section data-animate="sequence" className="mb-16">
+        <h2
+          data-seq
+          className="font-display text-[28px] leading-[1.2] tracking-[-0.02em] mb-8"
+        >
           What to expect
         </h2>
-        <ul className="space-y-5 max-w-[700px]">
+        <ul data-seq className="space-y-5 max-w-[700px]">
           <li className="flex gap-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -210,7 +213,7 @@ export const WorkWithMe = () => (
       </section>
 
       {/* Testimonial */}
-      <section className="mb-16">
+      <section data-animate="section" className="mb-16">
         <div className="bg-surface-1 rounded-[12px] border border-border p-9">
           <blockquote className="text-[clamp(1.25rem,2.5vw,1.5rem)] leading-[1.6] italic text-text-primary mb-8">
             "We brought Alex in as fractional CTO to extend our technical
@@ -247,7 +250,7 @@ export const WorkWithMe = () => (
       </section>
 
       {/* Not for Everyone */}
-      <section className="mb-16">
+      <section data-animate="section" className="mb-16">
         <h2 className="font-display text-[28px] leading-[1.2] tracking-[-0.02em] mb-4">
           Not for everyone
         </h2>
@@ -269,7 +272,7 @@ export const WorkWithMe = () => (
       </section>
 
       {/* Investment */}
-      <section className="mb-16">
+      <section data-animate="section" className="mb-16">
         <h2 className="font-display text-[28px] leading-[1.2] tracking-[-0.02em] mb-4">
           Investment
         </h2>
@@ -281,7 +284,7 @@ export const WorkWithMe = () => (
 
       {/* CTA */}
       <div className="border-t border-border my-10" />
-      <section className="py-12">
+      <section data-animate="section" className="py-12">
         <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
           <img
             src="/headshot2.webp"

@@ -1,6 +1,11 @@
 import { Layout } from "@server/components/layouts";
 import { CALENDLY_URL } from "@server/config";
 
+const heroChars = "out of the job.".split("").map((char, i) => ({
+  key: `c${i}`,
+  char: char === " " ? "\u00A0" : char,
+}));
+
 export const Home = () => (
   <Layout
     title="Home"
@@ -13,7 +18,17 @@ export const Home = () => (
         <div>
           <h1 className="font-display text-[clamp(3rem,7vw,5.5rem)] leading-[1.05] tracking-[-0.03em] mb-8">
             I'm a fractional CTO who specialises in engineering himself{" "}
-            <em className="text-accent italic">out of the job.</em>
+            <em className="text-accent italic" data-animate="chars">
+              {heroChars.map((c) => (
+                <span
+                  key={c.key}
+                  className="inline-block"
+                  style={{ opacity: 0 }}
+                >
+                  {c.char}
+                </span>
+              ))}
+            </em>
           </h1>
           <p className="text-text-secondary text-lg lg:text-xl leading-relaxed max-w-lg mb-4">
             Hiring a full-time CTO takes months... and often ends up looking
@@ -52,7 +67,10 @@ export const Home = () => (
 
     {/* Metrics Strip */}
     <section className="border-t border-border">
-      <div className="max-w-[1200px] mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-12">
+      <div
+        data-animate="stagger"
+        className="max-w-[1200px] mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-12"
+      >
         {[
           { value: "12+", label: "Years Leading" },
           { value: "80+", label: "Team Scaled To" },
@@ -72,7 +90,7 @@ export const Home = () => (
     </section>
 
     {/* Credibility */}
-    <section className="py-24 lg:py-32 px-6">
+    <section data-animate="section" className="py-24 lg:py-32 px-6">
       <div className="max-w-[700px] mx-auto lg:mx-0 lg:ml-[max(24px,calc((100%-1200px)/2+24px))]">
         <p className="text-lg text-text-secondary leading-relaxed">
           I co-founded and was CTO at{" "}
@@ -122,10 +140,13 @@ export const Home = () => (
     {/* When to bring me in */}
     <section className="py-24 lg:py-32 px-6">
       <div className="max-w-[1200px] mx-auto">
-        <h2 className="font-display text-[clamp(2rem,5vw,3rem)] tracking-[-0.02em] mb-12">
+        <h2
+          data-animate="section"
+          className="font-display text-[clamp(2rem,5vw,3rem)] tracking-[-0.02em] mb-12"
+        >
           When to bring me in
         </h2>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div data-animate="stagger" className="grid md:grid-cols-2 gap-6">
           <div className="bg-surface-1 rounded-[12px] border border-border p-9 hover:border-border-hover transition-colors duration-300">
             <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
               Strategic Gaps
@@ -175,19 +196,28 @@ export const Home = () => (
     </section>
 
     {/* The Engagement */}
-    <section className="py-24 lg:py-32 px-6 bg-surface-1">
+    <section
+      data-animate="sequence"
+      className="py-24 lg:py-32 px-6 bg-surface-1"
+    >
       <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-start">
           <div className="md:w-1/2">
-            <h2 className="font-display text-[clamp(2rem,5vw,3rem)] tracking-[-0.02em] mb-4">
+            <h2
+              data-seq
+              className="font-display text-[clamp(2rem,5vw,3rem)] tracking-[-0.02em] mb-4"
+            >
               How this works
             </h2>
-            <p className="text-lg text-text-secondary leading-relaxed mb-10">
+            <p
+              data-seq
+              className="text-lg text-text-secondary leading-relaxed mb-10"
+            >
               I don't just advise — I embed.
             </p>
             <div className="space-y-10">
               {/* Step 01 */}
-              <div className="flex gap-6">
+              <div data-seq className="flex gap-6">
                 <div className="shrink-0">
                   <span className="font-display text-accent text-[20px]">
                     01
@@ -212,7 +242,7 @@ export const Home = () => (
                 </div>
               </div>
               {/* Step 02 */}
-              <div className="flex gap-6">
+              <div data-seq className="flex gap-6">
                 <div className="shrink-0">
                   <span className="font-display text-accent text-[20px]">
                     02
@@ -239,7 +269,10 @@ export const Home = () => (
               </div>
             </div>
             {/* Direct feedback callout */}
-            <div className="mt-12 bg-surface-2 rounded-[12px] border border-border p-6">
+            <div
+              data-seq
+              className="mt-12 bg-surface-2 rounded-[12px] border border-border p-6"
+            >
               <p className="text-text-secondary leading-[1.7]">
                 If you want someone to tell you what you want to hear or move
                 cautiously, I'm not your guy. I work best with founders who are
@@ -248,7 +281,7 @@ export const Home = () => (
               </p>
             </div>
           </div>
-          <div className="md:w-1/2">
+          <div data-seq className="md:w-1/2">
             <img
               src="/alex-working.webp"
               alt="Alex Price in a meeting"
@@ -260,7 +293,7 @@ export const Home = () => (
     </section>
 
     {/* Testimonial */}
-    <section className="py-16 lg:py-20 px-6">
+    <section data-animate="section" className="py-16 lg:py-20 px-6">
       <div className="max-w-[700px] mx-auto">
         <blockquote className="border-l-[3px] border-accent pl-8 md:pl-10">
           <p className="text-[clamp(1.25rem,3vw,1.75rem)] leading-[1.6] italic text-text-primary mb-8">
@@ -298,7 +331,7 @@ export const Home = () => (
     </section>
 
     {/* Final CTA */}
-    <section className="py-24 lg:py-32 px-6">
+    <section data-animate="section" className="py-24 lg:py-32 px-6">
       <div className="max-w-[1200px] mx-auto bg-accent rounded-2xl p-12 md:p-20 relative overflow-hidden">
         <div className="relative z-10 max-w-2xl text-center md:text-left mx-auto md:mx-0">
           <h2 className="font-display text-[clamp(2.5rem,6vw,3.5rem)] tracking-[-0.03em] text-[#0C0C0C] mb-4">
