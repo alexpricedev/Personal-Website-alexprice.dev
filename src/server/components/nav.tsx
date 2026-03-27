@@ -3,6 +3,7 @@ import { CALENDLY_URL } from "@server/config";
 const navLinks = [
   { href: "/", label: "Home", name: "home" },
   { href: "/insights", label: "Insights", name: "insights" },
+  { href: "/projects", label: "Projects", name: "projects" },
   { href: "/work-with-me", label: "Work with me", name: "work-with-me" },
 ];
 
