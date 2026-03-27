@@ -64,18 +64,19 @@ export const Projects = ({ projects }: ProjectsProps) => (
           {projects.map((project) => (
             <div
               key={project.slug}
-              className="bg-surface-1 border border-border rounded-lg overflow-hidden hover:border-text-muted/20 transition-colors duration-200"
+              className="bg-surface-1 border border-border rounded-xl overflow-hidden hover:border-border-hover transition-colors duration-200"
             >
               {project.image && (
                 <div className="aspect-video overflow-hidden">
                   <img
                     src={project.image}
                     alt={`Screenshot of ${project.title}`}
+                    loading="lazy"
                     className="w-full h-full object-cover"
                   />
                 </div>
               )}
-              <div className="p-6">
+              <div className="p-7">
                 <h2 className="font-display text-[22px] leading-[1.2] mb-2">
                   {project.title}
                 </h2>
