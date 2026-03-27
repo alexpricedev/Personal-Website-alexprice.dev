@@ -2,9 +2,11 @@ import type { JSX } from "react";
 import { renderToString } from "react-dom/server";
 import { withTracking } from "../services/analytics";
 import { getAllArticles, getArticleBySlug } from "../services/articles";
+import { getAllProjects } from "../services/projects";
 import { Home } from "../templates/home";
 import { Insight } from "../templates/insight";
 import { Insights } from "../templates/insights";
+import { Projects } from "../templates/projects";
 import { WorkWithMe } from "../templates/work-with-me";
 
 const render = (element: JSX.Element): Response =>
@@ -29,6 +31,10 @@ export const viewRoutes = {
       return notFound();
     }
     return render(<Insight article={article} />);
+  }),
+  "/projects": withTracking(() => {
+    const projects = getAllProjects();
+    return render(<Projects projects={projects} />);
   }),
   "/work-with-me": withTracking(() => render(<WorkWithMe />)),
 };
