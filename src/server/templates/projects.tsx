@@ -106,7 +106,7 @@ export const Projects = ({ projects }: ProjectsProps) => (
                       className="inline-flex items-center gap-1.5 text-text-secondary hover:text-accent text-sm transition-colors duration-200"
                     >
                       <GlobeIcon />
-                      <span>Live</span>
+                      <span>Website</span>
                     </a>
                   )}
                   {project.githubUrl && (
