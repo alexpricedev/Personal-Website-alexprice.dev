@@ -1,9 +1,9 @@
 # Design System — Alex Price
 
 ## Product Context
-- **What this is:** Personal brand and marketing site for a fractional CTO
-- **Who it's for:** Series A/B founders and CEOs who need senior technical leadership
-- **Space/industry:** Fractional CTO / tech advisory / startup consulting
+- **What this is:** Personal brand and consulting site for pay-as-you-go technical help
+- **Who it's for:** Non-technical founders and AI-era builders who need senior technical oversight
+- **Space/industry:** Technical consulting / code review / architecture advisory
 - **Project type:** Marketing site with blog (insights)
 
 ## Aesthetic Direction
@@ -39,7 +39,7 @@ One warm accent + warm neutrals. Gold is used sparingly — rare = precious.
 - **Surface 2:** #1E1E1E — interactive elements, inputs
 - **Surface 3:** #282828 — highest elevation, tag backgrounds
 - **Text Primary:** #E8E3DD — warm cream (not pure white)
-- **Text Secondary:** #8A8580 — warm muted gray for body text
+- **Text Secondary:** #A8A29E — warm muted gray for body text (lightened for readability)
 - **Text Muted:** #5C5955 — metadata, timestamps, hints
 - **Accent:** #C9A96E — warm gold, used only for CTAs, key highlights, and emphasis
 - **Accent Dim:** #B8984F — hover state for accent

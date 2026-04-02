@@ -1,10 +1,10 @@
-import { CALENDLY_URL } from "@server/config";
+import { CONTACT_EMAIL } from "@server/config";
 
 const navLinks = [
   { href: "/", label: "Home", name: "home" },
   { href: "/insights", label: "Insights", name: "insights" },
   { href: "/projects", label: "Projects", name: "projects" },
-  { href: "/work-with-me", label: "Work with me", name: "work-with-me" },
+  { href: "/how-it-works", label: "How it works", name: "how-it-works" },
 ];
 
 export const Nav = ({ page }: { page: string }) => (
@@ -39,10 +39,10 @@ export const Nav = ({ page }: { page: string }) => (
       {/* Right side: CTA + mobile burger */}
       <div className="flex items-center gap-4">
         <a
-          href={CALENDLY_URL}
+          href={`mailto:${CONTACT_EMAIL}`}
           className="hidden min-[375px]:inline-flex items-center bg-accent text-[#0C0C0C] font-body font-semibold text-sm px-5 py-2 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
         >
-          Book a call
+          Get in touch
         </a>
 
         {/* Mobile burger */}
@@ -92,10 +92,10 @@ export const Nav = ({ page }: { page: string }) => (
           </a>
         ))}
         <a
-          href={CALENDLY_URL}
+          href={`mailto:${CONTACT_EMAIL}`}
           className="min-[375px]:hidden inline-flex items-center justify-center bg-accent text-[#0C0C0C] font-body font-semibold text-sm px-5 py-2.5 rounded-full mt-2"
         >
-          Book a call
+          Get in touch
         </a>
       </div>
     </div>
