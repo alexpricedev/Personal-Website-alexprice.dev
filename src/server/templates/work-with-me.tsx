@@ -32,7 +32,7 @@ export const WorkWithMe = () => (
       {/* Pricing */}
       <section data-animate="section" className="mb-16">
         <div data-animate="stagger" className="grid md:grid-cols-2 gap-6">
-          <div className="bg-surface-1 rounded-[12px] border border-border p-9">
+          <div className="bg-surface-1 rounded-[12px] border border-border p-6 sm:p-9">
             <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
               Pay as you go
             </span>
@@ -50,7 +50,7 @@ export const WorkWithMe = () => (
               Async code review also available at the same rate.
             </p>
           </div>
-          <div className="bg-surface-1 rounded-[12px] border border-accent/20 p-9 relative">
+          <div className="bg-surface-1 rounded-[12px] border border-accent/20 p-6 sm:p-9 relative">
             <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
               20-hour package
             </span>
@@ -148,7 +148,7 @@ export const WorkWithMe = () => (
           What I can help with
         </h2>
         <div data-animate="stagger" className="grid md:grid-cols-2 gap-6">
-          <div className="bg-surface-1 rounded-[12px] border border-border p-7">
+          <div className="bg-surface-1 rounded-[12px] border border-border p-5 sm:p-7">
             <h3 className="font-semibold text-[16px] mb-2">Code review</h3>
             <p className="text-text-secondary text-sm leading-[1.65]">
               Security, performance, and architecture review of AI-generated or
@@ -156,7 +156,7 @@ export const WorkWithMe = () => (
               work.
             </p>
           </div>
-          <div className="bg-surface-1 rounded-[12px] border border-border p-7">
+          <div className="bg-surface-1 rounded-[12px] border border-border p-5 sm:p-7">
             <h3 className="font-semibold text-[16px] mb-2">
               Architecture decisions
             </h3>
@@ -165,14 +165,14 @@ export const WorkWithMe = () => (
               microservices. Decisions that are expensive to get wrong.
             </p>
           </div>
-          <div className="bg-surface-1 rounded-[12px] border border-border p-7">
+          <div className="bg-surface-1 rounded-[12px] border border-border p-5 sm:p-7">
             <h3 className="font-semibold text-[16px] mb-2">Pre-launch audit</h3>
             <p className="text-text-secondary text-sm leading-[1.65]">
               Before you put this in front of users, let's make sure it won't
               fall over. Security, scalability, and the things AI tools miss.
             </p>
           </div>
-          <div className="bg-surface-1 rounded-[12px] border border-border p-7">
+          <div className="bg-surface-1 rounded-[12px] border border-border p-5 sm:p-7">
             <h3 className="font-semibold text-[16px] mb-2">
               Investor readiness
             </h3>
@@ -253,21 +253,21 @@ export const WorkWithMe = () => (
               Email me what you're building. I'll get back to you within 24
               hours.
             </p>
-            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3">
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center sm:justify-start gap-3">
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="inline-flex items-center bg-accent text-[#0C0C0C] font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
+                className="inline-flex items-center justify-center w-full sm:w-auto bg-accent text-[#0C0C0C] font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
               >
                 {CONTACT_EMAIL}
               </a>
-              <span className="text-text-muted text-sm hidden min-[375px]:inline">
+              <span className="text-text-muted text-sm hidden sm:inline">
                 or
               </span>
               <a
                 href="https://wa.me/447356066058"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-text-secondary border border-text-muted font-semibold text-sm px-6 py-2.5 rounded-full hover:text-text-primary hover:border-text-secondary transition-all duration-200"
+                className="inline-flex items-center justify-center w-full sm:w-auto gap-2 text-text-secondary border border-text-muted font-semibold text-sm px-6 py-2.5 rounded-full hover:text-text-primary hover:border-text-secondary transition-all duration-200"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

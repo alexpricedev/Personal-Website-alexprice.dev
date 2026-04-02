@@ -13,12 +13,15 @@ export const Home = () => (
     name="home"
   >
     {/* Hero */}
-    <section className="min-h-screen flex items-center pt-28 md:pt-16 px-6">
+    <section className="min-h-[70vh] md:min-h-screen flex items-center pt-28 md:pt-16 px-6">
       <div className="max-w-[1200px] mx-auto w-full grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <h1 className="font-display text-[clamp(3rem,7vw,5.5rem)] leading-[1.05] tracking-[-0.03em] mb-8">
             AI can build your product. It can't tell you what's{" "}
-            <em className="text-accent italic" data-animate="chars">
+            <em
+              className="text-accent italic whitespace-nowrap"
+              data-animate="chars"
+            >
               {heroChars.map((c) => (
                 <span
                   key={c.key}
@@ -55,22 +58,22 @@ export const Home = () => (
             </a>
           </div>
         </div>
-        <div className="relative">
+        <div className="relative hidden md:block">
           <div
             data-parallax="hero"
-            className="rounded-xl overflow-hidden bg-surface-1 border border-border relative aspect-[3/4] cursor-default"
+            className="rounded-xl overflow-hidden isolate bg-bg relative aspect-[3/4] cursor-default"
           >
             <img
               src="/hero-bg.png"
               alt=""
               data-parallax-layer="bg"
-              className="absolute inset-[-30px] w-[calc(100%+60px)] h-[calc(100%+60px)] object-cover"
+              className="absolute -top-[30px] -left-[30px] w-[calc(100%+60px)] max-w-none h-[calc(100%+60px)] object-cover"
             />
             <img
               src="/hero-subject.png"
               alt="Alex Price"
               data-parallax-layer="fg"
-              className="absolute inset-[-15px] w-[calc(100%+30px)] h-[calc(100%+30px)] object-cover"
+              className="absolute -top-[30px] -left-[30px] w-[calc(100%+60px)] max-w-none h-[calc(100%+60px)] object-cover"
             />
           </div>
         </div>
@@ -222,13 +225,13 @@ export const Home = () => (
         >
           <a
             href={`mailto:${CONTACT_EMAIL}`}
-            className="inline-flex items-center justify-center bg-accent text-[#0C0C0C] font-semibold px-8 py-4 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
+            className="inline-flex items-center justify-center w-full sm:w-auto bg-accent text-[#0C0C0C] font-semibold px-8 py-4 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
           >
             Get in touch
           </a>
           <a
             href="/how-it-works"
-            className="inline-flex items-center justify-center text-accent font-semibold border border-accent/25 px-8 py-4 rounded-full hover:bg-accent-subtle hover:border-accent transition-all duration-200"
+            className="inline-flex items-center justify-center w-full sm:w-auto text-accent font-semibold border border-accent/25 px-8 py-4 rounded-full hover:bg-accent-subtle hover:border-accent transition-all duration-200"
           >
             See pricing
           </a>
@@ -379,7 +382,7 @@ export const Home = () => (
 
     {/* Final CTA */}
     <section data-animate="section" className="py-24 lg:py-32 px-6">
-      <div className="max-w-[1200px] mx-auto bg-accent rounded-2xl p-12 md:p-20 relative overflow-hidden">
+      <div className="max-w-[1200px] mx-auto bg-accent rounded-2xl p-8 sm:p-12 md:p-20 relative overflow-hidden">
         <div className="relative z-10 max-w-2xl text-center md:text-left mx-auto md:mx-0">
           <h2 className="font-display text-[clamp(2.5rem,6vw,3.5rem)] tracking-[-0.03em] text-[#0C0C0C] mb-4">
             From £75. No retainer.
