@@ -1,7 +1,7 @@
 const socialLinks = [
   { href: "https://linkedin.com/in/alexpricecto", label: "LinkedIn" },
   { href: "https://github.com/alexpricedev", label: "GitHub" },
-  { href: "mailto:fractional@alexprice.dev", label: "Email" },
+  { href: "mailto:hello@alexprice.dev", label: "Email" },
 ];
 
 export const Footer = () => (

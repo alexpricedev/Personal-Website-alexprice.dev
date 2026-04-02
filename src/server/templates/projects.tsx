@@ -38,7 +38,7 @@ const GitHubIcon = () => (
 export const Projects = ({ projects }: ProjectsProps) => (
   <Layout
     title="Projects"
-    description="Things I've built recently."
+    description="Recent projects and things I've built. Open source, side projects, and client work."
     name="projects"
     path="/projects"
   >

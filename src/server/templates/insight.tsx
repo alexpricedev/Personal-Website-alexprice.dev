@@ -1,5 +1,5 @@
 import { Layout } from "@server/components/layouts";
-import { CALENDLY_URL } from "@server/config";
+import { CONTACT_EMAIL } from "@server/config";
 import type { Article } from "@server/services/articles";
 
 type InsightProps = {
@@ -62,10 +62,10 @@ export const Insight = ({ article }: InsightProps) => (
           <div className="text-center sm:text-left">
             <p className="text-text-secondary mb-3">Want to talk about this?</p>
             <a
-              href={CALENDLY_URL}
+              href={`mailto:${CONTACT_EMAIL}`}
               className="inline-flex items-center bg-accent text-[#0C0C0C] font-semibold text-sm px-5 py-2 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
             >
-              Book a call
+              Get in touch
             </a>
           </div>
         </div>

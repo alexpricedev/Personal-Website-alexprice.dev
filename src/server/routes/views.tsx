@@ -36,5 +36,9 @@ export const viewRoutes = {
     const projects = getAllProjects();
     return render(<Projects projects={projects} />);
   }),
-  "/work-with-me": withTracking(() => render(<WorkWithMe />)),
+  "/how-it-works": withTracking(() => render(<WorkWithMe />)),
+  "/work-with-me": withTracking(
+    () => Response.redirect("/how-it-works", 301),
+    "work-with-me-redirect",
+  ),
 };

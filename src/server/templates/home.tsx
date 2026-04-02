@@ -1,7 +1,7 @@
 import { Layout } from "@server/components/layouts";
-import { CALENDLY_URL } from "@server/config";
+import { CONTACT_EMAIL } from "@server/config";
 
-const heroChars = "out of the job.".split("").map((char, i) => ({
+const heroChars = "going to break.".split("").map((char, i) => ({
   key: `c${i}`,
   char: char === " " ? "\u00A0" : char,
 }));
@@ -9,7 +9,7 @@ const heroChars = "out of the job.".split("").map((char, i) => ({
 export const Home = () => (
   <Layout
     title="Home"
-    description="Fractional CTO for Series A startups. Senior technical leadership without the cost and risk of a full-time hire."
+    description="Senior technical help, by the hour. Architecture reviews, security audits, and technical guidance for founders building with AI."
     name="home"
   >
     {/* Hero */}
@@ -17,7 +17,7 @@ export const Home = () => (
       <div className="max-w-[1200px] mx-auto w-full grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <h1 className="font-display text-[clamp(3rem,7vw,5.5rem)] leading-[1.05] tracking-[-0.03em] mb-8">
-            I'm a fractional CTO who specialises in engineering himself{" "}
+            AI can build your product. It can't tell you what's{" "}
             <em className="text-accent italic" data-animate="chars">
               {heroChars.map((c) => (
                 <span
@@ -31,25 +31,27 @@ export const Home = () => (
             </em>
           </h1>
           <p className="text-text-secondary text-lg lg:text-xl leading-relaxed max-w-lg mb-4">
-            Hiring a full-time CTO takes months... and often ends up looking
-            like a shotgun marriage. Let's not take your Series A startup down
-            that road.
+            Senior technical help, by the hour. Architecture reviews, security
+            audits, and honest guidance from someone who's built and scaled
+            companies.
           </p>
           <p className="text-lg lg:text-xl leading-relaxed mb-10">
-            <strong className="text-text-primary">I'm the alternative.</strong>
+            <strong className="text-text-primary">
+              From £75 per session. No retainer.
+            </strong>
           </p>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <a
-              href={CALENDLY_URL}
+              href={`mailto:${CONTACT_EMAIL}`}
               className="inline-flex items-center justify-center bg-accent text-[#0C0C0C] font-semibold text-lg px-8 py-4 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
             >
-              Get the honest take
+              Get in touch
             </a>
             <a
-              href="/work-with-me"
+              href="/how-it-works"
               className="inline-flex items-center justify-center text-accent font-semibold border border-accent/25 px-8 py-4 rounded-full hover:bg-accent-subtle hover:border-accent transition-all duration-200"
             >
-              How I work
+              How it works
             </a>
           </div>
         </div>
@@ -82,7 +84,7 @@ export const Home = () => (
         className="max-w-[1200px] mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-12"
       >
         {[
-          { value: "12+", label: "Years Leading" },
+          { value: "12+", label: "Years Building" },
           { value: "80+", label: "Team Scaled To" },
           { value: "#8", label: "LinkedIn Top UK" },
           { value: "18k", label: "B2B Customers" },
@@ -139,10 +141,20 @@ export const Home = () => (
           >
             Just
           </a>
-          , taking a pre-alpha concept to production.
+          , taking a pre-alpha concept to production. Now I'm co-founder at{" "}
+          <a
+            href="https://chptrs.tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:text-accent-dim transition-colors duration-200"
+          >
+            CHPTRS
+          </a>
+          .
         </p>
         <p className="mt-6 text-xl text-text-primary font-medium">
-          Now I help Series A founders build engineering teams that scale.
+          I help founders building with AI make the technical decisions that
+          matter.
         </p>
       </div>
     </section>
@@ -159,53 +171,72 @@ export const Home = () => (
         <div data-animate="stagger" className="grid md:grid-cols-2 gap-6">
           <div className="bg-surface-1 rounded-[12px] border border-border p-9 hover:border-border-hover transition-colors duration-300">
             <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
-              Strategic Gaps
+              Getting started
             </span>
-            <h3 className="font-display text-[24px] leading-[1.25] tracking-[-0.01em] mb-4">
-              You don't have a CTO
+            <h3 className="font-display text-[clamp(1.5rem,3vw,2rem)] leading-[1.25] tracking-[-0.01em] mb-4">
+              You're building something and you've hit a wall you can't prompt
+              your way out of
             </h3>
             <ul className="space-y-2 text-text-secondary leading-[1.7]">
               <li className="flex gap-2">
                 <span className="text-text-muted shrink-0">–</span>
-                Tech debt is restricting your velocity
+                Architecture and database decisions before you're locked in
               </li>
               <li className="flex gap-2">
                 <span className="text-text-muted shrink-0">–</span>
-                Hiring has become a bottleneck
+                Making sense of AI-generated code you don't fully trust
               </li>
               <li className="flex gap-2">
                 <span className="text-text-muted shrink-0">–</span>
-                You lack a technical roadmap for your next round
+                "Am I doing this right?" answered by someone who's done it
               </li>
             </ul>
           </div>
           <div className="bg-surface-1 rounded-[12px] border border-border p-9 hover:border-border-hover transition-colors duration-300">
             <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
-              Optimising Leadership
+              Launch prep
             </span>
-            <h3 className="font-display text-[24px] leading-[1.25] tracking-[-0.01em] mb-4">
-              You have a CTO
+            <h3 className="font-display text-[clamp(1.5rem,3vw,2rem)] leading-[1.25] tracking-[-0.01em] mb-4">
+              You've built it and you need to know it won't fall over in front
+              of real users
             </h3>
             <ul className="space-y-2 text-text-secondary leading-[1.7]">
               <li className="flex gap-2">
                 <span className="text-text-muted shrink-0">–</span>
-                They're struggling with the shift from engineer to leader
+                Security and performance review before you go live
               </li>
               <li className="flex gap-2">
                 <span className="text-text-muted shrink-0">–</span>
-                Engineering decisions lack strategic oversight
+                "Will this scale to 1,000 users?" answered honestly
               </li>
               <li className="flex gap-2">
                 <span className="text-text-muted shrink-0">–</span>
-                You want to develop them, not replace them
+                Technical due diligence prep before investors ask
               </li>
             </ul>
           </div>
         </div>
+        <div
+          data-animate="section"
+          className="mt-10 flex flex-col sm:flex-row items-center gap-4"
+        >
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="inline-flex items-center justify-center bg-accent text-[#0C0C0C] font-semibold px-8 py-4 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
+          >
+            Get in touch
+          </a>
+          <a
+            href="/how-it-works"
+            className="inline-flex items-center justify-center text-accent font-semibold border border-accent/25 px-8 py-4 rounded-full hover:bg-accent-subtle hover:border-accent transition-all duration-200"
+          >
+            See pricing
+          </a>
+        </div>
       </div>
     </section>
 
-    {/* The Engagement */}
+    {/* How it works */}
     <section
       data-animate="sequence"
       className="py-24 lg:py-32 px-6 bg-surface-1"
@@ -217,13 +248,14 @@ export const Home = () => (
               data-seq
               className="font-display text-[clamp(2rem,5vw,3rem)] tracking-[-0.02em] mb-4"
             >
-              How this works
+              How it works
             </h2>
             <p
               data-seq
               className="text-lg text-text-secondary leading-relaxed mb-10"
             >
-              I don't just advise — I embed.
+              No retainer. No long-term commitment. Just senior technical help
+              when you need it.
             </p>
             <div className="space-y-10">
               {/* Step 01 */}
@@ -235,20 +267,13 @@ export const Home = () => (
                 </div>
                 <div>
                   <h4 className="font-semibold text-[20px] leading-[1.3] mb-3">
-                    Embedded support
+                    Email me your problem
                   </h4>
-                  <p className="text-text-secondary leading-[1.7] mb-4">
-                    I embed one or two days a week until you're ready to hire
-                    permanently.
+                  <p className="text-text-secondary leading-[1.7]">
+                    Tell me what you're building and what you need help with.
+                    I'll reply within 24 hours with whether I can help and when
+                    I'm available.
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3 py-1 rounded-full">
-                      Strategic Oversight
-                    </span>
-                    <span className="font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3 py-1 rounded-full">
-                      Leadership Mentorship
-                    </span>
-                  </div>
                 </div>
               </div>
               {/* Step 02 */}
@@ -260,21 +285,32 @@ export const Home = () => (
                 </div>
                 <div>
                   <h4 className="font-semibold text-[20px] leading-[1.3] mb-3">
-                    Transformation project
+                    Share your code or context
                   </h4>
-                  <p className="text-text-secondary leading-[1.7] mb-4">
-                    Focused three-month engagements covering team structure,
-                    hiring, and tech strategy. Then I cleanly hand off to your
-                    strengthened team.
+                  <p className="text-text-secondary leading-[1.7]">
+                    Before the session, share a repo link, screenshots, or
+                    whatever helps me understand the situation. The more context
+                    upfront, the more value in the session.
                   </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3 py-1 rounded-full">
-                      Architectural Audit
-                    </span>
-                    <span className="font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3 py-1 rounded-full">
-                      Rapid Execution
-                    </span>
-                  </div>
+                </div>
+              </div>
+              {/* Step 03 */}
+              <div data-seq className="flex gap-6">
+                <div className="shrink-0">
+                  <span className="font-display text-accent text-[20px]">
+                    03
+                  </span>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-[20px] leading-[1.3] mb-3">
+                    Live session + written summary
+                  </h4>
+                  <p className="text-text-secondary leading-[1.7]">
+                    We jump on a call. I review your code, answer your
+                    questions, and give you direct, honest technical guidance.
+                    Afterwards, you get a written summary of what we covered and
+                    what to do next.
+                  </p>
                 </div>
               </div>
             </div>
@@ -284,10 +320,11 @@ export const Home = () => (
               className="mt-12 bg-surface-2 rounded-[12px] border border-border p-6"
             >
               <p className="text-text-secondary leading-[1.7]">
-                If you want someone to tell you what you want to hear or move
-                cautiously, I'm not your guy. I work best with founders who are
-                ready for velocity and thrive on{" "}
-                <strong className="text-text-primary">direct feedback</strong>.
+                I don't tell you what you want to hear. I tell you what's going
+                to break, what's fine, and what to focus on next.{" "}
+                <strong className="text-text-primary">
+                  Direct, honest, useful.
+                </strong>
               </p>
             </div>
           </div>
@@ -304,9 +341,9 @@ export const Home = () => (
 
     {/* Testimonial */}
     <section data-animate="section" className="py-16 lg:py-20 px-6">
-      <div className="max-w-[700px] mx-auto">
+      <div className="max-w-[900px] mx-auto">
         <blockquote className="border-l-[3px] border-accent pl-8 md:pl-10">
-          <p className="text-[clamp(1.25rem,3vw,1.75rem)] leading-[1.6] italic text-text-primary mb-8">
+          <p className="text-[clamp(1.25rem,3vw,1.5rem)] leading-[1.6] italic text-text-primary mb-8">
             "Alex helped me cut through the noise when I was building
             HelloRevenue. Through regular strategy calls he gave me clear,
             honest technical guidance that took us from early-stage uncertainty
@@ -324,7 +361,7 @@ export const Home = () => (
                 Dennis Hettema
               </p>
               <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-text-muted">
-                CEO,{" "}
+                <span style={{ color: "rgba(168,162,158,0.7)" }}>CEO,</span>{" "}
                 <a
                   href="https://hellorevenue.me/"
                   target="_blank"
@@ -345,23 +382,24 @@ export const Home = () => (
       <div className="max-w-[1200px] mx-auto bg-accent rounded-2xl p-12 md:p-20 relative overflow-hidden">
         <div className="relative z-10 max-w-2xl text-center md:text-left mx-auto md:mx-0">
           <h2 className="font-display text-[clamp(2.5rem,6vw,3.5rem)] tracking-[-0.03em] text-[#0C0C0C] mb-4">
-            Let's scale this thing
+            From £75. No retainer.
           </h2>
           <p className="text-lg text-[#0C0C0C]/70 mb-8 max-w-lg mx-auto md:mx-0">
-            Stop firefighting your tech and start building on it.
+            Senior technical guidance from someone who's built and scaled
+            companies. Email me what you're working on.
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-6">
             <a
-              href={CALENDLY_URL}
+              href={`mailto:${CONTACT_EMAIL}`}
               className="inline-flex items-center justify-center w-full sm:w-auto bg-[#0C0C0C] text-accent font-semibold text-lg px-10 py-5 rounded-full hover:bg-[#1a1a1a] transition-all duration-200"
             >
-              Book a call
+              Get in touch
             </a>
             <a
-              href="/work-with-me"
+              href="/how-it-works"
               className="text-[#0C0C0C] font-semibold hover:underline underline-offset-4"
             >
-              Learn how it works →
+              See how it works →
             </a>
           </div>
         </div>

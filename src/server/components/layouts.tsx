@@ -27,10 +27,12 @@ export function Layout({
   children,
 }: LayoutProps) {
   const fullTitle =
-    title === "Home" ? "Alex Price – Fractional CTO" : `${title} – Alex Price`;
+    title === "Home"
+      ? "Alex Price – Senior Technical Help, By The Hour"
+      : `${title} – Alex Price`;
   const metaDescription =
     description ||
-    "Fractional CTO for Series A startups. Senior technical leadership without the cost and risk of a full-time hire.";
+    "Senior technical help, by the hour. Architecture reviews, security audits, and technical guidance for founders building with AI.";
   const canonicalUrl = `${SITE_URL}${path}`;
   const ogImageUrl = ogImage ? `${SITE_URL}${ogImage}` : DEFAULT_OG_IMAGE;
 
@@ -63,7 +65,7 @@ export function Layout({
           "@type": "Person",
           name: "Alex Price",
           url: SITE_URL,
-          jobTitle: "Fractional CTO",
+          jobTitle: "Technical Consultant",
           description: metaDescription,
           image: DEFAULT_OG_IMAGE,
           sameAs: ["https://linkedin.com/in/alexpricecto"],
