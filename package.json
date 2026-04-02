@@ -12,6 +12,7 @@
     "dev:server": "bun --watch run src/server/main.ts",
     "commit": "git add --all && git commit",
     "generate:og": "bun run tools/generate-og-images.ts",
+    "generate:site-og": "bun run tools/generate-site-og.ts",
     "check": "bunx @biomejs/biome@beta check src",
     "prepare": "husky"
   },
