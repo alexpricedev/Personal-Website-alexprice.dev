@@ -236,6 +236,38 @@ export const WorkWithMe = () => (
         </p>
       </section>
 
+      {/* CHPTRS Callout */}
+      <section data-animate="section" className="mb-16">
+        <div className="bg-surface-1 rounded-[12px] border border-border p-6 sm:p-9 relative overflow-hidden">
+          <div className="relative z-10">
+            <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
+              Need more than advice?
+            </span>
+            <p className="text-text-secondary leading-[1.7] max-w-[640px]">
+              If you're looking for hands-on build work or a longer-term
+              partnership, that's what{" "}
+              <a
+                href="https://chptrs.tech"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent-dim transition-colors duration-200"
+              >
+                CHPTRS
+              </a>{" "}
+              is for. It's the fractional software and product duo I co-founded.
+              We embed long-term, ship product, and scale engineering from
+              prototype to production.
+            </p>
+          </div>
+          <img
+            src="/chptrs-duo.png"
+            alt=""
+            aria-hidden="true"
+            className="hidden min-[891px]:block absolute right-6 bottom-0 h-[85%] w-auto object-contain opacity-50"
+          />
+        </div>
+      </section>
+
       {/* CTA */}
       <div className="border-t border-border my-10" />
       <section data-animate="section" className="py-12">
