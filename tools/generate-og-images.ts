@@ -57,10 +57,10 @@ function buildHTML(articles: Article[]): string {
       <div class="og-footer">
         <span class="author">Alex Price</span>
         <span class="sep"></span>
-        <span class="site">alexprice.dev</span>
+        <span class="site">backseatcto.com</span>
       </div>
     </div>
-  `
+  `,
     )
     .join("\n");
 
@@ -68,13 +68,15 @@ function buildHTML(articles: Article[]): string {
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Commit+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #1a1a1a;
+      background: #888;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -85,17 +87,10 @@ function buildHTML(articles: Article[]): string {
     .og {
       width: 1200px;
       height: 630px;
-      background: #0C0C0C;
+      background: #F4F0E8;
       position: relative;
       overflow: hidden;
       flex-shrink: 0;
-    }
-
-    .og::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 50% at 30% 60%, rgba(201, 169, 110, 0.04) 0%, transparent 70%);
     }
 
     .og-accent {
@@ -104,7 +99,7 @@ function buildHTML(articles: Article[]): string {
       left: 0;
       width: 5px;
       height: 100%;
-      background: linear-gradient(180deg, #C9A96E 0%, transparent 80%);
+      background: linear-gradient(180deg, #BF5540 0%, transparent 80%);
       opacity: 0.6;
     }
 
@@ -112,13 +107,13 @@ function buildHTML(articles: Article[]): string {
       position: absolute;
       top: 48px;
       left: 72px;
-      font-family: 'Geist Mono', monospace;
+      font-family: 'Commit Mono', monospace;
       font-size: 24px;
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #C9A96E;
-      background: rgba(201, 169, 110, 0.12);
+      color: #BF5540;
+      background: rgba(191, 85, 64, 0.1);
       padding: 12px 28px;
       border-radius: 999px;
     }
@@ -128,12 +123,12 @@ function buildHTML(articles: Article[]): string {
       left: 72px;
       right: 72px;
       bottom: 130px;
-      font-family: 'Instrument Serif', serif;
+      font-family: 'General Sans', sans-serif;
       font-size: 92px;
       line-height: 1.05;
       letter-spacing: -0.02em;
-      color: #E8E3DD;
-      font-weight: 400;
+      color: #1A1714;
+      font-weight: 700;
     }
 
     .og-footer {
@@ -146,25 +141,25 @@ function buildHTML(articles: Article[]): string {
     }
 
     .og-footer .author {
-      font-family: 'Instrument Sans', sans-serif;
+      font-family: 'General Sans', sans-serif;
       font-size: 34px;
       font-weight: 600;
-      color: #E8E3DD;
+      color: #1A1714;
     }
 
     .og-footer .sep {
       width: 2px;
       height: 24px;
-      background: rgba(232, 227, 221, 0.15);
+      background: rgba(26, 23, 20, 0.15);
     }
 
     .og-footer .site {
-      font-family: 'Instrument Sans', sans-serif;
+      font-family: 'General Sans', sans-serif;
       font-size: 32px;
       font-weight: 600;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: #C9A96E;
+      color: #BF5540;
     }
   </style>
 </head>

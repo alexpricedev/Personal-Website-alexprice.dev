@@ -150,6 +150,7 @@ export const CommonIssues = () => (
     description="The 10 most common problems in AI-generated code. Free self-assessment checklist to check your code's health."
     name="common-issues"
     path="/common-issues"
+    ogImage="/og-common-issues.png"
   >
     <div className="max-w-[1200px] mx-auto px-6 pt-28 pb-20">
       {/* Hero */}

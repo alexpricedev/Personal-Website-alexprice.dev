@@ -63,6 +63,7 @@ export const VibeCodeAudit = () => (
     description="Professional code audit for AI-built applications. Security, architecture, and performance review with a written report and walkthrough call. £150."
     name="vibe-code-audit"
     path="/vibe-code-audit"
+    ogImage="/og-vibe-code-audit.png"
   >
     <div className="max-w-[1200px] mx-auto px-6 pt-28 pb-20">
       {/* Hero */}
