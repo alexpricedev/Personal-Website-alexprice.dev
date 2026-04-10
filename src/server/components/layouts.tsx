@@ -28,11 +28,11 @@ export function Layout({
 }: LayoutProps) {
   const fullTitle =
     title === "Home"
-      ? "Alex Price – Senior Technical Help, By The Hour"
-      : `${title} – Alex Price`;
+      ? "Backseat CTO – Senior Technical Help, By The Hour"
+      : `${title} – Backseat CTO`;
   const metaDescription =
     description ||
-    "Senior technical help, by the hour. Architecture reviews, security audits, and technical guidance for founders building with AI.";
+    "Senior technical help, by the hour. Architecture reviews, vibe code audits, and technical guidance for founders building with AI.";
   const canonicalUrl = `${SITE_URL}${path}`;
   const ogImageUrl = ogImage ? `${SITE_URL}${ogImage}` : DEFAULT_OG_IMAGE;
 
@@ -64,6 +64,7 @@ export function Layout({
           "@context": "https://schema.org",
           "@type": "Person",
           name: "Alex Price",
+          alternateName: "Backseat CTO",
           url: SITE_URL,
           jobTitle: "Technical Consultant",
           description: metaDescription,
@@ -86,7 +87,7 @@ export function Layout({
         <meta property="og:title" content={fullTitle} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:site_name" content="Alex Price" />
+        <meta property="og:site_name" content="Backseat CTO" />
         <meta property="og:type" content={ogType} />
         <meta property="og:image" content={ogImageUrl} />
         <meta property="og:image:width" content="1200" />

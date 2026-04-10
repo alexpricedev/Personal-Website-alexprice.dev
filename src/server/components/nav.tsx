@@ -1,8 +1,7 @@
-import { CONTACT_EMAIL } from "@server/config";
-
 const navLinks = [
   { href: "/", label: "Home", name: "home" },
   { href: "/insights", label: "Insights", name: "insights" },
+  { href: "/common-issues", label: "Common Issues", name: "common-issues" },
   { href: "/projects", label: "Projects", name: "projects" },
   { href: "/how-it-works", label: "How it works", name: "how-it-works" },
 ];
@@ -10,12 +9,12 @@ const navLinks = [
 export const Nav = ({ page }: { page: string }) => (
   <nav className="fixed top-0 w-full z-50 bg-surface-base/80 backdrop-blur-xl border-b border-border">
     <div className="flex justify-between items-center max-w-[1200px] mx-auto px-6 lg:px-10 h-16">
-      {/* Brand monogram */}
+      {/* Brand */}
       <a
         href="/"
-        className="font-display text-[22px] tracking-[-0.03em] text-text-primary hover:text-accent transition-colors duration-200 py-2 px-1"
+        className="font-display text-[18px] tracking-[-0.02em] text-text-primary hover:text-accent transition-colors duration-200 py-2 px-1 font-semibold"
       >
-        <span className="text-accent">A</span>P
+        backseat<span className="text-accent">cto</span>
       </a>
 
       {/* Desktop links */}
@@ -24,7 +23,7 @@ export const Nav = ({ page }: { page: string }) => (
           <a
             key={name}
             href={href}
-            className={`text-sm font-body font-medium py-3 transition-colors duration-200 ${
+            className={`text-sm font-ui font-medium py-3 transition-colors duration-200 ${
               page === name
                 ? "text-accent"
                 : "text-text-secondary hover:text-text-primary"
@@ -39,10 +38,10 @@ export const Nav = ({ page }: { page: string }) => (
       {/* Right side: CTA + mobile burger */}
       <div className="flex items-center gap-4">
         <a
-          href={`mailto:${CONTACT_EMAIL}`}
-          className="hidden min-[375px]:inline-flex items-center bg-accent text-[#0C0C0C] font-body font-semibold text-sm px-5 py-2 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
+          href="/vibe-code-audit"
+          className="hidden min-[375px]:inline-flex items-center bg-accent text-white font-ui font-semibold text-sm px-5 py-2 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
         >
-          Get in touch
+          Get your code audited
         </a>
 
         {/* Mobile burger */}
@@ -81,7 +80,7 @@ export const Nav = ({ page }: { page: string }) => (
           <a
             key={name}
             href={href}
-            className={`text-sm font-body font-medium py-2 transition-colors duration-200 ${
+            className={`text-sm font-ui font-medium py-2 transition-colors duration-200 ${
               page === name
                 ? "text-accent"
                 : "text-text-secondary hover:text-text-primary"
@@ -92,10 +91,10 @@ export const Nav = ({ page }: { page: string }) => (
           </a>
         ))}
         <a
-          href={`mailto:${CONTACT_EMAIL}`}
-          className="min-[375px]:hidden inline-flex items-center justify-center bg-accent text-[#0C0C0C] font-body font-semibold text-sm px-5 py-2.5 rounded-full mt-2"
+          href="/vibe-code-audit"
+          className="inline-flex items-center justify-center bg-accent text-white font-ui font-semibold text-sm px-5 py-2.5 rounded-full mt-2"
         >
-          Get in touch
+          Get your code audited
         </a>
       </div>
     </div>
