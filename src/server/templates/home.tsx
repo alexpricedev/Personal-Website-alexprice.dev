@@ -1,5 +1,4 @@
 import { Layout } from "@server/components/layouts";
-import { CONTACT_EMAIL } from "@server/config";
 
 const heroChars = "going to break.".split("").map((char, i) => ({
   key: `c${i}`,
@@ -9,7 +8,7 @@ const heroChars = "going to break.".split("").map((char, i) => ({
 export const Home = () => (
   <Layout
     title="Home"
-    description="Senior technical help, by the hour. Architecture reviews, security audits, and technical guidance for founders building with AI."
+    description="The Backseat CTO. Architecture reviews, vibe code audits, and technical guidance for founders building with AI. From £75/session."
     name="home"
   >
     {/* Hero */}
@@ -34,9 +33,15 @@ export const Home = () => (
             </em>
           </h1>
           <p className="text-text-secondary text-lg lg:text-xl leading-relaxed max-w-lg mb-4">
-            Senior technical help, by the hour. Architecture reviews, security
-            audits, and honest guidance from someone who's built and scaled
-            companies.
+            I'm{" "}
+            <a
+              href="/about"
+              className="text-text-primary hover:text-accent transition-colors duration-200"
+            >
+              Alex Price
+            </a>
+            , the Backseat CTO. Architecture reviews, vibe code audits, and
+            honest technical guidance for founders building with AI.
           </p>
           <p className="text-lg lg:text-xl leading-relaxed mb-10">
             <strong className="text-text-primary">
@@ -45,14 +50,14 @@ export const Home = () => (
           </p>
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="inline-flex items-center justify-center bg-accent text-[#0C0C0C] font-semibold text-lg px-8 py-4 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
+              href="/vibe-code-audit"
+              className="inline-flex items-center justify-center bg-accent text-white font-ui font-semibold text-lg px-8 py-4 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
             >
-              Get in touch
+              Get your code audited — £150
             </a>
             <a
               href="/how-it-works"
-              className="inline-flex items-center justify-center text-accent font-semibold border border-accent/25 px-8 py-4 rounded-full hover:bg-accent-subtle hover:border-accent transition-all duration-200"
+              className="inline-flex items-center justify-center text-accent font-ui font-semibold border border-accent/25 px-8 py-4 rounded-full hover:bg-accent-subtle hover:border-accent transition-all duration-200"
             >
               How it works
             </a>
@@ -101,64 +106,6 @@ export const Home = () => (
             </div>
           </div>
         ))}
-      </div>
-    </section>
-
-    {/* Credibility */}
-    <section data-animate="section" className="py-24 lg:py-32 px-6">
-      <div className="max-w-[700px] mx-auto lg:mx-0 lg:ml-[max(24px,calc((100%-1200px)/2+24px))]">
-        <p className="text-lg text-text-secondary leading-relaxed">
-          I co-founded and was CTO at{" "}
-          <a
-            href="https://ecologi.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-accent hover:text-accent-dim transition-colors duration-200"
-          >
-            Ecologi
-          </a>{" "}
-          where we scaled from 3 to 80+ employees, had 18,000{" "}
-          <a
-            href="https://uk.trustpilot.com/review/ecologi.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-accent hover:text-accent-dim transition-colors duration-200"
-          >
-            happy B2B customers
-          </a>{" "}
-          and ranked #8 in{" "}
-          <a
-            href="https://www.linkedin.com/pulse/linkedin-top-startups-2022-15-uk-companies-rise-linkedin-news-uk/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-accent hover:text-accent-dim transition-colors duration-200"
-          >
-            LinkedIn's Top UK Startups 2022
-          </a>
-          . After my exit, I became CTO at{" "}
-          <a
-            href="https://justabout.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-accent hover:text-accent-dim transition-colors duration-200"
-          >
-            Just
-          </a>
-          , taking a pre-alpha concept to production. Now I'm co-founder at{" "}
-          <a
-            href="https://chptrs.tech"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-accent hover:text-accent-dim transition-colors duration-200"
-          >
-            CHPTRS
-          </a>
-          .
-        </p>
-        <p className="mt-6 text-xl text-text-primary font-medium">
-          I help founders building with AI make the technical decisions that
-          matter.
-        </p>
       </div>
     </section>
 
@@ -224,14 +171,14 @@ export const Home = () => (
           className="mt-10 flex flex-col sm:flex-row items-center gap-4"
         >
           <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="inline-flex items-center justify-center w-full sm:w-auto bg-accent text-[#0C0C0C] font-semibold px-8 py-4 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
+            href="/common-issues"
+            className="inline-flex items-center justify-center w-full sm:w-auto bg-accent text-white font-ui font-semibold px-8 py-4 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
           >
-            Get in touch
+            Check your code health — free
           </a>
           <a
             href="/how-it-works"
-            className="inline-flex items-center justify-center w-full sm:w-auto text-accent font-semibold border border-accent/25 px-8 py-4 rounded-full hover:bg-accent-subtle hover:border-accent transition-all duration-200"
+            className="inline-flex items-center justify-center w-full sm:w-auto text-accent font-ui font-semibold border border-accent/25 px-8 py-4 rounded-full hover:bg-accent-subtle hover:border-accent transition-all duration-200"
           >
             See pricing
           </a>
@@ -261,7 +208,6 @@ export const Home = () => (
               when you need it.
             </p>
             <div className="space-y-10">
-              {/* Step 01 */}
               <div data-seq className="flex gap-6">
                 <div className="shrink-0">
                   <span className="font-display text-accent text-[20px]">
@@ -279,7 +225,6 @@ export const Home = () => (
                   </p>
                 </div>
               </div>
-              {/* Step 02 */}
               <div data-seq className="flex gap-6">
                 <div className="shrink-0">
                   <span className="font-display text-accent text-[20px]">
@@ -297,7 +242,6 @@ export const Home = () => (
                   </p>
                 </div>
               </div>
-              {/* Step 03 */}
               <div data-seq className="flex gap-6">
                 <div className="shrink-0">
                   <span className="font-display text-accent text-[20px]">
@@ -317,7 +261,6 @@ export const Home = () => (
                 </div>
               </div>
             </div>
-            {/* Direct feedback callout */}
             <div
               data-seq
               className="mt-12 bg-surface-2 rounded-[12px] border border-border p-6"
@@ -342,67 +285,29 @@ export const Home = () => (
       </div>
     </section>
 
-    {/* Testimonial */}
-    <section data-animate="section" className="py-16 lg:py-20 px-6">
-      <div className="max-w-[900px] mx-auto">
-        <blockquote className="border-l-[3px] border-accent pl-8 md:pl-10">
-          <p className="text-[clamp(1.25rem,3vw,1.5rem)] leading-[1.6] italic text-text-primary mb-8">
-            "Alex helped me cut through the noise when I was building
-            HelloRevenue. Through regular strategy calls he gave me clear,
-            honest technical guidance that took us from early-stage uncertainty
-            to production readiness. If you're a non-technical founder who needs
-            a technical partner you can trust, Alex is your guy."
-          </p>
-          <footer className="flex items-center gap-4">
-            <img
-              src="/dennis-hettema.webp"
-              alt="Dennis Hettema"
-              className="w-12 h-12 rounded-full object-cover shrink-0"
-            />
-            <div>
-              <p className="text-sm font-semibold text-text-primary">
-                Dennis Hettema
-              </p>
-              <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-text-muted">
-                <span style={{ color: "rgba(168,162,158,0.7)" }}>CEO,</span>{" "}
-                <a
-                  href="https://hellorevenue.me/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-accent hover:text-accent-dim transition-colors duration-200"
-                >
-                  HelloRevenue
-                </a>
-              </p>
-            </div>
-          </footer>
-        </blockquote>
-      </div>
-    </section>
-
     {/* Final CTA */}
     <section data-animate="section" className="py-24 lg:py-32 px-6">
       <div className="max-w-[1200px] mx-auto bg-accent rounded-2xl p-8 sm:p-12 md:p-20 relative overflow-hidden">
         <div className="relative z-10 max-w-2xl text-center md:text-left mx-auto md:mx-0">
-          <h2 className="font-display text-[clamp(2.5rem,6vw,3.5rem)] tracking-[-0.03em] text-[#0C0C0C] mb-4">
-            From £75. No retainer.
+          <h2 className="font-display text-[clamp(2.5rem,6vw,3.5rem)] tracking-[-0.03em] text-white mb-4">
+            Not sure if your code is production-ready?
           </h2>
-          <p className="text-lg text-[#0C0C0C]/70 mb-8 max-w-lg mx-auto md:mx-0">
-            Senior technical guidance from someone who's built and scaled
-            companies. Email me what you're working on.
+          <p className="text-lg text-white/70 mb-8 max-w-lg mx-auto md:mx-0">
+            Start with a free self-assessment, or get a professional audit for
+            £150.
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-6">
             <a
-              href={`mailto:${CONTACT_EMAIL}`}
-              className="inline-flex items-center justify-center w-full sm:w-auto bg-[#0C0C0C] text-accent font-semibold text-lg px-10 py-5 rounded-full hover:bg-[#1a1a1a] transition-all duration-200"
+              href="/vibe-code-audit"
+              className="inline-flex items-center justify-center w-full sm:w-auto bg-white text-accent font-ui font-semibold text-lg px-10 py-5 rounded-full hover:bg-white/90 transition-all duration-200"
             >
-              Get in touch
+              Get your code audited
             </a>
             <a
-              href="/how-it-works"
-              className="text-[#0C0C0C] font-semibold hover:underline underline-offset-4"
+              href="/common-issues"
+              className="text-white font-ui font-semibold hover:underline underline-offset-4"
             >
-              See how it works →
+              Free self-assessment →
             </a>
           </div>
         </div>
