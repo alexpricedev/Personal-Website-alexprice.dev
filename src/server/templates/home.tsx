@@ -89,61 +89,76 @@ export const Home = () => (
       </div>
     </section>
 
+    <hr className="border-border max-w-[1200px] mx-auto" />
+
     {/* When to bring me in */}
     <section className="py-24 lg:py-32 px-6">
       <div className="max-w-[1200px] mx-auto">
-        <h2
-          data-animate="section"
-          className="font-display text-[clamp(2rem,5vw,3rem)] tracking-[-0.02em] mb-12"
+        <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-4 mb-12">
+          <h2
+            data-animate="section"
+            className="font-display text-[clamp(2rem,5vw,3rem)] tracking-[-0.02em]"
+          >
+            When to bring me in
+          </h2>
+          <p
+            data-animate="section"
+            className="font-mono text-[11px] tracking-[0.1em] uppercase text-text-muted"
+          >
+            Two common starting points
+          </p>
+        </div>
+        <div
+          data-animate="stagger"
+          className="bg-surface-1 rounded-[12px] border border-border overflow-hidden"
         >
-          When to bring me in
-        </h2>
-        <div data-animate="stagger" className="grid md:grid-cols-2 gap-6">
-          <div className="bg-surface-1 rounded-[12px] border border-border p-9 hover:border-border-hover transition-colors duration-300">
-            <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
-              Getting started
-            </span>
-            <h3 className="font-display text-[clamp(1.5rem,3vw,2rem)] leading-[1.25] tracking-[-0.01em] mb-4">
-              You're building something and you've hit a wall you can't prompt
-              your way out of
-            </h3>
-            <ul className="space-y-2 text-text-secondary leading-[1.7]">
-              <li className="flex gap-2">
-                <span className="text-text-muted shrink-0">–</span>
-                Architecture and database decisions before you're locked in
-              </li>
-              <li className="flex gap-2">
-                <span className="text-text-muted shrink-0">–</span>
-                Making sense of AI-generated code you don't fully trust
-              </li>
-              <li className="flex gap-2">
-                <span className="text-text-muted shrink-0">–</span>
-                "Am I doing this right?" answered by someone who's done it
-              </li>
-            </ul>
-          </div>
-          <div className="bg-surface-1 rounded-[12px] border border-border p-9 hover:border-border-hover transition-colors duration-300">
-            <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
-              Launch prep
-            </span>
-            <h3 className="font-display text-[clamp(1.5rem,3vw,2rem)] leading-[1.25] tracking-[-0.01em] mb-4">
-              You've built it and you need to know it won't fall over in front
-              of real users
-            </h3>
-            <ul className="space-y-2 text-text-secondary leading-[1.7]">
-              <li className="flex gap-2">
-                <span className="text-text-muted shrink-0">–</span>
-                Security and performance review before you go live
-              </li>
-              <li className="flex gap-2">
-                <span className="text-text-muted shrink-0">–</span>
-                "Will this scale to 1,000 users?" answered honestly
-              </li>
-              <li className="flex gap-2">
-                <span className="text-text-muted shrink-0">–</span>
-                Technical due diligence prep before investors ask
-              </li>
-            </ul>
+          <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border">
+            <div className="p-8 sm:p-10">
+              <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
+                Getting started
+              </span>
+              <h3 className="font-display text-[clamp(1.25rem,2.5vw,1.5rem)] leading-[1.3] tracking-[-0.01em] mb-4">
+                You're building something and you've hit a wall you can't prompt
+                your way out of
+              </h3>
+              <ul className="space-y-2 text-text-secondary leading-[1.7] text-[15px]">
+                <li className="flex gap-2">
+                  <span className="text-text-muted shrink-0">&mdash;</span>
+                  Architecture and database decisions before you're locked in
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-text-muted shrink-0">&mdash;</span>
+                  Making sense of AI-generated code you don't fully trust
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-text-muted shrink-0">&mdash;</span>
+                  "Am I doing this right?" answered by someone who's done it
+                </li>
+              </ul>
+            </div>
+            <div className="p-8 sm:p-10">
+              <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
+                Launch prep
+              </span>
+              <h3 className="font-display text-[clamp(1.25rem,2.5vw,1.5rem)] leading-[1.3] tracking-[-0.01em] mb-4">
+                You've built it and you need to know it won't fall over in front
+                of real users
+              </h3>
+              <ul className="space-y-2 text-text-secondary leading-[1.7] text-[15px]">
+                <li className="flex gap-2">
+                  <span className="text-text-muted shrink-0">&mdash;</span>
+                  Security and performance review before you go live
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-text-muted shrink-0">&mdash;</span>
+                  "Will this scale to 1,000 users?" answered honestly
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-text-muted shrink-0">&mdash;</span>
+                  Technical due diligence prep before investors ask
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div
@@ -167,103 +182,86 @@ export const Home = () => (
     </section>
 
     {/* How it works */}
-    <section
-      data-animate="sequence"
-      className="py-24 lg:py-32 px-6 bg-surface-1"
-    >
+    <section className="py-24 lg:py-32 px-6">
       <div className="max-w-[1200px] mx-auto">
-        <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-start">
-          <div className="md:w-1/2">
-            <h2
-              data-seq
-              className="font-display text-[clamp(2rem,5vw,3rem)] tracking-[-0.02em] mb-4"
-            >
-              How it works
-            </h2>
-            <p
-              data-seq
-              className="text-lg text-text-secondary leading-relaxed mb-10"
-            >
-              No retainer. No long-term commitment. Just senior technical help
-              when you need it.
-            </p>
-            <div className="space-y-10">
-              <div data-seq className="flex gap-6">
-                <div className="shrink-0">
-                  <span className="font-display text-accent text-[20px]">
-                    01
-                  </span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-[20px] leading-[1.3] mb-3">
-                    Email me your problem
-                  </h4>
-                  <p className="text-text-secondary leading-[1.7]">
-                    Tell me what you're building and what you need help with.
-                    I'll reply within 24 hours with whether I can help and when
-                    I'm available.
-                  </p>
-                </div>
-              </div>
-              <div data-seq className="flex gap-6">
-                <div className="shrink-0">
-                  <span className="font-display text-accent text-[20px]">
-                    02
-                  </span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-[20px] leading-[1.3] mb-3">
-                    Share your code or context
-                  </h4>
-                  <p className="text-text-secondary leading-[1.7]">
-                    Before the session, share a repo link, screenshots, or
-                    whatever helps me understand the situation. The more context
-                    upfront, the more value in the session.
-                  </p>
-                </div>
-              </div>
-              <div data-seq className="flex gap-6">
-                <div className="shrink-0">
-                  <span className="font-display text-accent text-[20px]">
-                    03
-                  </span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-[20px] leading-[1.3] mb-3">
-                    Live session + written summary
-                  </h4>
-                  <p className="text-text-secondary leading-[1.7]">
-                    We jump on a call. I review your code, answer your
-                    questions, and give you direct, honest technical guidance.
-                    Afterwards, you get a written summary of what we covered and
-                    what to do next.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div
-              data-seq
-              className="mt-12 bg-surface-2 rounded-[12px] border border-border p-6"
-            >
-              <p className="text-text-secondary leading-[1.7]">
-                I don't tell you what you want to hear. I tell you what's going
-                to break, what's fine, and what to focus on next.{" "}
-                <strong className="text-text-primary">
-                  Direct, honest, useful.
-                </strong>
+        <div
+          data-animate="sequence"
+          className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-4 mb-16"
+        >
+          <h2
+            data-seq
+            className="font-display text-[clamp(2rem,5vw,3rem)] tracking-[-0.02em]"
+          >
+            How it works
+          </h2>
+          <p
+            data-seq
+            className="text-lg text-text-secondary leading-relaxed max-w-md"
+          >
+            No retainer. No long-term commitment. Just senior technical help
+            when you need it.
+          </p>
+        </div>
+
+        <div
+          data-animate="stagger"
+          className="grid md:grid-cols-3 gap-px bg-border rounded-[12px] overflow-hidden mb-16"
+        >
+          {[
+            {
+              num: "01",
+              title: "Email me your problem",
+              text: "Tell me what you're building and what you need help with. I'll reply within 24 hours with whether I can help and when I'm available.",
+            },
+            {
+              num: "02",
+              title: "Share your code or context",
+              text: "Before the session, share a repo link, screenshots, or whatever helps me understand the situation. More context upfront means more value in the session.",
+            },
+            {
+              num: "03",
+              title: "Live session + written summary",
+              text: "We jump on a call. I review your code, answer your questions, and give you direct, honest guidance. Afterwards, you get a written summary of what to do next.",
+            },
+          ].map((step) => (
+            <div key={step.num} className="bg-surface-1 p-8 sm:p-10">
+              <span className="font-display text-accent text-[40px] leading-none block mb-6">
+                {step.num}
+              </span>
+              <h3 className="font-display text-[20px] leading-[1.3] tracking-[-0.01em] mb-3">
+                {step.title}
+              </h3>
+              <p className="text-text-secondary text-[15px] leading-[1.7]">
+                {step.text}
               </p>
             </div>
-          </div>
-          <div data-seq className="md:w-1/2">
-            <img
-              src="/alex-working.webp"
-              alt="Alex Price in a meeting"
-              className="w-full aspect-[4/3] rounded-[12px] object-cover"
-            />
-          </div>
+          ))}
+        </div>
+
+        {/* Image break */}
+        <img
+          data-animate="section"
+          src="/alex-working.webp"
+          alt="Alex Price in a meeting"
+          className="w-full aspect-[21/9] rounded-[12px] object-cover mb-16"
+        />
+
+        {/* Callout */}
+        <div data-animate="section" className="max-w-[700px]">
+          <blockquote className="border-l-[3px] border-accent pl-8 md:pl-10">
+            <p className="font-body text-[clamp(1.25rem,3vw,1.75rem)] leading-[1.5] italic text-text-primary">
+              I don't tell you what you want to hear. I tell you what's going to
+              break, what's fine, and what to focus on next.{" "}
+              <strong className="not-italic text-accent">
+                Direct, honest, useful.
+              </strong>
+            </p>
+          </blockquote>
         </div>
       </div>
     </section>
+
+    <hr className="border-border max-w-[1200px] mx-auto" />
 
     {/* Final CTA */}
     <section data-animate="section" className="py-24 lg:py-32 px-6">
