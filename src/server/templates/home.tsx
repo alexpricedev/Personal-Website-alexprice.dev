@@ -12,100 +12,80 @@ export const Home = () => (
     name="home"
   >
     {/* Hero */}
-    <section className="min-h-[70vh] md:min-h-screen flex items-center pt-28 md:pt-16 px-6">
-      <div className="max-w-[1200px] mx-auto w-full grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <div>
-          <h1 className="font-display text-[clamp(3rem,7vw,5.5rem)] leading-[1.05] tracking-[-0.03em] mb-8">
-            AI can build your product. It can't tell you what's{" "}
-            <em
-              className="text-accent italic whitespace-nowrap"
-              data-animate="chars"
-            >
-              {heroChars.map((c) => (
-                <span
-                  key={c.key}
-                  className="inline-block"
-                  style={{ opacity: 0 }}
-                >
-                  {c.char}
-                </span>
-              ))}
-            </em>
-          </h1>
-          <p className="text-text-secondary text-lg lg:text-xl leading-relaxed max-w-lg mb-4">
-            I'm{" "}
-            <a
-              href="/about"
-              className="text-text-primary hover:text-accent transition-colors duration-200"
-            >
-              Alex Price
-            </a>
-            , the Backseat CTO. Architecture reviews, vibe code audits, and
-            honest technical guidance for founders building with AI.
-          </p>
-          <p className="text-lg lg:text-xl leading-relaxed mb-10">
-            <strong className="text-text-primary">
-              From £75 per session. No retainer.
-            </strong>
-          </p>
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <a
-              href="/vibe-code-audit"
-              className="inline-flex items-center justify-center bg-accent text-white font-ui font-semibold text-lg px-8 py-4 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
-            >
-              Get your code audited — £150
-            </a>
-            <a
-              href="/how-it-works"
-              className="inline-flex items-center justify-center text-accent font-ui font-semibold border border-accent/25 px-8 py-4 rounded-full hover:bg-accent-subtle hover:border-accent transition-all duration-200"
-            >
-              How it works
-            </a>
-          </div>
-        </div>
-        <div className="relative hidden md:block">
-          <div
-            data-parallax="hero"
-            className="rounded-xl overflow-hidden isolate bg-bg relative aspect-[3/4] cursor-default"
+    <section className="min-h-[70vh] md:min-h-[85vh] flex flex-col justify-end pt-28 md:pt-16 pb-16 md:pb-24 px-6 relative">
+      <div className="max-w-[1200px] mx-auto w-full">
+        {/* Headline — full width, poster-scale */}
+        <h1 className="font-display text-[clamp(3rem,8.5vw,7rem)] leading-[0.95] tracking-[-0.04em] mb-8 max-w-[900px]">
+          AI can build your product. It can't tell you what's{" "}
+          <em
+            className="text-accent italic whitespace-nowrap"
+            data-animate="chars"
           >
-            <img
-              src="/hero-bg.png"
-              alt=""
-              data-parallax-layer="bg"
-              className="absolute -top-[30px] -left-[30px] w-[calc(100%+60px)] max-w-none h-[calc(100%+60px)] object-cover"
-            />
-            <img
-              src="/hero-subject.png"
-              alt="Alex Price"
-              data-parallax-layer="fg"
-              className="absolute -top-[30px] -left-[30px] w-[calc(100%+60px)] max-w-none h-[calc(100%+60px)] object-cover"
-            />
+            {heroChars.map((c) => (
+              <span key={c.key} className="inline-block" style={{ opacity: 0 }}>
+                {c.char}
+              </span>
+            ))}
+          </em>
+        </h1>
+
+        {/* Sub-hero: intro + metrics in a single row */}
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10 md:gap-16">
+          <div className="max-w-lg">
+            <p className="text-text-secondary text-lg lg:text-xl leading-relaxed mb-4">
+              I'm{" "}
+              <a
+                href="/about"
+                className="text-text-primary hover:text-accent transition-colors duration-200"
+              >
+                Alex Price
+              </a>
+              , the Backseat CTO. Architecture reviews, vibe code audits, and
+              honest technical guidance for founders building with AI.
+            </p>
+            <p className="text-lg lg:text-xl leading-relaxed mb-8">
+              <strong className="text-text-primary">
+                From £75 per session. No retainer.
+              </strong>
+            </p>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <a
+                href="/vibe-code-audit"
+                className="inline-flex items-center justify-center bg-accent text-white font-ui font-semibold text-lg px-8 py-4 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
+              >
+                Get your code audited — £150
+              </a>
+              <a
+                href="/how-it-works"
+                className="inline-flex items-center justify-center text-accent font-ui font-semibold border border-accent/25 px-8 py-4 rounded-full hover:bg-accent-subtle hover:border-accent transition-all duration-200"
+              >
+                How it works
+              </a>
+            </div>
+          </div>
+
+          {/* Metrics — right-aligned, vertical stack */}
+          <div
+            data-animate="stagger"
+            className="flex md:flex-col gap-8 md:gap-6 md:items-end md:text-right shrink-0"
+          >
+            {[
+              { value: "12+", label: "Years Building" },
+              { value: "80+", label: "Team Scaled To" },
+              { value: "#8", label: "LinkedIn Top UK" },
+              { value: "18k", label: "B2B Customers" },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <div className="font-display text-[28px] md:text-[32px] text-text-primary leading-none mb-1">
+                  {stat.value}
+                </div>
+                <div className="font-mono text-[11px] tracking-[0.1em] uppercase text-text-muted">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    </section>
-
-    {/* Metrics Strip */}
-    <section className="border-t border-border">
-      <div
-        data-animate="stagger"
-        className="max-w-[1200px] mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-12"
-      >
-        {[
-          { value: "12+", label: "Years Building" },
-          { value: "80+", label: "Team Scaled To" },
-          { value: "#8", label: "LinkedIn Top UK" },
-          { value: "18k", label: "B2B Customers" },
-        ].map((stat) => (
-          <div key={stat.label}>
-            <div className="font-display text-[32px] text-text-primary leading-none mb-1">
-              {stat.value}
-            </div>
-            <div className="font-mono text-[11px] tracking-[0.1em] uppercase text-text-muted">
-              {stat.label}
-            </div>
-          </div>
-        ))}
       </div>
     </section>
 
