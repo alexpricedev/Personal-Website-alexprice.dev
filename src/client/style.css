@@ -6,18 +6,35 @@
    ========================================== */
 
 :root {
-  --surface-base: #0C0C0C;
-  --surface-1: #161616;
-  --surface-2: #1E1E1E;
-  --surface-3: #282828;
-  --text-primary: #E8E3DD;
-  --text-secondary: #A8A29E;
-  --text-muted: #5C5955;
-  --accent: #C9A96E;
-  --accent-dim: #B8984F;
-  --accent-subtle: rgba(201, 169, 110, 0.12);
-  --border: rgba(232, 227, 221, 0.06);
-  --border-hover: rgba(232, 227, 221, 0.12);
+  --surface-base: #F4F0E8;
+  --surface-1: #ECE7DC;
+  --surface-2: #E3DDD2;
+  --surface-3: #D9D3C7;
+  --text-primary: #1A1714;
+  --text-secondary: #4A4540;
+  --text-muted: #8A837A;
+  --accent: #BF5540;
+  --accent-dim: #A34430;
+  --accent-subtle: rgba(191, 85, 64, 0.1);
+  --border: rgba(26, 23, 20, 0.08);
+  --border-hover: rgba(26, 23, 20, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface-base: #131210;
+    --surface-1: #1D1A17;
+    --surface-2: #262320;
+    --surface-3: #302D29;
+    --text-primary: #EDE8DE;
+    --text-secondary: #B5AFA7;
+    --text-muted: #6B6560;
+    --accent: #D06A52;
+    --accent-dim: #E07B62;
+    --accent-subtle: rgba(208, 106, 82, 0.12);
+    --border: rgba(237, 232, 222, 0.06);
+    --border-hover: rgba(237, 232, 222, 0.12);
+  }
 }
 
 /* ==========================================
@@ -38,9 +55,10 @@
   --color-border: var(--border);
   --color-border-hover: var(--border-hover);
 
-  --font-display: "Instrument Serif", serif;
-  --font-body: "Instrument Sans", sans-serif;
-  --font-mono: "Geist Mono", monospace;
+  --font-display: "General Sans", sans-serif;
+  --font-body: "Lora", serif;
+  --font-ui: "DM Sans", sans-serif;
+  --font-mono: "Commit Mono", monospace;
 }
 
 /* ==========================================
