@@ -12,10 +12,10 @@ export const Home = () => (
     name="home"
   >
     {/* Hero */}
-    <section className="min-h-[70vh] md:min-h-[85vh] flex flex-col justify-end pt-28 md:pt-16 pb-16 md:pb-24 px-6 relative">
+    <section className="min-h-[70vh] md:min-h-[85vh] flex flex-col justify-end pt-28 md:pt-28 pb-16 md:pb-24 px-6 relative">
       <div className="max-w-[1200px] mx-auto w-full">
         {/* Headline — full width, poster-scale */}
-        <h1 className="font-display text-[clamp(3rem,8.5vw,7rem)] leading-[0.95] tracking-[-0.04em] mb-8 max-w-[900px]">
+        <h1 className="font-display text-[clamp(3rem,7vw,5.5rem)] leading-[1] tracking-[-0.03em] mb-8 max-w-[900px]">
           AI can build your product. It can't tell you what's{" "}
           <em
             className="text-accent italic whitespace-nowrap"
