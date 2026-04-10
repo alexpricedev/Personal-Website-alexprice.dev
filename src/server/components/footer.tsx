@@ -1,7 +1,9 @@
+import { CONTACT_EMAIL, LINKEDIN_URL } from "@server/config";
+
 const socialLinks = [
-  { href: "https://linkedin.com/in/alexpricecto", label: "LinkedIn" },
+  { href: LINKEDIN_URL, label: "LinkedIn" },
   { href: "https://github.com/alexpricedev", label: "GitHub" },
-  { href: "mailto:hello@alexprice.dev", label: "Email" },
+  { href: `mailto:${CONTACT_EMAIL}`, label: "Email" },
 ];
 
 export const Footer = () => (
@@ -12,13 +14,23 @@ export const Footer = () => (
           <a
             key={link.label}
             href={link.href}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+            rel={
+              link.href.startsWith("mailto:")
+                ? undefined
+                : "noopener noreferrer"
+            }
             className="text-text-muted hover:text-accent text-sm font-body transition-colors duration-200 py-2"
           >
             {link.label}
           </a>
         ))}
+        <a
+          href="/about"
+          className="text-text-muted hover:text-accent text-sm font-body transition-colors duration-200 py-2"
+        >
+          About
+        </a>
       </nav>
       <p className="font-mono text-[11px] tracking-[0.1em] uppercase text-text-muted">
         Sheffield, UK
