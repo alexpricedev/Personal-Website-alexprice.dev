@@ -35,3 +35,37 @@ scrim.addEventListener("click", closeMenu);
 
 initScrollAnimations();
 initHoverParallax();
+
+// Checklist counter (common-issues page only)
+if (document.body.dataset.page === "common-issues") {
+  const checklist = document.querySelector("[data-checklist]");
+  if (checklist) {
+    const items = checklist.querySelectorAll<HTMLInputElement>(
+      "[data-checklist-item]",
+    );
+    const counter = checklist.querySelector("[data-checklist-counter]");
+    const cta = checklist.querySelector("[data-checklist-cta]");
+    const total = items.length;
+
+    function updateCount() {
+      if (!checklist) return;
+      const checked = checklist.querySelectorAll<HTMLInputElement>(
+        "[data-checklist-item]:checked",
+      ).length;
+      if (counter) {
+        counter.textContent = `${checked} of ${total} checked`;
+      }
+      if (cta) {
+        if (checked >= 3) {
+          cta.classList.remove("hidden");
+        } else {
+          cta.classList.add("hidden");
+        }
+      }
+    }
+
+    for (const item of items) {
+      item.addEventListener("change", updateCount);
+    }
+  }
+}
