@@ -71,6 +71,8 @@ export const WorkWithMe = () => (
         </div>
       </section>
 
+      <hr className="border-border mb-16" />
+
       {/* How it works */}
       <section data-animate="sequence" className="mb-16">
         <h2
@@ -142,6 +144,8 @@ export const WorkWithMe = () => (
         </div>
       </section>
 
+      <hr className="border-border mb-16" />
+
       {/* What I can help with */}
       <section data-animate="section" className="mb-16">
         <h2 className="font-display text-[28px] leading-[1.2] tracking-[-0.02em] mb-8">
@@ -186,41 +190,41 @@ export const WorkWithMe = () => (
 
       {/* Testimonial */}
       <section data-animate="section" className="mb-16">
-        <div className="space-y-6">
-          <div className="bg-surface-1 rounded-[12px] border border-border p-9">
-            <blockquote className="text-[clamp(1.1rem,2.5vw,1.35rem)] leading-[1.6] italic text-text-primary mb-8">
-              "We brought Alex in to extend our technical leadership as Naitiv
-              scaled. He slotted straight into the team, brought rigour to our
-              architecture and delivery, and freed us up to focus on clients and
-              strategy. If you need senior technical leadership without the
-              overhead of a full-time hire, Alex is your guy."
-            </blockquote>
-            <div className="flex items-center gap-3">
-              <img
-                src="/andrew-black.webp"
-                alt="Andrew Black"
-                className="w-11 h-11 rounded-full object-cover shrink-0"
-              />
-              <div>
-                <p className="font-semibold text-sm text-text-primary">
-                  Andrew Black
-                </p>
-                <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-text-muted">
-                  <span style={{ color: "rgba(168,162,158,0.7)" }}>CEO,</span>{" "}
-                  <a
-                    href="https://www.wearenaitiv.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-accent hover:text-accent-dim transition-colors duration-200"
-                  >
-                    Naitiv
-                  </a>
-                </p>
-              </div>
+        <blockquote className="border-l-[3px] border-accent pl-8 md:pl-10 max-w-[700px]">
+          <p className="font-body text-[clamp(1.15rem,2.5vw,1.5rem)] leading-[1.6] italic text-text-primary mb-8">
+            "We brought Alex in to extend our technical leadership as Naitiv
+            scaled. He slotted straight into the team, brought rigour to our
+            architecture and delivery, and freed us up to focus on clients and
+            strategy. If you need senior technical leadership without the
+            overhead of a full-time hire, Alex is your guy."
+          </p>
+          <footer className="flex items-center gap-3">
+            <img
+              src="/andrew-black.webp"
+              alt="Andrew Black"
+              className="w-11 h-11 rounded-full object-cover shrink-0"
+            />
+            <div>
+              <p className="font-semibold text-sm text-text-primary">
+                Andrew Black
+              </p>
+              <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-text-muted">
+                <span style={{ color: "rgba(168,162,158,0.7)" }}>CEO,</span>{" "}
+                <a
+                  href="https://www.wearenaitiv.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-accent-dim transition-colors duration-200"
+                >
+                  Naitiv
+                </a>
+              </p>
             </div>
-          </div>
-        </div>
+          </footer>
+        </blockquote>
       </section>
+
+      <hr className="border-border mb-16" />
 
       {/* Not for Everyone */}
       <section data-animate="section" className="mb-16">
