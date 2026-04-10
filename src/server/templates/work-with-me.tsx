@@ -288,7 +288,7 @@ export const WorkWithMe = () => (
             <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center sm:justify-start gap-3">
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="inline-flex items-center justify-center w-full sm:w-auto bg-accent text-[#0C0C0C] font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
+                className="inline-flex items-center justify-center w-full sm:w-auto bg-accent text-white font-ui font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
               >
                 {CONTACT_EMAIL}
               </a>

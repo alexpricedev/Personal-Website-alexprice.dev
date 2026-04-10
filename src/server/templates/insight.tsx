@@ -63,7 +63,7 @@ export const Insight = ({ article }: InsightProps) => (
             <p className="text-text-secondary mb-3">Want to talk about this?</p>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="inline-flex items-center bg-accent text-[#0C0C0C] font-semibold text-sm px-5 py-2 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
+              className="inline-flex items-center bg-accent text-white font-ui font-semibold text-sm px-5 py-2 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
             >
               Get in touch
             </a>

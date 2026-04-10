@@ -3,10 +3,13 @@ import { renderToString } from "react-dom/server";
 import { withTracking } from "../services/analytics";
 import { getAllArticles, getArticleBySlug } from "../services/articles";
 import { getAllProjects } from "../services/projects";
+import { About } from "../templates/about";
+import { CommonIssues } from "../templates/common-issues";
 import { Home } from "../templates/home";
 import { Insight } from "../templates/insight";
 import { Insights } from "../templates/insights";
 import { Projects } from "../templates/projects";
+import { VibeCodeAudit } from "../templates/vibe-code-audit";
 import { WorkWithMe } from "../templates/work-with-me";
 
 const render = (element: JSX.Element): Response =>
@@ -41,4 +44,7 @@ export const viewRoutes = {
     () => Response.redirect("/how-it-works", 301),
     "work-with-me-redirect",
   ),
+  "/about": withTracking(() => render(<About />)),
+  "/vibe-code-audit": withTracking(() => render(<VibeCodeAudit />)),
+  "/common-issues": withTracking(() => render(<CommonIssues />)),
 };
