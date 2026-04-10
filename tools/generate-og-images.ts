@@ -87,7 +87,7 @@ function buildHTML(articles: Article[]): string {
     .og {
       width: 1200px;
       height: 630px;
-      background: #F4F0E8;
+      background: #131210;
       position: relative;
       overflow: hidden;
       flex-shrink: 0;
@@ -99,7 +99,7 @@ function buildHTML(articles: Article[]): string {
       left: 0;
       width: 5px;
       height: 100%;
-      background: linear-gradient(180deg, #BF5540 0%, transparent 80%);
+      background: linear-gradient(180deg, #D06A52 0%, transparent 80%);
       opacity: 0.6;
     }
 
@@ -112,8 +112,8 @@ function buildHTML(articles: Article[]): string {
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #BF5540;
-      background: rgba(191, 85, 64, 0.1);
+      color: #D06A52;
+      background: rgba(208, 106, 82, 0.12);
       padding: 12px 28px;
       border-radius: 999px;
     }
@@ -127,7 +127,7 @@ function buildHTML(articles: Article[]): string {
       font-size: 92px;
       line-height: 1.05;
       letter-spacing: -0.02em;
-      color: #1A1714;
+      color: #EDE8DE;
       font-weight: 700;
     }
 
@@ -144,13 +144,13 @@ function buildHTML(articles: Article[]): string {
       font-family: 'General Sans', sans-serif;
       font-size: 34px;
       font-weight: 600;
-      color: #1A1714;
+      color: #EDE8DE;
     }
 
     .og-footer .sep {
       width: 2px;
       height: 24px;
-      background: rgba(26, 23, 20, 0.15);
+      background: rgba(237, 232, 222, 0.12);
     }
 
     .og-footer .site {
@@ -159,7 +159,7 @@ function buildHTML(articles: Article[]): string {
       font-weight: 600;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      color: #BF5540;
+      color: #D06A52;
     }
   </style>
 </head>

@@ -78,7 +78,7 @@ function buildHTML(variant: OGVariant): string {
     .og {
       width: 1200px;
       height: 630px;
-      background: #F4F0E8;
+      background: #131210;
       position: relative;
       overflow: hidden;
     }
@@ -89,7 +89,7 @@ function buildHTML(variant: OGVariant): string {
       left: 0;
       width: 5px;
       height: 100%;
-      background: linear-gradient(180deg, #BF5540 0%, transparent 80%);
+      background: linear-gradient(180deg, #D06A52 0%, transparent 80%);
       opacity: 0.6;
     }
 
@@ -102,8 +102,8 @@ function buildHTML(variant: OGVariant): string {
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #BF5540;
-      background: rgba(191, 85, 64, 0.1);
+      color: #D06A52;
+      background: rgba(208, 106, 82, 0.12);
       padding: 10px 24px;
       border-radius: 999px;
     }
@@ -117,7 +117,7 @@ function buildHTML(variant: OGVariant): string {
       font-size: 96px;
       line-height: 1.0;
       letter-spacing: -0.03em;
-      color: #1A1714;
+      color: #EDE8DE;
       font-weight: 700;
     }
 
@@ -129,12 +129,12 @@ function buildHTML(variant: OGVariant): string {
       font-family: 'Lora', serif;
       font-size: 32px;
       line-height: 1.4;
-      color: #4A4540;
+      color: #B5AFA7;
       font-weight: 400;
     }
 
     .og-tagline em {
-      color: #1A1714;
+      color: #EDE8DE;
       font-style: italic;
       font-weight: 600;
     }
@@ -153,9 +153,9 @@ function buildHTML(variant: OGVariant): string {
       font-weight: 400;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: #8A837A;
+      color: #6B6560;
       padding: 8px 20px;
-      border: 1px solid rgba(26, 23, 20, 0.12);
+      border: 1px solid rgba(237, 232, 222, 0.12);
       border-radius: 999px;
     }
 
@@ -174,20 +174,20 @@ function buildHTML(variant: OGVariant): string {
       font-weight: 600;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: #BF5540;
+      color: #D06A52;
     }
 
     .og-footer .sep {
       width: 2px;
       height: 20px;
-      background: rgba(26, 23, 20, 0.15);
+      background: rgba(237, 232, 222, 0.12);
     }
 
     .og-footer .price {
       font-family: 'General Sans', sans-serif;
       font-size: 26px;
       font-weight: 500;
-      color: #1A1714;
+      color: #EDE8DE;
     }
   </style>
 </head>
