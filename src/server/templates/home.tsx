@@ -67,7 +67,7 @@ export const Home = () => (
           {/* Metrics — right-aligned, vertical stack */}
           <div
             data-animate="stagger"
-            className="flex md:flex-col gap-8 md:gap-6 md:items-end md:text-right shrink-0"
+            className="flex flex-wrap md:flex-col gap-x-8 gap-y-6 md:gap-6 md:items-end md:text-right shrink-0"
           >
             {[
               { value: "12+", label: "Years Building" },
@@ -181,6 +181,8 @@ export const Home = () => (
       </div>
     </section>
 
+    <hr className="border-border max-w-[1200px] mx-auto" />
+
     {/* How it works */}
     <section className="py-24 lg:py-32 px-6">
       <div className="max-w-[1200px] mx-auto">
@@ -205,7 +207,7 @@ export const Home = () => (
 
         <div
           data-animate="stagger"
-          className="grid md:grid-cols-3 gap-px bg-border rounded-[12px] overflow-hidden mb-16"
+          className="grid md:grid-cols-3 rounded-[12px] border border-border overflow-hidden divide-y md:divide-y-0 md:divide-x divide-border mb-16"
         >
           {[
             {
@@ -264,7 +266,10 @@ export const Home = () => (
     <hr className="border-border max-w-[1200px] mx-auto" />
 
     {/* Final CTA */}
-    <section data-animate="section" className="py-24 lg:py-32 px-6">
+    <section
+      data-animate="section"
+      className="pt-24 lg:pt-32 pb-16 lg:pb-20 px-6"
+    >
       <div className="max-w-[1200px] mx-auto bg-accent rounded-2xl p-8 sm:p-12 md:p-20 relative overflow-hidden">
         <div className="relative z-10 max-w-2xl text-center md:text-left mx-auto md:mx-0">
           <h2 className="font-display text-[clamp(2.5rem,6vw,3.5rem)] tracking-[-0.03em] text-white mb-4">

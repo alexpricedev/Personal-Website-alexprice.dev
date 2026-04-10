@@ -29,6 +29,8 @@ export const WorkWithMe = () => (
         </p>
       </section>
 
+      <hr className="border-border mb-16" />
+
       {/* Pricing */}
       <section data-animate="section" className="mb-16">
         <div data-animate="stagger" className="grid md:grid-cols-2 gap-6">
