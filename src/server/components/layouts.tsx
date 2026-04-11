@@ -28,8 +28,8 @@ export function Layout({
 }: LayoutProps) {
   const fullTitle =
     title === "Home"
-      ? "Backseat CTO – Senior Technical Help, By The Hour"
-      : `${title} – Backseat CTO`;
+      ? "Alex Price – Senior Technical Help, By The Hour"
+      : `${title} – Alex Price`;
   const metaDescription =
     description ||
     "Senior technical help, by the hour. Architecture reviews, vibe code audits, and technical guidance for founders building with AI.";
@@ -64,7 +64,7 @@ export function Layout({
           "@context": "https://schema.org",
           "@type": "Person",
           name: "Alex Price",
-          alternateName: "Backseat CTO",
+          alternateName: "The Backseat CTO",
           url: SITE_URL,
           jobTitle: "Technical Consultant",
           description: metaDescription,
@@ -87,7 +87,7 @@ export function Layout({
         <meta property="og:title" content={fullTitle} />
         <meta property="og:description" content={metaDescription} />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:site_name" content="Backseat CTO" />
+        <meta property="og:site_name" content="Alex Price" />
         <meta property="og:type" content={ogType} />
         <meta property="og:image" content={ogImageUrl} />
         <meta property="og:image:width" content="1200" />

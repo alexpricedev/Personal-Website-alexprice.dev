@@ -4,7 +4,7 @@ import { CONTACT_EMAIL } from "@server/config";
 export const About = () => (
   <Layout
     title="About"
-    description="Alex Price is the Backseat CTO. 12+ years building and scaling companies, now helping founders make the technical decisions that matter."
+    description="Alex Price – the Backseat CTO. 12+ years building and scaling companies, now helping founders make the technical decisions that matter."
     name="about"
     path="/about"
   >
@@ -16,7 +16,7 @@ export const About = () => (
               About Alex
             </h1>
             <p className="text-xl text-text-secondary leading-relaxed max-w-xl">
-              The person behind Backseat CTO.
+              The Backseat CTO.
             </p>
           </header>
 

@@ -1,77 +1,79 @@
 # Design System — Alex Price
 
 ## Product Context
-- **What this is:** Personal brand and consulting site for pay-as-you-go technical help
-- **Who it's for:** Non-technical founders and AI-era builders who need senior technical oversight
-- **Space/industry:** Technical consulting / code review / architecture advisory
+- **What this is:** Personal consulting site with a productized entry point (Vibe Code Audit, £150)
+- **Who it's for:** Non-technical founders who built with AI tools and feel exposed
+- **Space/industry:** Technical consulting / vibe code audit / architecture advisory
 - **Project type:** Marketing site with blog (insights)
+- **Positioning:** "Technical co-founder for hire — the person you text when something breaks"
 
 ## Aesthetic Direction
-- **Direction:** Editorial/Magazine
-- **Decoration level:** Intentional — subtle background shifts and tonal layering only. No glassmorphism, no gradients, no glow effects. Restraint is the statement.
-- **Mood:** Quiet confidence. The site should feel like a high-end publication, not a developer portfolio or SaaS landing page. Typography does the heavy lifting. The content IS the design.
+- **Direction:** Warm Minimalism
+- **Decoration level:** Minimal — typography and whitespace do the work. No illustrations, no icons in circles, no abstract shapes. The restraint IS the design.
+- **Mood:** The site should feel like walking into a well-lit studio where someone capable works. Not a SaaS product, not a dev tool, not a portfolio. A person's space. Clean, warm, considered.
+- **Default mode:** Light mode. Non-technical founders (the actual buyers) prefer light mode. Dark mode available via system preference.
 
 ## Typography
-- **Display/Hero:** Instrument Serif — editorial weight, intellectual authority. Serifs are rare in the tech advisory space, making the site instantly recognizable. Use italic for emphasis keywords (e.g., "scalable").
-- **Body:** Instrument Sans — same foundry as Instrument Serif, effortless pairing. Clean, geometric, high legibility.
-- **UI/Labels:** Instrument Sans — SemiBold, 13px, uppercase with 0.02em tracking for navigation and label contexts.
-- **Data/Tags:** Geist Mono — for categories, reading times, metadata, technical details. Signals precision.
-- **Code:** Geist Mono
-- **Loading:** Google Fonts — `Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400` and `Instrument+Serif:ital@0;1` and `Geist+Mono:wght@400;500;600`
+- **Display/Hero:** General Sans (Fontshare) — tight, sharp geometric with enough character to not feel generic. Bold (700) for headlines, extra-bold (800) for emphasis. The precision says "I know what I'm doing."
+- **Body:** Lora (Google Fonts) — warm screen-optimized serif. The sans display + serif body contrast is the signature. Grotesque headline meets personal letter. Says "I write things worth reading."
+- **UI/Labels:** DM Sans (Google Fonts) — clean geometric for navigation, buttons, small UI elements. SemiBold (600), 13px, uppercase with 0.02em tracking for label contexts.
+- **Data/Tags:** Commit Mono (Google Fonts) — for prices (£150), reading times, metadata, technical details. Signals precision.
+- **Code:** Commit Mono
+- **Loading:** Google Fonts for Lora, DM Sans, Commit Mono. Fontshare CDN for General Sans: `https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap`
 - **Scale:**
-  - Display Large: 64px / 1.05 line-height / -0.03em tracking (clamp: 3rem–5.5rem)
-  - Display Medium: 40px / 1.15 / -0.02em
-  - Display Small: 28px / 1.2
-  - Body: 16px / 1.7
-  - Body Small: 14px / 1.65
-  - Label: 13px / SemiBold / uppercase / 0.02em
+  - Display Large: 64px / 1.05 line-height / -0.03em tracking / weight 700 (clamp: 3rem–5.5rem)
+  - Display Medium: 40px / 1.15 / -0.02em / weight 700
+  - Display Small: 28px / 1.2 / weight 700
+  - Body: 17px / 1.7
+  - Body Small: 15px / 1.65
+  - Label: 13px / DM Sans / SemiBold / uppercase / 0.02em
   - Mono: 13px / 0.02em
   - Mono Small: 11px / 0.1em / uppercase
 
 ## Color
 
 ### Approach: Restrained
-One warm accent + warm neutrals. Gold is used sparingly — rare = precious.
+One warm accent + warm neutrals. Burnt terracotta is the decisive color move. Nobody in the vibe code audit space uses it. It reads as warm, European, sophisticated. Penguin Modern Classics, not Stripe.
 
-### Dark Mode (default)
-- **Surface Base:** #0C0C0C — warm near-black
-- **Surface 1:** #161616 — cards, elevated sections
-- **Surface 2:** #1E1E1E — interactive elements, inputs
-- **Surface 3:** #282828 — highest elevation, tag backgrounds
-- **Text Primary:** #E8E3DD — warm cream (not pure white)
-- **Text Secondary:** #A8A29E — warm muted gray for body text (lightened for readability)
-- **Text Muted:** #5C5955 — metadata, timestamps, hints
-- **Accent:** #C9A96E — warm gold, used only for CTAs, key highlights, and emphasis
-- **Accent Dim:** #B8984F — hover state for accent
-- **Accent Subtle:** rgba(201, 169, 110, 0.12) — tag backgrounds, subtle highlights
-- **Border:** rgba(232, 227, 221, 0.06) — barely visible surface separation
-- **Border Hover:** rgba(232, 227, 221, 0.12) — interactive border state
+### Light Mode (default)
+- **Surface Base:** #F4F0E8 — warm off-white, aged paper
+- **Surface 1:** #ECE7DC — cards, elevated sections
+- **Surface 2:** #E3DDD2 — interactive elements, inputs
+- **Surface 3:** #D9D3C7 — highest elevation, tag backgrounds
+- **Text Primary:** #1A1714 — warm near-black
+- **Text Secondary:** #4A4540 — warm dark brown-grey for body text
+- **Text Muted:** #8A837A — metadata, timestamps, hints
+- **Accent:** #BF5540 — burnt terracotta, used for CTAs, key highlights, and emphasis
+- **Accent Hover:** #A34430 — deepened, not lightened
+- **Accent Subtle:** rgba(191, 85, 64, 0.1) — tag backgrounds, subtle highlights
+- **Border:** rgba(26, 23, 20, 0.08) — barely visible surface separation
+- **Border Hover:** rgba(26, 23, 20, 0.15) — interactive border state
 
-### Light Mode
-- **Surface Base:** #FAF8F5
-- **Surface 1:** #F0EDE8
-- **Surface 2:** #E8E4DF
-- **Surface 3:** #DDD8D2
-- **Text Primary:** #1A1817
-- **Text Secondary:** #6B6560
-- **Text Muted:** #9B958E
-- **Accent:** #A88840
-- **Accent Dim:** #967A38
-- **Accent Subtle:** rgba(168, 136, 64, 0.1)
-- **Border:** rgba(26, 24, 23, 0.08)
-- **Border Hover:** rgba(26, 24, 23, 0.15)
+### Dark Mode
+- **Surface Base:** #131210 — warm near-black
+- **Surface 1:** #1D1A17 — cards, elevated sections
+- **Surface 2:** #262320 — interactive elements, inputs
+- **Surface 3:** #302D29 — highest elevation, tag backgrounds
+- **Text Primary:** #EDE8DE — warm cream (not pure white)
+- **Text Secondary:** #B5AFA7 — warm muted for body text
+- **Text Muted:** #6B6560 — metadata, timestamps, hints
+- **Accent:** #D06A52 — softened terracotta for dark backgrounds
+- **Accent Hover:** #E07B62 — brighter, not just lighter
+- **Accent Subtle:** rgba(208, 106, 82, 0.12) — tag backgrounds, subtle highlights
+- **Border:** rgba(237, 232, 222, 0.06) — barely visible surface separation
+- **Border Hover:** rgba(237, 232, 222, 0.12) — interactive border state
+
+### Semantic Colors (light mode)
+- **Success:** #2D7A4F / bg rgba(45, 122, 79, 0.08) / border rgba(45, 122, 79, 0.2)
+- **Warning:** #A16207 / bg rgba(161, 98, 7, 0.08) / border rgba(161, 98, 7, 0.2)
+- **Error:** #C53030 / bg rgba(197, 48, 48, 0.08) / border rgba(197, 48, 48, 0.2)
+- **Info:** #2B6CB0 / bg rgba(43, 108, 176, 0.08) / border rgba(43, 108, 176, 0.2)
 
 ### Semantic Colors (dark mode)
-- **Success:** #6EE7A0 / bg rgba(74, 222, 128, 0.08) / border rgba(74, 222, 128, 0.15)
+- **Success:** #6EE7A0 / bg rgba(110, 231, 160, 0.08) / border rgba(110, 231, 160, 0.15)
 - **Warning:** #FBBF24 / bg rgba(251, 191, 36, 0.08) / border rgba(251, 191, 36, 0.15)
 - **Error:** #F87171 / bg rgba(248, 113, 113, 0.08) / border rgba(248, 113, 113, 0.15)
 - **Info:** #60A5FA / bg rgba(96, 165, 250, 0.08) / border rgba(96, 165, 250, 0.15)
-
-### Semantic Colors (light mode)
-- **Success:** #15803D / bg rgba(22, 163, 74, 0.06) / border rgba(22, 163, 74, 0.2)
-- **Warning:** #A16207 / bg rgba(202, 138, 4, 0.06) / border rgba(202, 138, 4, 0.2)
-- **Error:** #DC2626 / bg rgba(220, 38, 38, 0.06) / border rgba(220, 38, 38, 0.2)
-- **Info:** #2563EB / bg rgba(37, 99, 235, 0.06) / border rgba(37, 99, 235, 0.2)
 
 ## Spacing
 - **Base unit:** 8px
@@ -81,11 +83,11 @@ One warm accent + warm neutrals. Gold is used sparingly — rare = precious.
 - **Card padding:** 28-36px internal padding
 
 ## Layout
-- **Approach:** Creative-editorial — asymmetric grid, dramatic scale shifts between headlines and body text
+- **Approach:** Creative-editorial — asymmetric composition, poster-like first viewport, left-weighted text
 - **Grid:** Single column with max-width constraints per content type
 - **Max content width:** 1200px (container), 700px (body text), 900px (headlines)
 - **Border radius:** sm(4px) md(8px) lg(12px) full(9999px)
-- **Borders:** Use rgba opacity borders (6-12% opacity). Borders should be felt, not seen. No solid colored borders.
+- **Borders:** Use rgba opacity borders (6-15% opacity). Borders should be felt, not seen. No solid colored borders.
 
 ## Motion
 - **Approach:** Minimal-functional — only transitions that aid comprehension
@@ -99,28 +101,28 @@ One warm accent + warm neutrals. Gold is used sparingly — rare = precious.
 ## Component Patterns
 
 ### Buttons
-- **Primary:** Background accent (#C9A96E), text #0C0C0C, rounded full, font-weight 600. Hover: accent-dim + translateY(-2px).
+- **Primary:** Background accent (#BF5540 light / #D06A52 dark), text #FFFFFF, rounded full, font-weight 600, font-family DM Sans. Hover: accent-hover + translateY(-2px).
 - **Ghost:** Transparent background, accent text, 1px border at 25% accent opacity. Hover: accent-subtle background + full accent border.
 
 ### Cards
 - **Background:** Surface 1
-- **Border:** 1px solid border token (6% opacity)
+- **Border:** 1px solid border token (8% opacity light / 6% opacity dark)
 - **Border radius:** lg (12px)
-- **Hover:** Border transitions to border-hover token (12% opacity)
+- **Hover:** Border transitions to border-hover token
 - **Padding:** 28-36px
 
 ### Tags
-- **Font:** Geist Mono, 11px, uppercase, 0.06em tracking
-- **Background:** Accent subtle (12% opacity accent)
+- **Font:** Commit Mono, 11px, uppercase, 0.06em tracking
+- **Background:** Accent subtle (10-12% opacity accent)
 - **Color:** Accent
 - **Border radius:** Full (pill shape)
-- **Padding:** 6px 14px
+- **Padding:** 5px 12px
 
 ### Inputs
 - **Background:** Surface 2
 - **Border:** 1px solid border token
 - **Focus:** Border transitions to accent color
-- **Font:** Instrument Sans, 15px
+- **Font:** Lora, 15px
 - **Padding:** 14px 18px
 - **Border radius:** md (8px)
 
@@ -129,18 +131,20 @@ One warm accent + warm neutrals. Gold is used sparingly — rare = precious.
 - Gradient backgrounds or gradient buttons
 - Neon/bright accent colors (no mint, no electric blue, no purple gradients)
 - Box shadows for depth (use tonal surface shifts instead)
-- Pure white (#FFFFFF) text on dark backgrounds (use warm cream #E8E3DD)
-- Pure black (#000000) backgrounds (use warm #0C0C0C)
+- Pure white (#FFFFFF) text on dark backgrounds (use warm cream #EDE8DE)
+- Pure black (#000000) backgrounds (use warm #131210)
 - Centered long-form text (keep left-aligned for editorial feel)
 - Decorative icons in colored circles
 - Animated backgrounds or floating elements
 - 3-column feature grids with uniform card styling
+- Dark mode as default (light mode is the default for this audience)
 
 ## Decisions Log
 | Date | Decision | Rationale |
 |------|----------|-----------|
-| 2026-03-22 | Initial design system created | Created by /design-consultation. Editorial/Magazine direction with Instrument Serif + warm gold accent to differentiate from generic tech advisory sites. Key insight: fractional CTO buyers are founders/CEOs who respond to editorial authority, not developer aesthetics. |
-| 2026-03-22 | Serif display font (Instrument Serif) | Deliberate risk — serifs are rare in tech advisory. Communicates intellectual authority and editorial weight to founder audience. |
-| 2026-03-22 | Warm gold accent (#C9A96E) instead of neon | Deliberate risk — signals "established premium" rather than "tech startup." Less techy, more consultancy. |
-| 2026-03-22 | Zero decorative effects | Deliberate risk — no glass, gradients, or glow. Typography and whitespace are timeless. Confidence through restraint. |
-| 2026-03-26 | Added scroll-triggered section reveals | Subtle fade+translate animations for below-fold home page sections. GSAP ScrollTrigger for performance. Respects prefers-reduced-motion. Restraint preserved — no parallax, no looping animations. |
+| 2026-03-22 | Initial design system created | Editorial/Magazine direction with Instrument Serif + warm gold accent. |
+| 2026-04-10 | Full design system refresh | Repositioned for Vibe Code Audit + technical co-founder positioning. Competitive research showed all 7 audit competitors fall into dark-mode dev-tool or generic SaaS buckets. New direction: Warm Minimalism with General Sans + Lora + burnt terracotta to look like a trusted advisor, not an audit mill. |
+| 2026-04-10 | Light mode default | Non-technical founders (the actual buyers) prefer light mode. Every competitor defaults dark. Light mode with warm paper tones says "I'm an advisor, not a dev tool." |
+| 2026-04-10 | General Sans + Lora typography | Sans display + serif body contrast is the signature. General Sans (tight, sharp geometric) for confident headlines. Lora (warm screen serif) for readable body text. The contrast between bold grotesque and warm serif creates personality without decoration. |
+| 2026-04-10 | Burnt terracotta accent (#BF5540) | Nobody in the audit space uses terracotta. It reads as warm, European, sophisticated. Confident and unconventional without being loud. |
+| 2026-04-10 | Warm paper palette (#F4F0E8) | Warm off-white instead of clinical white or dark mode. Feels like aged paper, not a SaaS dashboard. Approachable and trustworthy. |

@@ -4,7 +4,7 @@ import { CONTACT_EMAIL } from "@server/config";
 export const Home = () => (
   <Layout
     title="Home"
-    description="The Backseat CTO. Architecture reviews, vibe code audits, and technical guidance for founders building with AI. From £75/session."
+    description="Alex Price, the Backseat CTO. Architecture reviews, vibe code audits, and technical guidance for founders building with AI. From £75/session."
     name="home"
   >
     {/* Hero */}

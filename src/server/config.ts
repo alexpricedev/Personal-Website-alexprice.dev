@@ -1,3 +1,3 @@
-export const SITE_URL = "https://backseatcto.com";
-export const CONTACT_EMAIL = "hello@backseatcto.com";
+export const SITE_URL = "https://alexprice.dev";
+export const CONTACT_EMAIL = "hello@alexprice.dev";
 export const LINKEDIN_URL = "https://linkedin.com/in/alexpricecto";

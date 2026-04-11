@@ -17,7 +17,7 @@ const pillarLabels: Record<string, string> = {
 export const Insights = ({ articles }: InsightsProps) => (
   <Layout
     title="Writing"
-    description="Things I think about — architecture, AI, building products, and the decisions that matter."
+    description="Short pieces on building with AI, making technical decisions, and knowing what matters."
     name="writing"
     path="/writing"
   >
