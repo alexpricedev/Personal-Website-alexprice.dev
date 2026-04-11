@@ -1,8 +1,5 @@
 const navLinks = [
-  { href: "/", label: "Home", name: "home" },
-  { href: "/insights", label: "Insights", name: "insights" },
   { href: "/common-issues", label: "Common Issues", name: "common-issues" },
-  { href: "/how-it-works", label: "How it works", name: "how-it-works" },
   { href: "/about", label: "About", name: "about" },
 ];
 
