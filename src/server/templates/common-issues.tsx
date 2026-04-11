@@ -203,16 +203,13 @@ export const CommonIssues = () => (
       </header>
 
       {/* Iceberg */}
-      <section
-        className="mb-20 flex justify-center md:justify-end"
-        data-animate="iceberg"
-      >
+      <section className="mb-20 flex justify-center" data-animate="iceberg">
         <svg
           data-iceberg
           role="img"
           aria-label="Iceberg diagram showing visible vs hidden software issues"
           viewBox="-140 0 700 600"
-          className="w-full max-w-[600px] lg:max-w-[700px] h-auto"
+          className="w-full h-auto"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
