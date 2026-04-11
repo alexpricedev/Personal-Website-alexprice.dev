@@ -8,7 +8,7 @@ export const Home = () => (
     name="home"
   >
     {/* Hero */}
-    <section className="min-h-[70vh] md:min-h-[85vh] flex flex-col justify-end pt-28 md:pt-28 pb-24 md:pb-32 px-6 relative">
+    <section className="min-h-[65vh] md:min-h-[80vh] flex flex-col justify-end pt-28 md:pt-28 pb-16 md:pb-24 px-6 relative">
       <div className="max-w-[1200px] mx-auto w-full">
         {/* Headline — full width, poster-scale */}
         <h1 className="font-display text-[clamp(3rem,7vw,5.5rem)] leading-[1] tracking-[-0.03em] max-w-[900px] mb-8">
