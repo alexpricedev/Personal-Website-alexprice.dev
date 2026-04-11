@@ -162,8 +162,7 @@ export const CommonIssues = () => (
           10 things AI tools get wrong in your codebase
         </h1>
         <p className="text-xl text-text-secondary leading-relaxed max-w-xl">
-          The most common security, performance, and architecture issues I find
-          in AI-generated code. Check yours for free.
+          You built it fast. Here's what to check before it has to hold up.
         </p>
       </header>
 
@@ -300,11 +299,10 @@ export const CommonIssues = () => (
             data-checklist-cta
           >
             <p className="text-white font-semibold mb-2">
-              Fewer than 7? Your code might need a professional look.
+              The self-assessment catches the obvious stuff.
             </p>
             <p className="text-white/70 text-sm mb-4">
-              The self-assessment catches the obvious issues. A Vibe Code Audit
-              catches the ones you didn't know to look for.
+              A Vibe Code Audit catches what you didn't know to look for.
             </p>
             <a
               href="/vibe-code-audit"
