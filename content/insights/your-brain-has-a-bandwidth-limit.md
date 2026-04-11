@@ -3,7 +3,7 @@ title: "Your Brain Has a Bandwidth Limit"
 date: 2026-02-24
 excerpt: "Most founders treat their brain like a server — always on, always available, always processing. But pretending your cognitive bandwidth is unlimited isn't a strategy — it's a countdown to bad decisions."
 pillar: leadership
-image: /insights-images/your-brain-has-a-bandwidth-limit.png
+image: /og/your-brain-has-a-bandwidth-limit.png
 ---
 
 Most founders treat their brain like a server — always on, always available, always processing.

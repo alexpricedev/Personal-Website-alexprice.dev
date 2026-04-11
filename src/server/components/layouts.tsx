@@ -32,7 +32,7 @@ export function Layout({
       : `${title} – Alex Price`;
   const metaDescription =
     description ||
-    "Senior technical help, by the hour. Architecture reviews, security audits, and technical guidance for founders building with AI.";
+    "Senior technical help, by the hour. Architecture reviews, vibe code audits, and technical guidance for founders building with AI.";
   const canonicalUrl = `${SITE_URL}${path}`;
   const ogImageUrl = ogImage ? `${SITE_URL}${ogImage}` : DEFAULT_OG_IMAGE;
 
@@ -64,6 +64,7 @@ export function Layout({
           "@context": "https://schema.org",
           "@type": "Person",
           name: "Alex Price",
+          alternateName: "The Backseat CTO",
           url: SITE_URL,
           jobTitle: "Technical Consultant",
           description: metaDescription,
@@ -124,6 +125,14 @@ export function Layout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
 
+        {/* Fontshare CDN for General Sans */}
+        <link rel="preconnect" href="https://api.fontshare.com" />
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap"
+          rel="stylesheet"
+        />
+
+        {/* Google Fonts for Lora, DM Sans, Commit Mono */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -131,7 +140,7 @@ export function Layout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500;600&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Commit+Mono:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
           rel="stylesheet"
         />
 

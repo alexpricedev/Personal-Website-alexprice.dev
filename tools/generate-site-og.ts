@@ -1,29 +1,74 @@
 /**
- * Generates the default site OG image (1200x630) for alexprice.dev.
+ * Generates OG images (1200x630) for the site.
  *
- * Usage: bun run tools/generate-site-og.ts
+ * Usage:
+ *   bun run tools/generate-site-og.ts              → generates default site OG
+ *   bun run tools/generate-site-og.ts vibe-code-audit → generates audit page OG
+ *   bun run tools/generate-site-og.ts common-issues   → generates common issues OG
  *
- * Renders a branded card with the site's current messaging using Puppeteer,
- * saves to public/og-image.png.
+ * Renders a branded card using Puppeteer, saves to public/.
  */
 
 import { join } from "node:path";
 import puppeteer from "puppeteer-core";
 
-const OUTPUT_PATH = join(import.meta.dir, "../public/og-image.png");
+interface OGVariant {
+  outputPath: string;
+  label: string;
+  title: string;
+  tagline: string;
+  services: string[];
+  footerLeft: string;
+  footerRight: string;
+}
 
-function buildHTML(): string {
+const variants: Record<string, OGVariant> = {
+  default: {
+    outputPath: "public/og-image.png",
+    label: "Technical Consulting",
+    title: "Alex Price",
+    tagline:
+      'Senior technical help, <em>by the hour.</em><br>Architecture, security &amp; honest guidance.',
+    services: ["Architecture", "Security", "Code Review", "AI Guidance"],
+    footerLeft: "alexprice.dev",
+    footerRight: "From £75 / session",
+  },
+  "vibe-code-audit": {
+    outputPath: "public/og-vibe-code-audit.png",
+    label: "Vibe Code Audit",
+    title: "Alex Price",
+    tagline:
+      'You built it with AI.<br>I\'ll tell you if it\'s <em>going to hold up.</em>',
+    services: ["Security", "Architecture", "Performance", "Code Quality"],
+    footerLeft: "alexprice.dev",
+    footerRight: "£150 flat fee",
+  },
+  "common-issues": {
+    outputPath: "public/og-common-issues.png",
+    label: "Free Resource",
+    title: "Alex Price",
+    tagline:
+      '10 things AI tools <em>get wrong</em><br>in your codebase.',
+    services: ["Security", "Architecture", "Performance", "Reliability"],
+    footerLeft: "alexprice.dev",
+    footerRight: "Free self-assessment",
+  },
+};
+
+function buildHTML(variant: OGVariant): string {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Commit+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #1a1a1a;
+      background: #888;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -33,16 +78,9 @@ function buildHTML(): string {
     .og {
       width: 1200px;
       height: 630px;
-      background: #0C0C0C;
+      background: #131210;
       position: relative;
       overflow: hidden;
-    }
-
-    .og::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 50% at 30% 60%, rgba(201, 169, 110, 0.04) 0%, transparent 70%);
     }
 
     .og-accent {
@@ -51,7 +89,7 @@ function buildHTML(): string {
       left: 0;
       width: 5px;
       height: 100%;
-      background: linear-gradient(180deg, #C9A96E 0%, transparent 80%);
+      background: linear-gradient(180deg, #D06A52 0%, transparent 80%);
       opacity: 0.6;
     }
 
@@ -59,13 +97,13 @@ function buildHTML(): string {
       position: absolute;
       top: 48px;
       left: 72px;
-      font-family: 'Geist Mono', monospace;
+      font-family: 'Commit Mono', monospace;
       font-size: 20px;
       font-weight: 500;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #C9A96E;
-      background: rgba(201, 169, 110, 0.12);
+      color: #D06A52;
+      background: rgba(208, 106, 82, 0.12);
       padding: 10px 24px;
       border-radius: 999px;
     }
@@ -75,12 +113,12 @@ function buildHTML(): string {
       top: 130px;
       left: 72px;
       right: 72px;
-      font-family: 'Instrument Serif', serif;
+      font-family: 'General Sans', sans-serif;
       font-size: 96px;
       line-height: 1.0;
       letter-spacing: -0.03em;
-      color: #E8E3DD;
-      font-weight: 400;
+      color: #EDE8DE;
+      font-weight: 700;
     }
 
     .og-tagline {
@@ -88,16 +126,16 @@ function buildHTML(): string {
       top: 250px;
       left: 72px;
       right: 200px;
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 36px;
-      line-height: 1.35;
-      color: #A8A29E;
+      font-family: 'Lora', serif;
+      font-size: 32px;
+      line-height: 1.4;
+      color: #B5AFA7;
       font-weight: 400;
     }
 
     .og-tagline em {
-      color: #E8E3DD;
-      font-style: normal;
+      color: #EDE8DE;
+      font-style: italic;
       font-weight: 600;
     }
 
@@ -110,14 +148,14 @@ function buildHTML(): string {
     }
 
     .og-services span {
-      font-family: 'Geist Mono', monospace;
+      font-family: 'Commit Mono', monospace;
       font-size: 16px;
       font-weight: 400;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: #5C5955;
+      color: #6B6560;
       padding: 8px 20px;
-      border: 1px solid rgba(232, 227, 221, 0.08);
+      border: 1px solid rgba(237, 232, 222, 0.12);
       border-radius: 999px;
     }
 
@@ -131,47 +169,41 @@ function buildHTML(): string {
     }
 
     .og-footer .site {
-      font-family: 'Instrument Sans', sans-serif;
+      font-family: 'General Sans', sans-serif;
       font-size: 28px;
       font-weight: 600;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: #C9A96E;
+      color: #D06A52;
     }
 
     .og-footer .sep {
       width: 2px;
       height: 20px;
-      background: rgba(232, 227, 221, 0.15);
+      background: rgba(237, 232, 222, 0.12);
     }
 
     .og-footer .price {
-      font-family: 'Instrument Sans', sans-serif;
+      font-family: 'General Sans', sans-serif;
       font-size: 26px;
       font-weight: 500;
-      color: #E8E3DD;
+      color: #EDE8DE;
     }
   </style>
 </head>
 <body>
   <div class="og" id="site-og">
     <div class="og-accent"></div>
-    <div class="og-label">Technical Consulting</div>
-    <div class="og-name">Alex Price</div>
-    <div class="og-tagline">
-      Senior technical help, <em>by the hour.</em><br>
-      Architecture, security &amp; honest guidance.
-    </div>
+    <div class="og-label">${variant.label}</div>
+    <div class="og-name">${variant.title}</div>
+    <div class="og-tagline">${variant.tagline}</div>
     <div class="og-services">
-      <span>Architecture</span>
-      <span>Security</span>
-      <span>Code Review</span>
-      <span>AI Guidance</span>
+      ${variant.services.map((s) => `<span>${s}</span>`).join("\n      ")}
     </div>
     <div class="og-footer">
-      <span class="site">alexprice.dev</span>
+      <span class="site">${variant.footerLeft}</span>
       <span class="sep"></span>
-      <span class="price">From £75 / session</span>
+      <span class="price">${variant.footerRight}</span>
     </div>
   </div>
 </body>
@@ -179,7 +211,17 @@ function buildHTML(): string {
 }
 
 async function main() {
-  const html = buildHTML();
+  const arg = process.argv[2] ?? "default";
+  const variant = variants[arg];
+  if (!variant) {
+    process.stderr.write(
+      `Unknown variant "${arg}". Available: ${Object.keys(variants).join(", ")}\n`,
+    );
+    process.exit(1);
+  }
+
+  const html = buildHTML(variant);
+  const outputPath = join(import.meta.dir, "..", variant.outputPath);
 
   const browser = await puppeteer.launch({
     headless: true,
@@ -190,7 +232,7 @@ async function main() {
   await page.setViewport({ width: 1400, height: 800, deviceScaleFactor: 1 });
   await page.setContent(html, { waitUntil: "domcontentloaded" });
 
-  // Wait for Google Fonts to load
+  // Wait for fonts to load
   await page.evaluate(
     () =>
       new Promise<void>((resolve) => {
@@ -199,9 +241,8 @@ async function main() {
           clearTimeout(timeout);
           resolve();
         });
-      })
+      }),
   );
-  // Extra pause for font rendering
   await new Promise((r) => setTimeout(r, 1000));
 
   const element = await page.$("#site-og");
@@ -210,8 +251,8 @@ async function main() {
     process.exit(1);
   }
 
-  await element.screenshot({ path: OUTPUT_PATH, type: "png" });
-  process.stdout.write(`Generated: ${OUTPUT_PATH}\n`);
+  await element.screenshot({ path: outputPath, type: "png" });
+  process.stdout.write(`Generated: ${outputPath}\n`);
 
   await browser.close();
 }
