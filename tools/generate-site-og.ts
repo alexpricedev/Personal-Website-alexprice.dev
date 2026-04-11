@@ -26,31 +26,31 @@ const variants: Record<string, OGVariant> = {
   default: {
     outputPath: "public/og-image.png",
     label: "Technical Consulting",
-    title: "Backseat CTO",
+    title: "Alex Price",
     tagline:
       'Senior technical help, <em>by the hour.</em><br>Architecture, security &amp; honest guidance.',
     services: ["Architecture", "Security", "Code Review", "AI Guidance"],
-    footerLeft: "backseatcto.com",
+    footerLeft: "alexprice.dev",
     footerRight: "From £75 / session",
   },
   "vibe-code-audit": {
     outputPath: "public/og-vibe-code-audit.png",
     label: "Vibe Code Audit",
-    title: "Backseat CTO",
+    title: "Alex Price",
     tagline:
       'You built it with AI.<br>I\'ll tell you if it\'s <em>going to hold up.</em>',
     services: ["Security", "Architecture", "Performance", "Code Quality"],
-    footerLeft: "backseatcto.com",
+    footerLeft: "alexprice.dev",
     footerRight: "£150 flat fee",
   },
   "common-issues": {
     outputPath: "public/og-common-issues.png",
     label: "Free Resource",
-    title: "Backseat CTO",
+    title: "Alex Price",
     tagline:
       '10 things AI tools <em>get wrong</em><br>in your codebase.',
     services: ["Security", "Architecture", "Performance", "Reliability"],
-    footerLeft: "backseatcto.com",
+    footerLeft: "alexprice.dev",
     footerRight: "Free self-assessment",
   },
 };

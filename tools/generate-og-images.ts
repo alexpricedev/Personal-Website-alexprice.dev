@@ -57,7 +57,7 @@ function buildHTML(articles: Article[]): string {
       <div class="og-footer">
         <span class="author">Alex Price</span>
         <span class="sep"></span>
-        <span class="site">backseatcto.com</span>
+        <span class="site">alexprice.dev</span>
       </div>
     </div>
   `,
