@@ -105,6 +105,38 @@ const issueCards = [
       "AI tools often use 'any' or skip types entirely. This means your editor can't catch bugs, and refactoring becomes guesswork.",
     fix: "Enable strict TypeScript. Define types for your API responses, database models, and component props.",
   },
+  {
+    category: "Security",
+    severity: "warning",
+    title: "No CORS configuration",
+    description:
+      "AI tools build frontends and APIs separately but rarely configure CORS headers. The first deploy to separate domains breaks every API call.",
+    fix: "Configure CORS on your API to allow your frontend origin. Use a whitelist, not a wildcard.",
+  },
+  {
+    category: "Security",
+    severity: "warning",
+    title: "No rate limiting on public endpoints",
+    description:
+      "AI-generated APIs accept unlimited requests. One bot or angry user can run up your database costs or take down your app with a simple loop.",
+    fix: "Add rate limiting middleware to all public endpoints. Start with 60 requests per minute per IP.",
+  },
+  {
+    category: "Reliability",
+    severity: "warning",
+    title: "Auth redirect loops",
+    description:
+      "AI tools often misconfigure auth middleware, creating infinite redirect loops between login and protected pages. The app appears completely broken.",
+    fix: "Ensure auth middleware has proper redirect logic with a clear unauthenticated landing page that doesn't itself require auth.",
+  },
+  {
+    category: "Reliability",
+    severity: "critical",
+    title: "No production error monitoring",
+    description:
+      "Without error tracking, you only learn about production bugs when users complain — or leave. AI tools never set up monitoring because they only work in development.",
+    fix: "Add an error monitoring service (Sentry, LogRocket, or similar). Set up alerts for error rate spikes.",
+  },
 ];
 
 const checklistItems = [
@@ -118,6 +150,10 @@ const checklistItems = [
   "No single file is longer than 300 lines",
   "TypeScript strict mode is enabled with no 'any' types",
   "You can deploy to a new environment without changing any code",
+  "CORS is configured to allow only your frontend origin, not wildcard",
+  "Public API endpoints have rate limiting enabled",
+  "Auth flows have been tested end-to-end with no redirect loops",
+  "Production errors are tracked and alerting is configured",
 ];
 
 const severityStyles: Record<
@@ -147,7 +183,7 @@ const severityStyles: Record<
 export const CommonIssues = () => (
   <Layout
     title="Common Issues"
-    description="The 10 most common problems in AI-generated code. Free self-assessment checklist to check your code's health."
+    description="The 14 most common problems in AI-generated code. Free self-assessment checklist to check your code's health."
     name="common-issues"
     path="/common-issues"
     ogImage="/og-common-issues.png"
@@ -159,7 +195,7 @@ export const CommonIssues = () => (
           Free resource
         </span>
         <h1 className="font-display text-[clamp(2.5rem,5vw,3.5rem)] tracking-[-0.02em] mb-4 max-w-[900px]">
-          10 things AI tools get wrong in your codebase
+          14 things AI tools get wrong in your codebase
         </h1>
         <p className="text-xl text-text-secondary leading-relaxed max-w-xl">
           You built it fast. Here's what to check before it has to hold up.
@@ -202,7 +238,7 @@ export const CommonIssues = () => (
           data-animate="section"
           className="font-display text-[28px] leading-[1.2] tracking-[-0.02em] mb-8"
         >
-          The 10 most common issues
+          The 14 most common issues
         </h2>
         <div data-animate="stagger" className="space-y-6 max-w-[700px]">
           {issueCards.map((issue, i) => {
@@ -291,7 +327,7 @@ export const CommonIssues = () => (
               className="font-mono text-[13px] text-text-muted"
               data-checklist-counter
             >
-              0 of 10 checked
+              0 of 14 checked
             </p>
           </div>
           <div
@@ -322,7 +358,7 @@ export const CommonIssues = () => (
             Want the full picture?
           </h2>
           <p className="text-text-secondary mb-6">
-            This page covers the top 10 issues. A Vibe Code Audit covers
+            This page covers the top 14 issues. A Vibe Code Audit covers
             everything — security, architecture, performance, and reliability —
             with a written report and walkthrough call.
           </p>
