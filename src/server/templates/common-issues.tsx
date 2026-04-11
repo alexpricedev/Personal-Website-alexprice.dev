@@ -195,10 +195,10 @@ export const CommonIssues = () => (
           Free resource
         </span>
         <h1 className="font-display text-[clamp(2.5rem,5vw,3.5rem)] tracking-[-0.02em] mb-4 max-w-[900px]">
-          14 things AI tools get wrong in your codebase
+          Your app looks great on the surface
         </h1>
         <p className="text-xl text-text-secondary leading-relaxed max-w-xl">
-          You built it fast. Here's what to check before it has to hold up.
+          AI tools build what you can see. The problems are underneath.
         </p>
       </header>
 
