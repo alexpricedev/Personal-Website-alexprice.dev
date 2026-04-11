@@ -11,14 +11,9 @@ export const Home = () => (
     <section className="min-h-[70vh] md:min-h-[85vh] flex flex-col justify-end pt-28 md:pt-28 pb-16 md:pb-24 px-6 relative">
       <div className="max-w-[1200px] mx-auto w-full">
         {/* Headline — full width, poster-scale */}
-        <div className="mb-8">
-          <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
-            Backseat CTO
-          </span>
-          <h1 className="font-display text-[clamp(3rem,7vw,5.5rem)] leading-[1] tracking-[-0.03em] max-w-[900px]">
-            It's not a side project anymore.
-          </h1>
-        </div>
+        <h1 className="font-display text-[clamp(3rem,7vw,5.5rem)] leading-[1] tracking-[-0.03em] max-w-[900px] mb-8">
+          It's not a side project anymore.
+        </h1>
 
         {/* Sub-hero: intro + metrics in a single row */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-10 md:gap-16">
