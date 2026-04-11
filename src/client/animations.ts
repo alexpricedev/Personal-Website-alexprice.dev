@@ -169,3 +169,74 @@ export function initScrollAnimations(): void {
     });
   }
 }
+
+export function initIcebergAnimation(): void {
+  const svg = document.querySelector<SVGElement>("[data-iceberg]");
+  if (!svg) return;
+
+  const tip = svg.querySelector("[data-iceberg-tip]");
+  const waterline = svg.querySelector("[data-iceberg-waterline]");
+  const depth = svg.querySelector("[data-iceberg-depth]");
+  const labels = svg.querySelectorAll("[data-iceberg-label]");
+
+  if (!tip || !waterline || !depth) return;
+
+  // Respect reduced motion
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+  // Set initial states
+  gsap.set(tip, { opacity: 0, y: 24 });
+  gsap.set(waterline, {
+    opacity: 0,
+    scaleX: 0,
+    transformOrigin: "left center",
+  });
+  gsap.set(depth, { opacity: 0, y: -20, clipPath: "inset(0 0 100% 0)" });
+  gsap.set(labels, { opacity: 0 });
+
+  // Create timeline triggered by scroll
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: svg,
+      start: "top 85%",
+      once: true,
+    },
+  });
+
+  // Phase 1: Tip fades in (350ms)
+  tl.to(tip, {
+    opacity: 1,
+    y: 0,
+    duration: 0.35,
+    ease: "power2.out",
+  });
+
+  // Phase 2: Waterline draws across (200ms)
+  tl.to(waterline, {
+    opacity: 1,
+    scaleX: 1,
+    duration: 0.2,
+    ease: "power2.inOut",
+  });
+
+  // Phase 3: Underwater portion reveals (800ms total with stagger)
+  tl.to(depth, {
+    opacity: 1,
+    y: 0,
+    clipPath: "inset(0 0 0% 0)",
+    duration: 0.5,
+    ease: "power2.out",
+  });
+
+  // Phase 3b: Labels stagger in
+  tl.to(
+    labels,
+    {
+      opacity: 1,
+      duration: 0.3,
+      ease: "power2.out",
+      stagger: 0.08,
+    },
+    "-=0.3",
+  );
+}

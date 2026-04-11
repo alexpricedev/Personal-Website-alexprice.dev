@@ -1,4 +1,8 @@
-import { initHoverParallax, initScrollAnimations } from "./animations";
+import {
+  initHoverParallax,
+  initIcebergAnimation,
+  initScrollAnimations,
+} from "./animations";
 
 const toggle = document.querySelector("[data-menu-toggle]");
 const menu = document.querySelector("[data-mobile-menu]");
@@ -38,6 +42,7 @@ initHoverParallax();
 
 // Checklist counter (common-issues page only)
 if (document.body.dataset.page === "common-issues") {
+  initIcebergAnimation();
   const checklist = document.querySelector("[data-checklist]");
   if (checklist) {
     const items = checklist.querySelectorAll<HTMLInputElement>(
