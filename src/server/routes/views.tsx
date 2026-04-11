@@ -32,10 +32,6 @@ export const viewRoutes = {
     }
     return render(<Insight article={article} />);
   }),
-  "/how-it-works": withTracking(
-    () => Response.redirect("/", 301),
-    "how-it-works-redirect",
-  ),
   "/work-with-me": withTracking(
     () => Response.redirect("/", 301),
     "work-with-me-redirect",
