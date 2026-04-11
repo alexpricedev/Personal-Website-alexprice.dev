@@ -3,7 +3,7 @@ title: "The Rebuild Is The Strategy"
 date: 2026-02-10
 excerpt: "I was airlifted off a mountain in Switzerland. The doctor said twelve weeks recovery. Four weeks later, I was back in the wind tunnel."
 pillar: leadership
-image: /insights-images/the-rebuild-is-the-strategy.png
+image: /og/the-rebuild-is-the-strategy.png
 ---
 
 I was airlifted off a mountain in Switzerland after a snowboarding accident. High-grade AC joint separation. The doctor told me twelve weeks recovery, minimum.

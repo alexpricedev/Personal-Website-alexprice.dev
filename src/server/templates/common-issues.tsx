@@ -210,7 +210,7 @@ export const CommonIssues = () => (
             data-iceberg
             role="img"
             aria-label="Iceberg diagram showing visible vs hidden software issues"
-            viewBox="0 0 420 600"
+            viewBox="-140 0 700 600"
             className="w-[340px] lg:w-[420px] h-[500px] lg:h-[600px]"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -301,16 +301,49 @@ export const CommonIssues = () => (
             </g>
 
             {/* Waterline */}
-            <line
-              data-iceberg-waterline
-              x1="0"
-              y1="150"
-              x2="420"
-              y2="150"
-              stroke="var(--color-border)"
-              strokeWidth="1"
-              strokeDasharray="6 4"
-            />
+            <g data-iceberg-waterline>
+              {/* Water tint below the surface */}
+              <rect
+                x="-140"
+                y="150"
+                width="700"
+                height="450"
+                fill="var(--color-text-muted)"
+                fillOpacity="0.08"
+              />
+              {/* Water surface highlight band */}
+              <rect
+                x="-140"
+                y="147"
+                width="700"
+                height="6"
+                fill="var(--color-text-muted)"
+                fillOpacity="0.2"
+              />
+              {/* Waterline */}
+              <line
+                x1="-140"
+                y1="150"
+                x2="560"
+                y2="150"
+                stroke="var(--color-text-secondary)"
+                strokeWidth="1"
+                strokeOpacity="0.5"
+              />
+              {/* Waterline labels */}
+              <text
+                x="556"
+                y="145"
+                fill="var(--color-text-muted)"
+                fontFamily="'Commit Mono', monospace"
+                fontSize="8"
+                letterSpacing="0.1em"
+                textAnchor="end"
+                style={{ textTransform: "uppercase" }}
+              >
+                WATERLINE
+              </text>
+            </g>
 
             {/* Below-water facets */}
             <g data-iceberg-depth>

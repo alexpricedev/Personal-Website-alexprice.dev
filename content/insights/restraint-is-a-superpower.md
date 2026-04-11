@@ -3,7 +3,7 @@ title: "Restraint Is a Superpower"
 date: 2026-02-14
 excerpt: "With the rise of AI coding the barrier to building is basically gone. That's made the skill of knowing what not to build more important than ever."
 pillar: startups
-image: /insights-images/restraint-is-a-superpower.png
+image: /og/restraint-is-a-superpower.png
 ---
 
 Just because you can build something doesn't mean you should.
