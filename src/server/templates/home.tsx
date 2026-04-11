@@ -95,8 +95,7 @@ export const Home = () => (
             for what comes next?
           </p>
           <p className="text-text-primary font-medium">
-            You don't need a CTO. You need someone who's done this before to
-            take a look.
+            You don't need to hire a CTO. You need one on your side.
           </p>
         </div>
       </div>
