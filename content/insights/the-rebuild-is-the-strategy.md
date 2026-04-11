@@ -26,4 +26,4 @@ The obstacle doesn't block the path. It reshapes it. And if you're paying attent
 
 I'm back in the tunnel now, and soon I'll be back in the sky. Faster, more deliberate, and with a clearer plan than I had before the mountain decided otherwise.
 
-If you're a founder navigating a setback that's forced you to rethink your technical strategy, this is exactly the kind of situation I help with as a fractional CTO. Sometimes the best time to bring in outside technical leadership is when the old plan has stopped working.
+If you're a founder navigating a setback that's forced you to rethink your technical direction, I can help. Sometimes the best time to get a second opinion on your code is when the old plan has stopped working.

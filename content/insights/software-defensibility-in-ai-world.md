@@ -52,4 +52,4 @@ So where does defensibility actually live now?
 
 The entire value hierarchy of software is being rewritten. There's still tonnes of opportunity to make amazing and profitable products—it's just going to look different.
 
-If you're a founder working through these questions for your own product, I help Series A startups navigate exactly this kind of strategic technical decision-making.
+If you're a founder working through these questions for your own product, this is exactly the kind of strategic thinking I help with.
