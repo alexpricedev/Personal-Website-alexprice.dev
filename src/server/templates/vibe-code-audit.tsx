@@ -5,32 +5,32 @@ const auditIncludes = [
   {
     title: "Security review",
     description:
-      "Authentication, authorization, input validation, secrets management. The things AI tools consistently get wrong.",
+      "Authentication, input validation, secrets management, data exposure.",
   },
   {
     title: "Architecture assessment",
     description:
-      "Database design, API structure, hosting choices. Will this hold up at 1,000 users? 10,000?",
+      "Database design, API structure, will it scale past your first 1,000 users?",
   },
   {
     title: "Performance analysis",
     description:
-      "N+1 queries, missing indexes, unoptimized assets. The silent killers of user experience.",
+      "N+1 queries, missing indexes, asset loading — the things that slow you down at scale.",
   },
   {
     title: "Code quality review",
     description:
-      "Error handling, edge cases, maintainability. What happens when things go wrong?",
+      "Error handling, edge cases, the stuff AI generates but never tests.",
   },
   {
     title: "Written report",
     description:
-      "A prioritised list of findings with severity ratings, clear explanations, and specific fix recommendations. Not a checklist — a roadmap.",
+      "Prioritized findings with severity ratings and fix recommendations.",
   },
   {
-    title: "30-minute walkthrough call",
+    title: "30-minute walkthrough",
     description:
-      "We go through the report together. Ask anything. I'll make sure you understand every finding and what to do about it.",
+      "We go through it together. You ask questions. You leave knowing exactly what to do.",
   },
 ];
 
@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: "What if I need help fixing the issues?",
-    a: "The report is designed to be actionable — you or your AI tools can fix most issues directly from the recommendations. If you want hands-on help, I offer hourly consulting at £75/hr.",
+    a: "The report is designed to be actionable — you or your AI tools can fix most issues directly from the recommendations. If you want hands-on help, I offer hourly consulting at £150/hr.",
   },
   {
     q: "Is this just an automated scan?",
@@ -69,15 +69,15 @@ export const VibeCodeAudit = () => (
       {/* Hero */}
       <header className="mb-20">
         <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
-          Vibe Code Audit
+          Vibe Code Audit · £150
         </span>
         <h1 className="font-display text-[clamp(2.5rem,5vw,3.5rem)] tracking-[-0.02em] mb-4 max-w-[900px]">
-          You built it with AI. I'll tell you if it's going to hold up.
+          Find out what AI missed.
         </h1>
         <p className="text-xl text-text-secondary leading-relaxed max-w-xl mb-6">
-          A professional code audit for applications built with Cursor, Bolt,
-          Lovable, and other AI tools. Security, architecture, performance —
-          everything your AI assistant can't evaluate about its own work.
+          A professional code review for apps built with Cursor, Bolt, Lovable,
+          and other AI tools. Security, architecture, performance — everything
+          your AI can't evaluate about its own work.
         </p>
         <div className="flex items-baseline gap-4 mb-8">
           <span className="font-display text-[clamp(2rem,5vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-text-primary">
@@ -131,20 +131,21 @@ export const VibeCodeAudit = () => (
             <ul className="space-y-3 text-text-secondary leading-[1.7]">
               <li className="flex gap-3">
                 <span className="text-accent shrink-0 mt-1">✓</span>
-                You built your app with AI tools and aren't 100% sure what's
-                under the hood
+                You built with AI and you're not sure what's under the hood
               </li>
               <li className="flex gap-3">
                 <span className="text-accent shrink-0 mt-1">✓</span>
-                You're about to launch and want someone senior to check it first
+                You're about to launch and want a senior engineer to check your
+                work
               </li>
               <li className="flex gap-3">
                 <span className="text-accent shrink-0 mt-1">✓</span>
-                You're raising money and investors will ask about your tech
+                Investors are going to ask about your tech and you want honest
+                answers first
               </li>
               <li className="flex gap-3">
                 <span className="text-accent shrink-0 mt-1">✓</span>
-                You want honest answers, not reassurance
+                You want the truth, not reassurance
               </li>
             </ul>
           </div>
@@ -155,7 +156,7 @@ export const VibeCodeAudit = () => (
             <ul className="space-y-3 text-text-secondary leading-[1.7]">
               <li className="flex gap-3">
                 <span className="text-text-muted shrink-0 mt-1">✗</span>
-                You need someone to build it for you (try{" "}
+                You need someone to build it for you — that's what{" "}
                 <a
                   href="https://chptrs.tech"
                   target="_blank"
@@ -168,12 +169,11 @@ export const VibeCodeAudit = () => (
               </li>
               <li className="flex gap-3">
                 <span className="text-text-muted shrink-0 mt-1">✗</span>
-                You just want a certificate to show investors (this is real
-                feedback, not a rubber stamp)
+                You want a rubber stamp for investors
               </li>
               <li className="flex gap-3">
                 <span className="text-text-muted shrink-0 mt-1">✗</span>
-                Your app is still at the idea stage with no code written yet
+                You're still at the idea stage with no code yet
               </li>
             </ul>
           </div>
@@ -183,7 +183,7 @@ export const VibeCodeAudit = () => (
       {/* Sample report mockup */}
       <section data-animate="section" className="mb-20">
         <h2 className="font-display text-[28px] leading-[1.2] tracking-[-0.02em] mb-8">
-          What the report looks like
+          What a report looks like
         </h2>
         <div className="bg-surface-1 rounded-[12px] border border-border p-7 sm:p-9 max-w-[700px]">
           <div className="space-y-6">
@@ -248,9 +248,9 @@ export const VibeCodeAudit = () => (
             fine.
           </p>
           <p className="text-text-secondary leading-[1.7]">
-            A vibe code audit is the second opinion your AI can't give you. I've
-            spent 12+ years building and breaking production systems. I know
-            what fails at scale because I've been the one debugging it at 2am.
+            I've spent 12 years building and breaking production systems. I know
+            what fails at scale because I've been the one fixing it at 2am. This
+            audit is the second opinion your AI can't give you.
           </p>
         </div>
       </section>
@@ -283,11 +283,11 @@ export const VibeCodeAudit = () => (
           />
           <div className="text-center sm:text-left">
             <h2 className="font-display text-[28px] leading-[1.2] tracking-[-0.02em] mb-2">
-              Get your code audited
+              Your AI built it. Let's make sure it holds up.
             </h2>
             <p className="text-text-secondary mb-4">
-              Send me your repo link. You'll have the report within 3 working
-              days.
+              Send me your repo link and a brief description. Report within 3
+              working days.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center sm:justify-start gap-3">
               <a
