@@ -16,19 +16,19 @@ const pillarLabels: Record<string, string> = {
 
 export const Insights = ({ articles }: InsightsProps) => (
   <Layout
-    title="Insights"
-    description="Technical insights for founders building with AI. Architecture, security, and the decisions that matter."
-    name="insights"
-    path="/insights"
+    title="Writing"
+    description="Things I think about — architecture, AI, building products, and the decisions that matter."
+    name="writing"
+    path="/writing"
   >
     <div className="max-w-[700px] mx-auto px-6 pt-28 pb-20">
       <header className="mb-14">
         <h1 className="font-display text-[40px] leading-[1.15] tracking-[-0.02em] mb-4">
-          Insights
+          Writing
         </h1>
         <p className="text-text-secondary leading-[1.7]">
-          Technical insights for founders building with AI. Architecture,
-          security, and the decisions that matter.
+          Things I think about — architecture, AI, building products, and the
+          decisions that matter.
         </p>
       </header>
 
@@ -50,7 +50,7 @@ export const Insights = ({ articles }: InsightsProps) => (
           {articles.map((article, index) => (
             <a
               key={article.slug}
-              href={`/insights/${article.slug}`}
+              href={`/writing/${article.slug}`}
               className={`block py-8 group ${
                 index < articles.length - 1 ? "border-b border-border" : ""
               }`}
@@ -62,7 +62,7 @@ export const Insights = ({ articles }: InsightsProps) => (
                   </span>
                 )}
                 <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-text-muted">
-                  {article.date} · {article.readingTime} min read
+                  {article.readingTime} min read
                 </span>
               </div>
               <h2 className="font-display text-[28px] leading-[1.2] mb-3 group-hover:text-accent transition-colors duration-200">

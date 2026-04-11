@@ -19,19 +19,28 @@ const notFound = (): Response => new Response("Not found", { status: 404 });
 export const viewRoutes = {
   "/": withTracking(() => render(<Home />)),
   "/in": withTracking(() => Response.redirect("/", 302), "linkedin"),
-  "/insights": withTracking(() => {
+  "/writing": withTracking(() => {
     const articles = getAllArticles();
     return render(<Insights articles={articles} />);
   }),
-  "/insights/:slug": withTracking((req: Request) => {
+  "/writing/:slug": withTracking((req: Request) => {
     const url = new URL(req.url);
-    const slug = url.pathname.replace("/insights/", "");
+    const slug = url.pathname.replace("/writing/", "");
     const article = getArticleBySlug(slug);
     if (!article) {
       return notFound();
     }
     return render(<Insight article={article} />);
   }),
+  "/insights": withTracking(
+    () => Response.redirect("/writing", 301),
+    "insights-redirect",
+  ),
+  "/insights/:slug": withTracking((req: Request) => {
+    const url = new URL(req.url);
+    const slug = url.pathname.replace("/insights/", "");
+    return Response.redirect(`/writing/${slug}`, 301);
+  }, "insights-slug-redirect"),
   "/work-with-me": withTracking(
     () => Response.redirect("/", 301),
     "work-with-me-redirect",

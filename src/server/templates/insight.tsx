@@ -11,17 +11,17 @@ export const Insight = ({ article }: InsightProps) => (
     title={article.title}
     description={article.excerpt}
     name="insight"
-    path={`/insights/${article.slug}`}
+    path={`/writing/${article.slug}`}
     ogType="article"
     ogImage={article.image}
     publishedTime={article.isoDate}
   >
     <article className="max-w-[700px] mx-auto px-6 pt-28 pb-20">
       <a
-        href="/insights"
+        href="/writing"
         className="text-text-muted text-sm hover:text-text-secondary transition-colors duration-200 inline-block mb-10"
       >
-        ← All insights
+        ← All writing
       </a>
 
       <header className="mb-14">
@@ -37,7 +37,7 @@ export const Insight = ({ article }: InsightProps) => (
           <div>
             <p className="text-sm font-medium text-text-primary">Alex Price</p>
             <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-text-muted">
-              {article.date} · {article.readingTime} min read
+              {article.readingTime} min read
             </p>
           </div>
         </div>
