@@ -190,20 +190,10 @@ export const CommonIssues = () => (
   >
     <div className="max-w-[1200px] mx-auto px-6 pt-28 pb-20">
       {/* Hero */}
-      <header className="mb-20 flex flex-col md:flex-row md:items-center md:gap-12 lg:gap-16">
-        <div className="flex-1 min-w-0">
-          <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
-            Free resource
-          </span>
-          <h1 className="font-display text-[clamp(2.5rem,5vw,3.5rem)] tracking-[-0.02em] mb-4 max-w-[900px]">
-            14 things AI tools get wrong in your codebase
-          </h1>
-          <p className="text-xl text-text-secondary leading-relaxed max-w-xl">
-            You built it fast. Here's what to check before it has to hold up.
-          </p>
-        </div>
+      <header className="relative mb-20 min-h-[600px] lg:min-h-[700px] flex items-center">
+        {/* Iceberg background */}
         <div
-          className="flex-shrink-0 mt-12 md:mt-0 flex justify-center"
+          className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none"
           data-animate="iceberg"
         >
           <svg
@@ -211,13 +201,13 @@ export const CommonIssues = () => (
             role="img"
             aria-label="Iceberg diagram showing visible vs hidden software issues"
             viewBox="-140 0 700 600"
-            className="w-[340px] lg:w-[420px] h-[500px] lg:h-[600px]"
+            className="w-[600px] md:w-[700px] lg:w-[800px] h-auto opacity-40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            {/* Above-water tip + labels */}
-            <g data-iceberg-tip>
-              {/* Tip facets */}
+            {/* Iceberg shape */}
+            <g data-iceberg-shape>
+              {/* Above-water tip facets */}
               <polygon
                 points="210,20 170,150 250,150"
                 fill="var(--color-surface-3)"
@@ -237,90 +227,15 @@ export const CommonIssues = () => (
                 strokeWidth="1"
               />
 
-              {/* Above-water labels */}
-              <line
-                x1="250"
-                y1="60"
-                x2="310"
-                y2="60"
-                stroke="var(--color-border)"
-                strokeWidth="1"
-              />
-              <text
-                x="316"
-                y="63"
-                fill="var(--color-text-primary)"
-                fontFamily="'Commit Mono', monospace"
-                fontSize="10"
-                letterSpacing="0.06em"
-                style={{ textTransform: "uppercase" }}
-              >
-                BEAUTIFUL UI
-              </text>
-
-              <line
-                x1="170"
-                y1="90"
-                x2="100"
-                y2="90"
-                stroke="var(--color-border)"
-                strokeWidth="1"
-              />
-              <text
-                x="94"
-                y="93"
-                fill="var(--color-text-primary)"
-                fontFamily="'Commit Mono', monospace"
-                fontSize="10"
-                letterSpacing="0.06em"
-                textAnchor="end"
-                style={{ textTransform: "uppercase" }}
-              >
-                PRETTY DASHBOARDS
-              </text>
-
-              <line
-                x1="240"
-                y1="120"
-                x2="310"
-                y2="120"
-                stroke="var(--color-border)"
-                strokeWidth="1"
-              />
-              <text
-                x="316"
-                y="123"
-                fill="var(--color-text-primary)"
-                fontFamily="'Commit Mono', monospace"
-                fontSize="10"
-                letterSpacing="0.06em"
-                style={{ textTransform: "uppercase" }}
-              >
-                DEMO WITH FAKE DATA
-              </text>
-            </g>
-
-            {/* Waterline */}
-            <g data-iceberg-waterline>
-              {/* Water tint below the surface */}
+              {/* Waterline band */}
               <rect
                 x="-140"
-                y="150"
+                y="146"
                 width="700"
-                height="450"
+                height="8"
                 fill="var(--color-text-muted)"
-                fillOpacity="0.08"
+                fillOpacity="0.15"
               />
-              {/* Water surface highlight band */}
-              <rect
-                x="-140"
-                y="147"
-                width="700"
-                height="6"
-                fill="var(--color-text-muted)"
-                fillOpacity="0.2"
-              />
-              {/* Waterline */}
               <line
                 x1="-140"
                 y1="150"
@@ -328,25 +243,10 @@ export const CommonIssues = () => (
                 y2="150"
                 stroke="var(--color-text-secondary)"
                 strokeWidth="1"
-                strokeOpacity="0.5"
+                strokeOpacity="0.4"
               />
-              {/* Waterline labels */}
-              <text
-                x="556"
-                y="145"
-                fill="var(--color-text-muted)"
-                fontFamily="'Commit Mono', monospace"
-                fontSize="8"
-                letterSpacing="0.1em"
-                textAnchor="end"
-                style={{ textTransform: "uppercase" }}
-              >
-                WATERLINE
-              </text>
-            </g>
 
-            {/* Below-water facets */}
-            <g data-iceberg-depth>
+              {/* Below-water facets */}
               <polygon
                 points="140,150 210,400 100,280"
                 fill="var(--color-surface-1)"
@@ -398,8 +298,72 @@ export const CommonIssues = () => (
               />
             </g>
 
-            {/* Below-water labels */}
+            {/* Labels */}
             <g data-iceberg-labels>
+              {/* Above-water labels */}
+              <g data-iceberg-label>
+                <line
+                  x1="250"
+                  y1="60"
+                  x2="310"
+                  y2="60"
+                  stroke="var(--color-border)"
+                  strokeWidth="1"
+                />
+                <text
+                  x="316"
+                  y="63"
+                  fill="var(--color-text-primary)"
+                  fontFamily="'Commit Mono', monospace"
+                  fontSize="10"
+                  letterSpacing="0.06em"
+                >
+                  BEAUTIFUL UI
+                </text>
+              </g>
+              <g data-iceberg-label>
+                <line
+                  x1="170"
+                  y1="90"
+                  x2="100"
+                  y2="90"
+                  stroke="var(--color-border)"
+                  strokeWidth="1"
+                />
+                <text
+                  x="94"
+                  y="93"
+                  fill="var(--color-text-primary)"
+                  fontFamily="'Commit Mono', monospace"
+                  fontSize="10"
+                  letterSpacing="0.06em"
+                  textAnchor="end"
+                >
+                  PRETTY DASHBOARDS
+                </text>
+              </g>
+              <g data-iceberg-label>
+                <line
+                  x1="240"
+                  y1="120"
+                  x2="310"
+                  y2="120"
+                  stroke="var(--color-border)"
+                  strokeWidth="1"
+                />
+                <text
+                  x="316"
+                  y="123"
+                  fill="var(--color-text-primary)"
+                  fontFamily="'Commit Mono', monospace"
+                  fontSize="10"
+                  letterSpacing="0.06em"
+                >
+                  DEMO WITH FAKE DATA
+                </text>
+              </g>
+
+              {/* Below-water labels */}
               <g data-iceberg-label>
                 <line
                   x1="130"
@@ -417,7 +381,6 @@ export const CommonIssues = () => (
                   fontSize="10"
                   letterSpacing="0.06em"
                   textAnchor="end"
-                  style={{ textTransform: "uppercase" }}
                 >
                   ENVIRONMENT VARIABLES
                 </text>
@@ -438,7 +401,6 @@ export const CommonIssues = () => (
                   fontFamily="'Commit Mono', monospace"
                   fontSize="10"
                   letterSpacing="0.06em"
-                  style={{ textTransform: "uppercase" }}
                 >
                   AUTH REDIRECTS
                 </text>
@@ -460,7 +422,6 @@ export const CommonIssues = () => (
                   fontSize="10"
                   letterSpacing="0.06em"
                   textAnchor="end"
-                  style={{ textTransform: "uppercase" }}
                 >
                   CORS ERRORS
                 </text>
@@ -481,7 +442,6 @@ export const CommonIssues = () => (
                   fontFamily="'Commit Mono', monospace"
                   fontSize="10"
                   letterSpacing="0.06em"
-                  style={{ textTransform: "uppercase" }}
                 >
                   DATABASE MIGRATIONS
                 </text>
@@ -503,7 +463,6 @@ export const CommonIssues = () => (
                   fontSize="10"
                   letterSpacing="0.06em"
                   textAnchor="end"
-                  style={{ textTransform: "uppercase" }}
                 >
                   RATE LIMITS
                 </text>
@@ -524,7 +483,6 @@ export const CommonIssues = () => (
                   fontFamily="'Commit Mono', monospace"
                   fontSize="10"
                   letterSpacing="0.06em"
-                  style={{ textTransform: "uppercase" }}
                 >
                   BUILD FAILURES
                 </text>
@@ -546,13 +504,25 @@ export const CommonIssues = () => (
                   fontSize="10"
                   letterSpacing="0.06em"
                   textAnchor="end"
-                  style={{ textTransform: "uppercase" }}
                 >
                   PRODUCTION DEBUGGING
                 </text>
               </g>
             </g>
           </svg>
+        </div>
+
+        {/* Hero text overlay */}
+        <div className="relative z-10">
+          <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
+            Free resource
+          </span>
+          <h1 className="font-display text-[clamp(2.5rem,5vw,3.5rem)] tracking-[-0.02em] mb-4 max-w-[900px]">
+            14 things AI tools get wrong in your codebase
+          </h1>
+          <p className="text-xl text-text-secondary leading-relaxed max-w-xl">
+            You built it fast. Here's what to check before it has to hold up.
+          </p>
         </div>
       </header>
 

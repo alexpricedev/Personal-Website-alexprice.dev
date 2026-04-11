@@ -4,7 +4,7 @@
  * Usage: bun run tools/generate-og-images.ts
  *
  * Reads frontmatter from content/insights/*.md, renders each as a branded
- * card using Puppeteer, and saves to public/insights-images/{slug}.png.
+ * card using Puppeteer, and saves to public/og/{slug}.png.
  * Also updates the article frontmatter with the image path if missing.
  */
 
@@ -14,7 +14,7 @@ import matter from "gray-matter";
 import puppeteer from "puppeteer-core";
 
 const CONTENT_DIR = join(import.meta.dir, "../content/insights");
-const OUTPUT_DIR = join(import.meta.dir, "../public/insights-images");
+const OUTPUT_DIR = join(import.meta.dir, "../public/og");
 
 interface Article {
   slug: string;
@@ -171,7 +171,7 @@ ${cards}
 
 function ensureImageFrontmatter(article: Article): void {
   const raw = readFileSync(article.filePath, "utf-8");
-  const imagePath = `/insights-images/${article.slug}.png`;
+  const imagePath = `/og/${article.slug}.png`;
   if (raw.includes(`image:`)) return;
 
   // Insert image field after the title line in frontmatter
