@@ -70,12 +70,11 @@ export const About = () => (
               .
             </p>
             <p className="text-lg text-text-secondary leading-relaxed">
-              I started Backseat CTO because I kept seeing the same pattern:
-              non-technical founders building incredible products with AI tools,
-              but making architectural and security decisions that would cost
-              them later. They didn't need a full-time CTO. They needed someone
-              who'd been through it to look over their shoulder and say "that's
-              fine" or "fix that before it breaks."
+              I started Backseat CTO because I kept seeing the same thing:
+              founders building incredible products with AI, then making
+              technical decisions that would cost them later. They didn't need a
+              full-time CTO. They needed someone who'd done it before to look
+              over their shoulder.
             </p>
             <p className="text-xl text-text-primary font-medium">
               I help founders building with AI make the technical decisions that
