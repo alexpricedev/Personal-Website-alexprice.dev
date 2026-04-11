@@ -278,22 +278,24 @@ export const Home = () => (
           </p>
         </div>
 
-        {/* Image break */}
-        <img
+        {/* Image + Callout overlay */}
+        <div
           data-animate="section"
-          src="/alex-working.webp"
-          alt="Alex Price in a meeting"
-          className="w-full aspect-[21/9] rounded-[12px] object-cover object-[center_20%] mb-16"
-        />
-
-        {/* Callout */}
-        <div data-animate="section" className="max-w-[700px]">
-          <blockquote className="border-l-[3px] border-accent pl-8 md:pl-10">
-            <p className="font-body text-[clamp(1.25rem,3vw,1.75rem)] leading-[1.5] italic text-text-primary">
-              I don't tell you what you want to hear. I tell you what's going to
-              break, what's fine, and what to focus on next.
-            </p>
-          </blockquote>
+          className="relative flex flex-col md:flex-row md:items-start mb-16"
+        >
+          <img
+            src="/alex-working.webp"
+            alt="Alex Price in a meeting"
+            className="w-full md:w-[55%] aspect-[4/3] rounded-[12px] object-cover shrink-0"
+          />
+          <div className="relative z-10 -mt-12 mx-4 md:mt-0 md:mx-0 md:-ml-16 md:self-center bg-surface-1 border border-border rounded-[12px] p-8 md:p-10">
+            <blockquote className="border-l-[3px] border-accent pl-6 md:pl-8">
+              <p className="font-body text-[clamp(1.15rem,2.5vw,1.5rem)] leading-[1.6] italic text-text-secondary">
+                I don't tell you what you want to hear. I tell you what's fine
+                for now, what's going to break, and what to focus on next.
+              </p>
+            </blockquote>
+          </div>
         </div>
       </div>
     </section>
@@ -395,7 +397,7 @@ export const Home = () => (
                 today.
               </p>
               <a
-                href="/common-issues"
+                href="/assessment"
                 className="inline-flex items-center justify-center w-full bg-white/10 text-white border border-white/25 font-ui font-semibold text-sm px-6 py-3 rounded-full hover:bg-white/20 transition-all duration-200"
               >
                 Free self-assessment

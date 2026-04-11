@@ -182,24 +182,40 @@ const severityStyles: Record<
 
 export const CommonIssues = () => (
   <Layout
-    title="Common Issues"
+    title="Free Assessment"
     description="The 14 most common problems in AI-generated code. Free self-assessment checklist to check your code's health."
-    name="common-issues"
-    path="/common-issues"
+    name="assessment"
+    path="/assessment"
     ogImage="/og-common-issues.png"
   >
     <div className="max-w-[1200px] mx-auto px-6 pt-28 pb-20">
       {/* Hero */}
-      <header className="mb-16">
-        <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
-          Free resource
-        </span>
-        <h1 className="font-display text-[clamp(2.5rem,5vw,3.5rem)] tracking-[-0.02em] mb-4 max-w-[900px]">
+      <header className="mb-16 text-center">
+        <h1 className="font-display text-[clamp(2.5rem,5vw,3.5rem)] tracking-[-0.02em] mb-4">
           Your app looks great on the surface
         </h1>
-        <p className="text-xl text-text-secondary leading-relaxed max-w-xl">
-          AI tools build what you can see. The problems are underneath.
+        <p className="text-xl text-text-secondary leading-relaxed mb-8">
+          AI tools build what you can see.
+          The&nbsp;problems&nbsp;are&nbsp;below&nbsp;the&nbsp;surface.
         </p>
+        <p className="text-sm text-text-muted mb-2">
+          Free self-assessment — 14 issues to check
+        </p>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="text-text-muted mx-auto"
+          aria-hidden="true"
+        >
+          <path d="m6 9 6 6 6-6" />
+        </svg>
       </header>
 
       {/* Iceberg */}
@@ -233,25 +249,6 @@ export const CommonIssues = () => (
               fill="var(--color-surface-2)"
               stroke="var(--color-border)"
               strokeWidth="1"
-            />
-
-            {/* Waterline band */}
-            <rect
-              x="-140"
-              y="146"
-              width="700"
-              height="8"
-              fill="var(--color-text-muted)"
-              fillOpacity="0.15"
-            />
-            <line
-              x1="-140"
-              y1="150"
-              x2="560"
-              y2="150"
-              stroke="var(--color-text-secondary)"
-              strokeWidth="1"
-              strokeOpacity="0.4"
             />
 
             {/* Below-water facets */}
@@ -303,6 +300,27 @@ export const CommonIssues = () => (
               fillOpacity="0.8"
               stroke="var(--color-border)"
               strokeWidth="1"
+            />
+          </g>
+
+          {/* Waterline */}
+          <g data-iceberg-waterline>
+            <rect
+              x="-140"
+              y="146"
+              width="700"
+              height="8"
+              fill="var(--color-text-muted)"
+              fillOpacity="0.15"
+            />
+            <line
+              x1="-140"
+              y1="150"
+              x2="560"
+              y2="150"
+              stroke="var(--color-text-secondary)"
+              strokeWidth="1"
+              strokeOpacity="0.4"
             />
           </g>
 
@@ -523,7 +541,7 @@ export const CommonIssues = () => (
       {/* Health Score Framework */}
       <section data-animate="section" className="mb-20">
         <h2 className="font-display text-[28px] leading-[1.2] tracking-[-0.02em] mb-4">
-          The Code Health Score
+          My Code Health Score
         </h2>
         <p className="text-text-secondary leading-[1.7] max-w-[700px] mb-8">
           I evaluate every codebase across five dimensions. Most AI-built
@@ -596,7 +614,11 @@ export const CommonIssues = () => (
       </section>
 
       {/* Self-Assessment Checklist */}
-      <section data-animate="section" className="mb-20">
+      <section
+        id="checklist"
+        data-animate="section"
+        className="mb-20 scroll-mt-24"
+      >
         <h2 className="font-display text-[28px] leading-[1.2] tracking-[-0.02em] mb-4">
           Quick self-assessment
         </h2>

@@ -93,7 +93,7 @@ export const VibeCodeAudit = () => (
             Book your audit
           </a>
           <a
-            href="/common-issues"
+            href="/assessment"
             className="inline-flex items-center justify-center text-accent font-ui font-semibold border border-accent/25 px-8 py-4 rounded-full hover:bg-accent-subtle hover:border-accent transition-all duration-200"
           >
             Free self-assessment first →

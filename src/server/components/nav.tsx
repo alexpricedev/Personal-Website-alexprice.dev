@@ -1,5 +1,5 @@
 const navLinks = [
-  { href: "/common-issues", label: "Common Issues", name: "common-issues" },
+  { href: "/assessment", label: "Free Assessment", name: "assessment" },
   { href: "/writing", label: "Writing", name: "writing" },
   { href: "/about", label: "About", name: "about" },
 ];

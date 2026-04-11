@@ -41,7 +41,7 @@ initScrollAnimations();
 initHoverParallax();
 
 // Checklist counter (common-issues page only)
-if (document.body.dataset.page === "common-issues") {
+if (document.body.dataset.page === "assessment") {
   initIcebergAnimation();
   const checklist = document.querySelector("[data-checklist]");
   if (checklist) {

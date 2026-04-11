@@ -176,15 +176,20 @@ export function initIcebergAnimation(): void {
 
   const shape = svg.querySelector("[data-iceberg-shape]");
   const labels = svg.querySelectorAll("[data-iceberg-label]");
+  const waterline = svg.querySelector("[data-iceberg-waterline]");
 
   if (!shape) return;
 
-  // Respect reduced motion
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  if (reducedMotion) return;
 
   // Set initial states
   gsap.set(shape, { opacity: 0 });
   gsap.set(labels, { opacity: 0 });
+  if (waterline) gsap.set(waterline, { opacity: 0 });
 
   // Create timeline triggered by scroll
   const tl = gsap.timeline({
@@ -202,11 +207,52 @@ export function initIcebergAnimation(): void {
     ease: "power2.out",
   });
 
+  // Waterline fades in with shape
+  if (waterline) {
+    tl.to(waterline, { opacity: 1, duration: 0.6, ease: "power2.out" }, "<");
+  }
+
   // Phase 2: Labels stagger in after
   tl.to(labels, {
     opacity: 1,
     duration: 0.3,
     ease: "power2.out",
     stagger: 0.08,
+  });
+
+  // Phase 3: Start organic bobbing after reveal completes
+  tl.call(() => {
+    // Iceberg bobs with layered motions for organic feel
+    const bobTl = gsap.timeline({ repeat: -1, yoyo: true });
+    bobTl.to(shape, {
+      y: 6,
+      x: 1,
+      rotation: 0.2,
+      transformOrigin: "50% 50%",
+      duration: 2.8,
+      ease: "sine.inOut",
+    });
+    bobTl.to(shape, {
+      y: -2,
+      x: -0.5,
+      rotation: -0.15,
+      duration: 3.5,
+      ease: "sine.inOut",
+    });
+
+    // Waterline bobs with its own layered motions
+    if (waterline) {
+      const waterTl = gsap.timeline({ repeat: -1, yoyo: true });
+      waterTl.to(waterline, {
+        y: 2.5,
+        duration: 3.2,
+        ease: "sine.inOut",
+      });
+      waterTl.to(waterline, {
+        y: -1.5,
+        duration: 4,
+        ease: "sine.inOut",
+      });
+    }
   });
 }

@@ -51,5 +51,5 @@ export const viewRoutes = {
   ),
   "/about": withTracking(() => render(<About />)),
   "/vibe-code-audit": withTracking(() => render(<VibeCodeAudit />)),
-  "/common-issues": withTracking(() => render(<CommonIssues />)),
+  "/assessment": withTracking(() => render(<CommonIssues />)),
 };
