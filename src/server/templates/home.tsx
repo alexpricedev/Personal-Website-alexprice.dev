@@ -26,8 +26,9 @@ export const Home = () => (
               >
                 Alex Price
               </a>
-              , the Backseat CTO. I help founders who built with AI make sure
-              their code is ready for what comes next.
+              , the <em className="italic">Backseat</em> CTO. I help founders
+              who build with AI make sure their code is ready for what comes
+              next.
             </p>
             <p className="text-lg lg:text-xl leading-relaxed mb-8">
               <strong className="text-text-primary">

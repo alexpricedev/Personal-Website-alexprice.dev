@@ -193,7 +193,7 @@ export const CommonIssues = () => (
       <header className="relative mb-20 min-h-[600px] lg:min-h-[700px] flex items-center">
         {/* Iceberg background */}
         <div
-          className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none"
+          className="absolute inset-0 flex items-center justify-center md:justify-end overflow-hidden pointer-events-none"
           data-animate="iceberg"
         >
           <svg
