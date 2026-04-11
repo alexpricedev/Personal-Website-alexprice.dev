@@ -346,6 +346,11 @@ export const Home = () => (
             guy."
           </p>
           <footer className="flex items-center gap-4">
+            <img
+              src="/andrew-black.webp"
+              alt="Andrew Black"
+              className="w-12 h-12 rounded-full object-cover shrink-0"
+            />
             <div>
               <p className="text-sm font-semibold text-text-primary">
                 Andrew Black
