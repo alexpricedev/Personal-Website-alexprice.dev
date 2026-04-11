@@ -27,8 +27,8 @@ export const Home = () => (
                 Alex Price
               </a>
               , the <em className="italic">Backseat</em> CTO. I help founders
-              who build with AI make sure their code is ready for what comes
-              next.
+              who build with AI make sure their code doesn't become the
+              bottleneck to growth.
             </p>
             <p className="text-lg lg:text-xl leading-relaxed mb-8">
               <strong className="text-text-primary">
@@ -283,7 +283,7 @@ export const Home = () => (
           data-animate="section"
           src="/alex-working.webp"
           alt="Alex Price in a meeting"
-          className="w-full aspect-[21/9] rounded-[12px] object-cover mb-16"
+          className="w-full aspect-[21/9] rounded-[12px] object-cover object-[center_20%] mb-16"
         />
 
         {/* Callout */}

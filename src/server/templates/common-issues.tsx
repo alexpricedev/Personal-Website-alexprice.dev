@@ -190,341 +190,338 @@ export const CommonIssues = () => (
   >
     <div className="max-w-[1200px] mx-auto px-6 pt-28 pb-20">
       {/* Hero */}
-      <header className="relative mb-20 min-h-[600px] lg:min-h-[700px] flex items-center">
-        {/* Iceberg background */}
-        <div
-          className="absolute inset-0 flex items-center justify-center md:justify-end overflow-hidden pointer-events-none"
-          data-animate="iceberg"
-        >
-          <svg
-            data-iceberg
-            role="img"
-            aria-label="Iceberg diagram showing visible vs hidden software issues"
-            viewBox="-140 0 700 600"
-            className="w-[600px] md:w-[700px] lg:w-[800px] h-auto opacity-40"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* Iceberg shape */}
-            <g data-iceberg-shape>
-              {/* Above-water tip facets */}
-              <polygon
-                points="210,20 170,150 250,150"
-                fill="var(--color-surface-3)"
-                stroke="var(--color-border)"
-                strokeWidth="1"
-              />
-              <polygon
-                points="210,20 250,150 280,150"
-                fill="var(--color-surface-2)"
-                stroke="var(--color-border)"
-                strokeWidth="1"
-              />
-              <polygon
-                points="210,20 140,150 170,150"
-                fill="var(--color-surface-2)"
-                stroke="var(--color-border)"
-                strokeWidth="1"
-              />
-
-              {/* Waterline band */}
-              <rect
-                x="-140"
-                y="146"
-                width="700"
-                height="8"
-                fill="var(--color-text-muted)"
-                fillOpacity="0.15"
-              />
-              <line
-                x1="-140"
-                y1="150"
-                x2="560"
-                y2="150"
-                stroke="var(--color-text-secondary)"
-                strokeWidth="1"
-                strokeOpacity="0.4"
-              />
-
-              {/* Below-water facets */}
-              <polygon
-                points="140,150 210,400 100,280"
-                fill="var(--color-surface-1)"
-                fillOpacity="0.8"
-                stroke="var(--color-border)"
-                strokeWidth="1"
-              />
-              <polygon
-                points="140,150 280,150 210,400"
-                fill="var(--color-surface-2)"
-                fillOpacity="0.8"
-                stroke="var(--color-border)"
-                strokeWidth="1"
-              />
-              <polygon
-                points="280,150 320,280 210,400"
-                fill="var(--color-surface-1)"
-                fillOpacity="0.8"
-                stroke="var(--color-border)"
-                strokeWidth="1"
-              />
-              <polygon
-                points="100,280 210,400 80,400"
-                fill="var(--color-surface-2)"
-                fillOpacity="0.8"
-                stroke="var(--color-border)"
-                strokeWidth="1"
-              />
-              <polygon
-                points="320,280 340,400 210,400"
-                fill="var(--color-surface-2)"
-                fillOpacity="0.8"
-                stroke="var(--color-border)"
-                strokeWidth="1"
-              />
-              <polygon
-                points="80,400 210,400 210,560"
-                fill="var(--color-surface-1)"
-                fillOpacity="0.8"
-                stroke="var(--color-border)"
-                strokeWidth="1"
-              />
-              <polygon
-                points="340,400 210,400 210,560"
-                fill="var(--color-surface-2)"
-                fillOpacity="0.8"
-                stroke="var(--color-border)"
-                strokeWidth="1"
-              />
-            </g>
-
-            {/* Labels */}
-            <g data-iceberg-labels>
-              {/* Above-water labels */}
-              <g data-iceberg-label>
-                <line
-                  x1="250"
-                  y1="60"
-                  x2="310"
-                  y2="60"
-                  stroke="var(--color-border)"
-                  strokeWidth="1"
-                />
-                <text
-                  x="316"
-                  y="63"
-                  fill="var(--color-text-primary)"
-                  fontFamily="'Commit Mono', monospace"
-                  fontSize="10"
-                  letterSpacing="0.06em"
-                >
-                  BEAUTIFUL UI
-                </text>
-              </g>
-              <g data-iceberg-label>
-                <line
-                  x1="170"
-                  y1="90"
-                  x2="100"
-                  y2="90"
-                  stroke="var(--color-border)"
-                  strokeWidth="1"
-                />
-                <text
-                  x="94"
-                  y="93"
-                  fill="var(--color-text-primary)"
-                  fontFamily="'Commit Mono', monospace"
-                  fontSize="10"
-                  letterSpacing="0.06em"
-                  textAnchor="end"
-                >
-                  PRETTY DASHBOARDS
-                </text>
-              </g>
-              <g data-iceberg-label>
-                <line
-                  x1="240"
-                  y1="120"
-                  x2="310"
-                  y2="120"
-                  stroke="var(--color-border)"
-                  strokeWidth="1"
-                />
-                <text
-                  x="316"
-                  y="123"
-                  fill="var(--color-text-primary)"
-                  fontFamily="'Commit Mono', monospace"
-                  fontSize="10"
-                  letterSpacing="0.06em"
-                >
-                  DEMO WITH FAKE DATA
-                </text>
-              </g>
-
-              {/* Below-water labels */}
-              <g data-iceberg-label>
-                <line
-                  x1="130"
-                  y1="200"
-                  x2="30"
-                  y2="200"
-                  stroke="var(--color-border)"
-                  strokeWidth="1"
-                />
-                <text
-                  x="24"
-                  y="203"
-                  fill="var(--color-text-secondary)"
-                  fontFamily="'Commit Mono', monospace"
-                  fontSize="10"
-                  letterSpacing="0.06em"
-                  textAnchor="end"
-                >
-                  ENVIRONMENT VARIABLES
-                </text>
-              </g>
-              <g data-iceberg-label>
-                <line
-                  x1="290"
-                  y1="240"
-                  x2="370"
-                  y2="240"
-                  stroke="var(--color-border)"
-                  strokeWidth="1"
-                />
-                <text
-                  x="376"
-                  y="243"
-                  fill="var(--color-text-secondary)"
-                  fontFamily="'Commit Mono', monospace"
-                  fontSize="10"
-                  letterSpacing="0.06em"
-                >
-                  AUTH REDIRECTS
-                </text>
-              </g>
-              <g data-iceberg-label>
-                <line
-                  x1="115"
-                  y1="290"
-                  x2="30"
-                  y2="290"
-                  stroke="var(--color-border)"
-                  strokeWidth="1"
-                />
-                <text
-                  x="24"
-                  y="293"
-                  fill="var(--color-text-secondary)"
-                  fontFamily="'Commit Mono', monospace"
-                  fontSize="10"
-                  letterSpacing="0.06em"
-                  textAnchor="end"
-                >
-                  CORS ERRORS
-                </text>
-              </g>
-              <g data-iceberg-label>
-                <line
-                  x1="300"
-                  y1="340"
-                  x2="370"
-                  y2="340"
-                  stroke="var(--color-border)"
-                  strokeWidth="1"
-                />
-                <text
-                  x="376"
-                  y="343"
-                  fill="var(--color-text-secondary)"
-                  fontFamily="'Commit Mono', monospace"
-                  fontSize="10"
-                  letterSpacing="0.06em"
-                >
-                  DATABASE MIGRATIONS
-                </text>
-              </g>
-              <g data-iceberg-label>
-                <line
-                  x1="110"
-                  y1="400"
-                  x2="30"
-                  y2="400"
-                  stroke="var(--color-border)"
-                  strokeWidth="1"
-                />
-                <text
-                  x="24"
-                  y="403"
-                  fill="var(--color-text-muted)"
-                  fontFamily="'Commit Mono', monospace"
-                  fontSize="10"
-                  letterSpacing="0.06em"
-                  textAnchor="end"
-                >
-                  RATE LIMITS
-                </text>
-              </g>
-              <g data-iceberg-label>
-                <line
-                  x1="300"
-                  y1="460"
-                  x2="370"
-                  y2="460"
-                  stroke="var(--color-border)"
-                  strokeWidth="1"
-                />
-                <text
-                  x="376"
-                  y="463"
-                  fill="var(--color-text-muted)"
-                  fontFamily="'Commit Mono', monospace"
-                  fontSize="10"
-                  letterSpacing="0.06em"
-                >
-                  BUILD FAILURES
-                </text>
-              </g>
-              <g data-iceberg-label>
-                <line
-                  x1="195"
-                  y1="520"
-                  x2="30"
-                  y2="520"
-                  stroke="var(--color-border)"
-                  strokeWidth="1"
-                />
-                <text
-                  x="24"
-                  y="523"
-                  fill="var(--color-text-muted)"
-                  fontFamily="'Commit Mono', monospace"
-                  fontSize="10"
-                  letterSpacing="0.06em"
-                  textAnchor="end"
-                >
-                  PRODUCTION DEBUGGING
-                </text>
-              </g>
-            </g>
-          </svg>
-        </div>
-
-        {/* Hero text overlay */}
-        <div className="relative z-10">
-          <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
-            Free resource
-          </span>
-          <h1 className="font-display text-[clamp(2.5rem,5vw,3.5rem)] tracking-[-0.02em] mb-4 max-w-[900px]">
-            14 things AI tools get wrong in your codebase
-          </h1>
-          <p className="text-xl text-text-secondary leading-relaxed max-w-xl">
-            You built it fast. Here's what to check before it has to hold up.
-          </p>
-        </div>
+      <header className="mb-16">
+        <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
+          Free resource
+        </span>
+        <h1 className="font-display text-[clamp(2.5rem,5vw,3.5rem)] tracking-[-0.02em] mb-4 max-w-[900px]">
+          14 things AI tools get wrong in your codebase
+        </h1>
+        <p className="text-xl text-text-secondary leading-relaxed max-w-xl">
+          You built it fast. Here's what to check before it has to hold up.
+        </p>
       </header>
+
+      {/* Iceberg */}
+      <section
+        className="mb-20 flex justify-center md:justify-end"
+        data-animate="iceberg"
+      >
+        <svg
+          data-iceberg
+          role="img"
+          aria-label="Iceberg diagram showing visible vs hidden software issues"
+          viewBox="-140 0 700 600"
+          className="w-full max-w-[600px] lg:max-w-[700px] h-auto"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Iceberg shape */}
+          <g data-iceberg-shape>
+            {/* Above-water tip facets */}
+            <polygon
+              points="210,20 170,150 250,150"
+              fill="var(--color-surface-3)"
+              stroke="var(--color-border)"
+              strokeWidth="1"
+            />
+            <polygon
+              points="210,20 250,150 280,150"
+              fill="var(--color-surface-2)"
+              stroke="var(--color-border)"
+              strokeWidth="1"
+            />
+            <polygon
+              points="210,20 140,150 170,150"
+              fill="var(--color-surface-2)"
+              stroke="var(--color-border)"
+              strokeWidth="1"
+            />
+
+            {/* Waterline band */}
+            <rect
+              x="-140"
+              y="146"
+              width="700"
+              height="8"
+              fill="var(--color-text-muted)"
+              fillOpacity="0.15"
+            />
+            <line
+              x1="-140"
+              y1="150"
+              x2="560"
+              y2="150"
+              stroke="var(--color-text-secondary)"
+              strokeWidth="1"
+              strokeOpacity="0.4"
+            />
+
+            {/* Below-water facets */}
+            <polygon
+              points="140,150 210,400 100,280"
+              fill="var(--color-surface-1)"
+              fillOpacity="0.8"
+              stroke="var(--color-border)"
+              strokeWidth="1"
+            />
+            <polygon
+              points="140,150 280,150 210,400"
+              fill="var(--color-surface-2)"
+              fillOpacity="0.8"
+              stroke="var(--color-border)"
+              strokeWidth="1"
+            />
+            <polygon
+              points="280,150 320,280 210,400"
+              fill="var(--color-surface-1)"
+              fillOpacity="0.8"
+              stroke="var(--color-border)"
+              strokeWidth="1"
+            />
+            <polygon
+              points="100,280 210,400 80,400"
+              fill="var(--color-surface-2)"
+              fillOpacity="0.8"
+              stroke="var(--color-border)"
+              strokeWidth="1"
+            />
+            <polygon
+              points="320,280 340,400 210,400"
+              fill="var(--color-surface-2)"
+              fillOpacity="0.8"
+              stroke="var(--color-border)"
+              strokeWidth="1"
+            />
+            <polygon
+              points="80,400 210,400 210,560"
+              fill="var(--color-surface-1)"
+              fillOpacity="0.8"
+              stroke="var(--color-border)"
+              strokeWidth="1"
+            />
+            <polygon
+              points="340,400 210,400 210,560"
+              fill="var(--color-surface-2)"
+              fillOpacity="0.8"
+              stroke="var(--color-border)"
+              strokeWidth="1"
+            />
+          </g>
+
+          {/* Labels */}
+          <g data-iceberg-labels>
+            {/* Above-water labels */}
+            <g data-iceberg-label>
+              <line
+                x1="250"
+                y1="60"
+                x2="310"
+                y2="60"
+                stroke="var(--color-border)"
+                strokeWidth="1"
+              />
+              <text
+                x="316"
+                y="63"
+                fill="var(--color-text-primary)"
+                fontFamily="'Commit Mono', monospace"
+                fontSize="10"
+                letterSpacing="0.06em"
+              >
+                BEAUTIFUL UI
+              </text>
+            </g>
+            <g data-iceberg-label>
+              <line
+                x1="170"
+                y1="90"
+                x2="100"
+                y2="90"
+                stroke="var(--color-border)"
+                strokeWidth="1"
+              />
+              <text
+                x="94"
+                y="93"
+                fill="var(--color-text-primary)"
+                fontFamily="'Commit Mono', monospace"
+                fontSize="10"
+                letterSpacing="0.06em"
+                textAnchor="end"
+              >
+                PRETTY DASHBOARDS
+              </text>
+            </g>
+            <g data-iceberg-label>
+              <line
+                x1="240"
+                y1="120"
+                x2="310"
+                y2="120"
+                stroke="var(--color-border)"
+                strokeWidth="1"
+              />
+              <text
+                x="316"
+                y="123"
+                fill="var(--color-text-primary)"
+                fontFamily="'Commit Mono', monospace"
+                fontSize="10"
+                letterSpacing="0.06em"
+              >
+                DEMO WITH FAKE DATA
+              </text>
+            </g>
+
+            {/* Below-water labels */}
+            <g data-iceberg-label>
+              <line
+                x1="130"
+                y1="200"
+                x2="30"
+                y2="200"
+                stroke="var(--color-border)"
+                strokeWidth="1"
+              />
+              <text
+                x="24"
+                y="203"
+                fill="var(--color-text-secondary)"
+                fontFamily="'Commit Mono', monospace"
+                fontSize="10"
+                letterSpacing="0.06em"
+                textAnchor="end"
+              >
+                ENVIRONMENT VARIABLES
+              </text>
+            </g>
+            <g data-iceberg-label>
+              <line
+                x1="290"
+                y1="240"
+                x2="370"
+                y2="240"
+                stroke="var(--color-border)"
+                strokeWidth="1"
+              />
+              <text
+                x="376"
+                y="243"
+                fill="var(--color-text-secondary)"
+                fontFamily="'Commit Mono', monospace"
+                fontSize="10"
+                letterSpacing="0.06em"
+              >
+                AUTH REDIRECTS
+              </text>
+            </g>
+            <g data-iceberg-label>
+              <line
+                x1="115"
+                y1="290"
+                x2="30"
+                y2="290"
+                stroke="var(--color-border)"
+                strokeWidth="1"
+              />
+              <text
+                x="24"
+                y="293"
+                fill="var(--color-text-secondary)"
+                fontFamily="'Commit Mono', monospace"
+                fontSize="10"
+                letterSpacing="0.06em"
+                textAnchor="end"
+              >
+                CORS ERRORS
+              </text>
+            </g>
+            <g data-iceberg-label>
+              <line
+                x1="300"
+                y1="340"
+                x2="370"
+                y2="340"
+                stroke="var(--color-border)"
+                strokeWidth="1"
+              />
+              <text
+                x="376"
+                y="343"
+                fill="var(--color-text-secondary)"
+                fontFamily="'Commit Mono', monospace"
+                fontSize="10"
+                letterSpacing="0.06em"
+              >
+                DATABASE MIGRATIONS
+              </text>
+            </g>
+            <g data-iceberg-label>
+              <line
+                x1="110"
+                y1="400"
+                x2="30"
+                y2="400"
+                stroke="var(--color-border)"
+                strokeWidth="1"
+              />
+              <text
+                x="24"
+                y="403"
+                fill="var(--color-text-muted)"
+                fontFamily="'Commit Mono', monospace"
+                fontSize="10"
+                letterSpacing="0.06em"
+                textAnchor="end"
+              >
+                RATE LIMITS
+              </text>
+            </g>
+            <g data-iceberg-label>
+              <line
+                x1="300"
+                y1="460"
+                x2="370"
+                y2="460"
+                stroke="var(--color-border)"
+                strokeWidth="1"
+              />
+              <text
+                x="376"
+                y="463"
+                fill="var(--color-text-muted)"
+                fontFamily="'Commit Mono', monospace"
+                fontSize="10"
+                letterSpacing="0.06em"
+              >
+                BUILD FAILURES
+              </text>
+            </g>
+            <g data-iceberg-label>
+              <line
+                x1="195"
+                y1="520"
+                x2="30"
+                y2="520"
+                stroke="var(--color-border)"
+                strokeWidth="1"
+              />
+              <text
+                x="24"
+                y="523"
+                fill="var(--color-text-muted)"
+                fontFamily="'Commit Mono', monospace"
+                fontSize="10"
+                letterSpacing="0.06em"
+                textAnchor="end"
+              >
+                PRODUCTION DEBUGGING
+              </text>
+            </g>
+          </g>
+        </svg>
+      </section>
 
       {/* Health Score Framework */}
       <section data-animate="section" className="mb-20">
