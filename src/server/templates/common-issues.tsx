@@ -190,16 +190,24 @@ export const CommonIssues = () => (
   >
     <div className="max-w-[1200px] mx-auto px-6 pt-28 pb-20">
       {/* Hero */}
-      <header className="mb-20">
-        <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
-          Free resource
-        </span>
-        <h1 className="font-display text-[clamp(2.5rem,5vw,3.5rem)] tracking-[-0.02em] mb-4 max-w-[900px]">
-          14 things AI tools get wrong in your codebase
-        </h1>
-        <p className="text-xl text-text-secondary leading-relaxed max-w-xl">
-          You built it fast. Here's what to check before it has to hold up.
-        </p>
+      <header className="mb-20 flex flex-col md:flex-row md:items-center md:gap-12 lg:gap-16">
+        <div className="flex-1 min-w-0">
+          <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
+            Free resource
+          </span>
+          <h1 className="font-display text-[clamp(2.5rem,5vw,3.5rem)] tracking-[-0.02em] mb-4 max-w-[900px]">
+            14 things AI tools get wrong in your codebase
+          </h1>
+          <p className="text-xl text-text-secondary leading-relaxed max-w-xl">
+            You built it fast. Here's what to check before it has to hold up.
+          </p>
+        </div>
+        <div
+          className="flex-shrink-0 mt-12 md:mt-0 flex justify-center"
+          data-animate="iceberg"
+        >
+          <div className="w-[340px] lg:w-[420px] h-[500px] lg:h-[600px]" />
+        </div>
       </header>
 
       {/* Health Score Framework */}
