@@ -25,7 +25,7 @@ const auditIncludes = [
   {
     title: "Written report",
     description:
-      "Prioritized findings with severity ratings and fix recommendations.",
+      "Prioritised findings with severity ratings and fix recommendations.",
   },
   {
     title: "30-minute walkthrough",
@@ -130,21 +130,85 @@ export const VibeCodeAudit = () => (
             </h3>
             <ul className="space-y-3 text-text-secondary leading-[1.7]">
               <li className="flex gap-3">
-                <span className="text-accent shrink-0 mt-1">✓</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-accent shrink-0 mt-1"
+                  role="img"
+                  aria-label="Check"
+                >
+                  <path d="M18 6 7 17l-5-5" />
+                  <path d="m22 10-7.5 7.5L13 16" />
+                </svg>
                 You built with AI and you're not sure what's under the hood
               </li>
               <li className="flex gap-3">
-                <span className="text-accent shrink-0 mt-1">✓</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-accent shrink-0 mt-1"
+                  role="img"
+                  aria-label="Check"
+                >
+                  <path d="M18 6 7 17l-5-5" />
+                  <path d="m22 10-7.5 7.5L13 16" />
+                </svg>
                 You're about to launch and want a senior engineer to check your
                 work
               </li>
               <li className="flex gap-3">
-                <span className="text-accent shrink-0 mt-1">✓</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-accent shrink-0 mt-1"
+                  role="img"
+                  aria-label="Check"
+                >
+                  <path d="M18 6 7 17l-5-5" />
+                  <path d="m22 10-7.5 7.5L13 16" />
+                </svg>
                 Investors are going to ask about your tech and you want honest
                 answers first
               </li>
               <li className="flex gap-3">
-                <span className="text-accent shrink-0 mt-1">✓</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-accent shrink-0 mt-1"
+                  role="img"
+                  aria-label="Check"
+                >
+                  <path d="M18 6 7 17l-5-5" />
+                  <path d="m22 10-7.5 7.5L13 16" />
+                </svg>
                 You want the truth, not reassurance
               </li>
             </ul>
@@ -155,24 +219,74 @@ export const VibeCodeAudit = () => (
             </h3>
             <ul className="space-y-3 text-text-secondary leading-[1.7]">
               <li className="flex gap-3">
-                <span className="text-text-muted shrink-0 mt-1">✗</span>
-                You need someone to build it for you — that's what{" "}
-                <a
-                  href="https://chptrs.tech"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-accent hover:text-accent-dim transition-colors duration-200"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-text-muted shrink-0 mt-1"
+                  role="img"
+                  aria-label="Not applicable"
                 >
-                  CHPTRS
-                </a>
-                )
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M4.929 4.929 19.07 19.071" />
+                </svg>
+                <span>
+                  You need someone to build it for you — that's what{" "}
+                  <a
+                    href="https://chptrs.tech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:text-accent-dim transition-colors duration-200"
+                  >
+                    CHPTRS
+                  </a>{" "}
+                  is for
+                </span>
               </li>
               <li className="flex gap-3">
-                <span className="text-text-muted shrink-0 mt-1">✗</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-text-muted shrink-0 mt-1"
+                  role="img"
+                  aria-label="Not applicable"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M4.929 4.929 19.07 19.071" />
+                </svg>
                 You want a rubber stamp for investors
               </li>
               <li className="flex gap-3">
-                <span className="text-text-muted shrink-0 mt-1">✗</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-text-muted shrink-0 mt-1"
+                  role="img"
+                  aria-label="Not applicable"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M4.929 4.929 19.07 19.071" />
+                </svg>
                 You're still at the idea stage with no code yet
               </li>
             </ul>
