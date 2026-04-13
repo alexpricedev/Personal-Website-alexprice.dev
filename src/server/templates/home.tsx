@@ -48,7 +48,7 @@ export const Home = () => (
                 href="/vibe-code-audit"
                 className="inline-flex items-center justify-center bg-accent text-white font-ui font-semibold text-lg px-8 py-4 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
               >
-                Get your code audited — £150
+                Get your code audited — £199
               </a>
               <a
                 href="#how-it-works"
@@ -227,7 +227,7 @@ export const Home = () => (
       <div className="max-w-[1200px] mx-auto">
         <div
           data-animate="sequence"
-          className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-4 mb-16"
+          className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-16"
         >
           <h2
             data-seq
@@ -281,7 +281,7 @@ export const Home = () => (
 
         {/* Pricing */}
         <div data-animate="section" className="mb-16">
-          <p className="font-mono text-[13px] tracking-[0.02em] text-text-muted">
+          <p className="font-mono text-[15px] tracking-[0.02em] text-text-secondary">
             £75 / 30 min · £150 / hour · 20-hour package £2,500 (save £500)
           </p>
         </div>
@@ -401,7 +401,7 @@ export const Home = () => (
                 Check it yourself
               </h3>
               <p className="text-white/70 text-sm mb-4">
-                Ten common issues AI tools get wrong, with fixes you can apply
+                15 common issues AI tools get wrong, with fixes you can apply
                 today.
               </p>
               <a
@@ -413,7 +413,7 @@ export const Home = () => (
             </div>
             <div>
               <h3 className="text-white font-semibold mb-2">
-                Get a professional audit — £150
+                Get a professional audit — £199
               </h3>
               <p className="text-white/70 text-sm mb-4">
                 I review your codebase and deliver a written report with a

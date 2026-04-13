@@ -60,7 +60,7 @@ const faqs = [
 export const VibeCodeAudit = () => (
   <Layout
     title="Vibe Code Audit"
-    description="Professional code audit for AI-built applications. Security, architecture, and performance review with a written report and walkthrough call. £150."
+    description="Professional code audit for AI-built applications. Security, architecture, and performance review with a written report and walkthrough call. £199."
     name="vibe-code-audit"
     path="/vibe-code-audit"
     ogImage="/og-vibe-code-audit.png"
@@ -69,7 +69,7 @@ export const VibeCodeAudit = () => (
       {/* Hero */}
       <header className="mb-20">
         <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
-          Vibe Code Audit · £150
+          Vibe Code Audit · £199
         </span>
         <h1 className="font-display text-[clamp(2.5rem,5vw,3.5rem)] tracking-[-0.02em] mb-4 max-w-[900px]">
           Find out what AI missed.
@@ -81,7 +81,7 @@ export const VibeCodeAudit = () => (
         </p>
         <div className="flex items-baseline gap-4 mb-8">
           <span className="font-display text-[clamp(2rem,5vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-text-primary">
-            £150
+            £199
           </span>
           <span className="text-text-muted text-lg">flat fee</span>
         </div>
@@ -299,8 +299,8 @@ export const VibeCodeAudit = () => (
         <h2 className="font-display text-[28px] leading-[1.2] tracking-[-0.02em] mb-8">
           What a report looks like
         </h2>
-        <div className="bg-surface-1 rounded-[12px] border border-border p-7 sm:p-9 max-w-[700px]">
-          <div className="space-y-6">
+        <div className="relative bg-surface-1 rounded-[12px] border border-border max-w-[700px] overflow-hidden">
+          <div className="p-7 sm:p-9 space-y-6">
             <div>
               <div className="flex items-center gap-3 mb-3">
                 <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase bg-[rgba(197,48,48,0.08)] text-[#C53030] px-3 py-1 rounded-full border border-[rgba(197,48,48,0.2)]">
@@ -341,10 +341,17 @@ export const VibeCodeAudit = () => (
             </div>
             <div className="border-t border-border" />
             <p className="text-text-muted text-sm italic">
-              + 8 more findings with severity, category, and specific fix
+              More findings with severity, category, and specific fix
               recommendations…
             </p>
           </div>
+          <div
+            className="absolute bottom-0 left-0 right-0 h-28 pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(to bottom, transparent, var(--color-surface-base))",
+            }}
+          />
         </div>
       </section>
 

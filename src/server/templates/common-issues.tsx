@@ -137,6 +137,14 @@ const issueCards = [
       "Without error tracking, you only learn about production bugs when users complain — or leave. AI tools never set up monitoring because they only work in development.",
     fix: "Add an error monitoring service (Sentry, LogRocket, or similar). Set up alerts for error rate spikes.",
   },
+  {
+    category: "Maintainability",
+    severity: "warning",
+    title: "No automated tests",
+    description:
+      "AI tools build features but never write tests. The code works today, but you have no safety net. Change one thing, silently break three others.",
+    fix: "Start with integration tests for your critical paths: sign-up, checkout, data creation. You don't need 100% coverage, just enough to catch regressions.",
+  },
 ];
 
 const checklistItems = [
@@ -154,6 +162,7 @@ const checklistItems = [
   "Public API endpoints have rate limiting enabled",
   "Auth flows have been tested end-to-end with no redirect loops",
   "Production errors are tracked and alerting is configured",
+  "Critical user paths (sign-up, checkout) have automated tests",
 ];
 
 const severityStyles: Record<
@@ -183,7 +192,7 @@ const severityStyles: Record<
 export const CommonIssues = () => (
   <Layout
     title="Free Assessment"
-    description="The 14 most common problems in AI-generated code. Free self-assessment checklist to check your code's health."
+    description="The 15 most common problems in AI-generated code. Free self-assessment checklist to check your code's health."
     name="assessment"
     path="/assessment"
     ogImage="/og-common-issues.png"
@@ -199,7 +208,7 @@ export const CommonIssues = () => (
           The&nbsp;problems&nbsp;are&nbsp;below&nbsp;the&nbsp;surface.
         </p>
         <p className="text-sm text-text-muted mb-2">
-          Free self-assessment — 14 issues to check
+          Free self-assessment — 15 issues to check
         </p>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -219,33 +228,37 @@ export const CommonIssues = () => (
       </header>
 
       {/* Iceberg */}
-      <section className="mb-20 flex justify-center" data-animate="iceberg">
+      <section
+        className="mb-20 w-[100vw] relative left-1/2 -translate-x-1/2 overflow-hidden"
+        data-animate="iceberg"
+      >
         <svg
           data-iceberg
           role="img"
           aria-label="Iceberg diagram showing visible vs hidden software issues"
-          viewBox="-140 0 700 600"
+          viewBox="0 0 1000 600"
           className="w-full h-auto"
+          preserveAspectRatio="xMidYMid meet"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Iceberg shape */}
+          {/* Iceberg shape — centered at x=500 */}
           <g data-iceberg-shape>
             {/* Above-water tip facets */}
             <polygon
-              points="210,20 170,150 250,150"
+              points="500,20 460,150 540,150"
               fill="var(--color-surface-3)"
               stroke="var(--color-border)"
               strokeWidth="1"
             />
             <polygon
-              points="210,20 250,150 280,150"
+              points="500,20 540,150 570,150"
               fill="var(--color-surface-2)"
               stroke="var(--color-border)"
               strokeWidth="1"
             />
             <polygon
-              points="210,20 140,150 170,150"
+              points="500,20 430,150 460,150"
               fill="var(--color-surface-2)"
               stroke="var(--color-border)"
               strokeWidth="1"
@@ -253,49 +266,49 @@ export const CommonIssues = () => (
 
             {/* Below-water facets */}
             <polygon
-              points="140,150 210,400 100,280"
+              points="430,150 500,400 390,280"
               fill="var(--color-surface-1)"
               fillOpacity="0.8"
               stroke="var(--color-border)"
               strokeWidth="1"
             />
             <polygon
-              points="140,150 280,150 210,400"
+              points="430,150 570,150 500,400"
               fill="var(--color-surface-2)"
               fillOpacity="0.8"
               stroke="var(--color-border)"
               strokeWidth="1"
             />
             <polygon
-              points="280,150 320,280 210,400"
+              points="570,150 610,280 500,400"
               fill="var(--color-surface-1)"
               fillOpacity="0.8"
               stroke="var(--color-border)"
               strokeWidth="1"
             />
             <polygon
-              points="100,280 210,400 80,400"
+              points="390,280 500,400 370,400"
               fill="var(--color-surface-2)"
               fillOpacity="0.8"
               stroke="var(--color-border)"
               strokeWidth="1"
             />
             <polygon
-              points="320,280 340,400 210,400"
+              points="610,280 630,400 500,400"
               fill="var(--color-surface-2)"
               fillOpacity="0.8"
               stroke="var(--color-border)"
               strokeWidth="1"
             />
             <polygon
-              points="80,400 210,400 210,560"
+              points="370,400 500,400 500,560"
               fill="var(--color-surface-1)"
               fillOpacity="0.8"
               stroke="var(--color-border)"
               strokeWidth="1"
             />
             <polygon
-              points="340,400 210,400 210,560"
+              points="630,400 500,400 500,560"
               fill="var(--color-surface-2)"
               fillOpacity="0.8"
               stroke="var(--color-border)"
@@ -306,17 +319,17 @@ export const CommonIssues = () => (
           {/* Waterline */}
           <g data-iceberg-waterline>
             <rect
-              x="-140"
+              x="0"
               y="146"
-              width="700"
+              width="1000"
               height="8"
               fill="var(--color-text-muted)"
               fillOpacity="0.15"
             />
             <line
-              x1="-140"
+              x1="0"
               y1="150"
-              x2="560"
+              x2="1000"
               y2="150"
               stroke="var(--color-text-secondary)"
               strokeWidth="1"
@@ -329,19 +342,19 @@ export const CommonIssues = () => (
             {/* Above-water labels */}
             <g data-iceberg-label>
               <line
-                x1="250"
+                x1="540"
                 y1="60"
-                x2="310"
+                x2="620"
                 y2="60"
                 stroke="var(--color-border)"
                 strokeWidth="1"
               />
               <text
-                x="316"
-                y="63"
+                x="628"
+                y="64"
                 fill="var(--color-text-primary)"
                 fontFamily="'Commit Mono', monospace"
-                fontSize="10"
+                fontSize="13"
                 letterSpacing="0.06em"
               >
                 BEAUTIFUL UI
@@ -349,144 +362,144 @@ export const CommonIssues = () => (
             </g>
             <g data-iceberg-label>
               <line
-                x1="170"
+                x1="460"
                 y1="90"
-                x2="100"
+                x2="380"
                 y2="90"
                 stroke="var(--color-border)"
                 strokeWidth="1"
               />
               <text
-                x="94"
-                y="93"
+                x="372"
+                y="94"
                 fill="var(--color-text-primary)"
                 fontFamily="'Commit Mono', monospace"
-                fontSize="10"
+                fontSize="13"
                 letterSpacing="0.06em"
                 textAnchor="end"
               >
-                PRETTY DASHBOARDS
+                WORKS ON LOCALHOST
               </text>
             </g>
             <g data-iceberg-label>
               <line
-                x1="240"
+                x1="530"
                 y1="120"
-                x2="310"
+                x2="620"
                 y2="120"
                 stroke="var(--color-border)"
                 strokeWidth="1"
               />
               <text
-                x="316"
-                y="123"
+                x="628"
+                y="124"
                 fill="var(--color-text-primary)"
                 fontFamily="'Commit Mono', monospace"
-                fontSize="10"
+                fontSize="13"
                 letterSpacing="0.06em"
               >
-                DEMO WITH FAKE DATA
+                HAPPY PATHS WORK
               </text>
             </g>
 
             {/* Below-water labels */}
             <g data-iceberg-label>
               <line
-                x1="130"
+                x1="420"
                 y1="200"
-                x2="30"
+                x2="310"
                 y2="200"
                 stroke="var(--color-border)"
                 strokeWidth="1"
               />
               <text
-                x="24"
-                y="203"
+                x="302"
+                y="204"
                 fill="var(--color-text-secondary)"
                 fontFamily="'Commit Mono', monospace"
-                fontSize="10"
+                fontSize="13"
                 letterSpacing="0.06em"
                 textAnchor="end"
               >
-                ENVIRONMENT VARIABLES
+                NO ERROR HANDLING
               </text>
             </g>
             <g data-iceberg-label>
               <line
-                x1="290"
+                x1="580"
                 y1="240"
-                x2="370"
+                x2="680"
                 y2="240"
                 stroke="var(--color-border)"
                 strokeWidth="1"
               />
               <text
-                x="376"
-                y="243"
+                x="688"
+                y="244"
                 fill="var(--color-text-secondary)"
                 fontFamily="'Commit Mono', monospace"
-                fontSize="10"
+                fontSize="13"
                 letterSpacing="0.06em"
               >
-                AUTH REDIRECTS
+                HARDCODED API KEYS
               </text>
             </g>
             <g data-iceberg-label>
               <line
-                x1="115"
+                x1="405"
                 y1="290"
-                x2="30"
+                x2="310"
                 y2="290"
                 stroke="var(--color-border)"
                 strokeWidth="1"
               />
               <text
-                x="24"
-                y="293"
+                x="302"
+                y="294"
                 fill="var(--color-text-secondary)"
                 fontFamily="'Commit Mono', monospace"
-                fontSize="10"
+                fontSize="13"
                 letterSpacing="0.06em"
                 textAnchor="end"
               >
-                CORS ERRORS
+                ZERO TEST COVERAGE
               </text>
             </g>
             <g data-iceberg-label>
               <line
-                x1="300"
+                x1="590"
                 y1="340"
-                x2="370"
+                x2="680"
                 y2="340"
                 stroke="var(--color-border)"
                 strokeWidth="1"
               />
               <text
-                x="376"
-                y="343"
+                x="688"
+                y="344"
                 fill="var(--color-text-secondary)"
                 fontFamily="'Commit Mono', monospace"
-                fontSize="10"
+                fontSize="13"
                 letterSpacing="0.06em"
               >
-                DATABASE MIGRATIONS
+                NO STAGING ENVIRONMENT
               </text>
             </g>
             <g data-iceberg-label>
               <line
-                x1="110"
+                x1="400"
                 y1="400"
-                x2="30"
+                x2="310"
                 y2="400"
                 stroke="var(--color-border)"
                 strokeWidth="1"
               />
               <text
-                x="24"
-                y="403"
+                x="302"
+                y="404"
                 fill="var(--color-text-muted)"
                 fontFamily="'Commit Mono', monospace"
-                fontSize="10"
+                fontSize="13"
                 letterSpacing="0.06em"
                 textAnchor="end"
               >
@@ -495,19 +508,19 @@ export const CommonIssues = () => (
             </g>
             <g data-iceberg-label>
               <line
-                x1="300"
+                x1="590"
                 y1="460"
-                x2="370"
+                x2="680"
                 y2="460"
                 stroke="var(--color-border)"
                 strokeWidth="1"
               />
               <text
-                x="376"
-                y="463"
+                x="688"
+                y="464"
                 fill="var(--color-text-muted)"
                 fontFamily="'Commit Mono', monospace"
-                fontSize="10"
+                fontSize="13"
                 letterSpacing="0.06em"
               >
                 BUILD FAILURES
@@ -515,19 +528,19 @@ export const CommonIssues = () => (
             </g>
             <g data-iceberg-label>
               <line
-                x1="195"
+                x1="485"
                 y1="520"
-                x2="30"
+                x2="310"
                 y2="520"
                 stroke="var(--color-border)"
                 strokeWidth="1"
               />
               <text
-                x="24"
-                y="523"
+                x="302"
+                y="524"
                 fill="var(--color-text-muted)"
                 fontFamily="'Commit Mono', monospace"
-                fontSize="10"
+                fontSize="13"
                 letterSpacing="0.06em"
                 textAnchor="end"
               >
@@ -568,48 +581,62 @@ export const CommonIssues = () => (
         </div>
       </section>
 
-      {/* Issue Cards */}
+      {/* Issue Cards — Brick Wall */}
       <section className="mb-20">
         <h2
           data-animate="section"
           className="font-display text-[28px] leading-[1.2] tracking-[-0.02em] mb-8"
         >
-          The 14 most common issues
+          The 15 most common issues
         </h2>
-        <div data-animate="stagger" className="space-y-6 max-w-[700px]">
-          {issueCards.map((issue, i) => {
-            const severity = severityStyles[issue.severity];
-            return (
-              <div
-                key={issue.title}
-                className="bg-surface-1 rounded-[12px] border border-border p-7"
-              >
-                <div className="flex items-center gap-3 mb-3">
-                  <span className="font-mono text-[13px] text-text-muted">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span
-                    className={`inline-block font-mono text-[11px] tracking-[0.06em] uppercase ${severity.bg} ${severity.text} px-3 py-1 rounded-full border ${severity.border}`}
-                  >
-                    {severity.label}
-                  </span>
-                  <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-text-muted">
-                    {issue.category}
-                  </span>
+        <div data-animate="stagger" className="space-y-3">
+          {(() => {
+            const rows: (typeof issueCards)[] = [];
+            for (let r = 0; r < issueCards.length; r += 3) {
+              rows.push(issueCards.slice(r, r + 3));
+            }
+            let idx = 0;
+            return rows.map((row, rowIdx) => {
+              const isOffset = rowIdx % 2 === 1;
+              return (
+                <div
+                  key={`row-${row[0]?.title ?? rowIdx}`}
+                  className={`grid grid-cols-1 md:grid-cols-3 gap-3 md:w-[94%] ${isOffset ? "md:ml-auto" : ""}`}
+                >
+                  {row.map((issue) => {
+                    const severity = severityStyles[issue.severity];
+                    const num = ++idx;
+                    return (
+                      <div
+                        key={issue.title}
+                        className="bg-surface-1 rounded-[10px] border border-border p-4 sm:p-5"
+                      >
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="font-mono text-[12px] text-text-muted">
+                            {String(num).padStart(2, "0")}
+                          </span>
+                          <span
+                            className={`inline-block font-mono text-[10px] tracking-[0.06em] uppercase ${severity.bg} ${severity.text} px-2 py-0.5 rounded-full border ${severity.border}`}
+                          >
+                            {severity.label}
+                          </span>
+                          <span className="font-mono text-[10px] tracking-[0.08em] uppercase text-text-muted">
+                            {issue.category}
+                          </span>
+                        </div>
+                        <h3 className="font-semibold text-[14px] leading-snug mb-1">
+                          {issue.title}
+                        </h3>
+                        <p className="text-text-secondary text-[12px] leading-[1.55]">
+                          {issue.description}
+                        </p>
+                      </div>
+                    );
+                  })}
                 </div>
-                <h3 className="font-semibold text-[16px] mb-2">
-                  {issue.title}
-                </h3>
-                <p className="text-text-secondary text-sm leading-[1.65] mb-3">
-                  {issue.description}
-                </p>
-                <p className="text-sm leading-[1.65]">
-                  <strong className="text-text-primary">Fix: </strong>
-                  <span className="text-text-secondary">{issue.fix}</span>
-                </p>
-              </div>
-            );
-          })}
+              );
+            });
+          })()}
         </div>
       </section>
 
@@ -667,7 +694,7 @@ export const CommonIssues = () => (
               className="font-mono text-[13px] text-text-muted"
               data-checklist-counter
             >
-              0 of 14 checked
+              0 of 15 checked
             </p>
           </div>
           <div
@@ -684,7 +711,7 @@ export const CommonIssues = () => (
               href="/vibe-code-audit"
               className="inline-flex items-center justify-center bg-white text-accent font-ui font-semibold text-sm px-6 py-2.5 rounded-full hover:bg-white/90 transition-all duration-200"
             >
-              Get your code audited — £150
+              Get your code audited — £199
             </a>
           </div>
         </div>
@@ -698,7 +725,7 @@ export const CommonIssues = () => (
             Want the full picture?
           </h2>
           <p className="text-text-secondary mb-6">
-            This page covers the top 14 issues. A Vibe Code Audit covers
+            This page covers the top 15 issues. A Vibe Code Audit covers
             everything — security, architecture, performance, and reliability —
             with a written report and walkthrough call.
           </p>
@@ -707,7 +734,7 @@ export const CommonIssues = () => (
               href="/vibe-code-audit"
               className="inline-flex items-center justify-center bg-accent text-white font-ui font-semibold px-8 py-4 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
             >
-              Get your code audited — £150
+              Get your code audited — £199
             </a>
             <a
               href={`mailto:${CONTACT_EMAIL}`}
