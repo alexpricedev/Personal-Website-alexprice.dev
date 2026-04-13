@@ -9,6 +9,14 @@ export const Home = () => (
   >
     {/* Hero */}
     <section className="min-h-[70vh] md:min-h-dvh flex flex-col justify-center pt-28 md:pt-28 pb-16 md:pb-24 px-6 relative">
+      {/* Hero background image */}
+      <img
+        src="/hero-subject.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute right-[15%] bottom-0 h-[80%] w-auto opacity-20 pointer-events-none grayscale hidden lg:block"
+      />
+
       <div className="max-w-[1200px] mx-auto w-full">
         {/* Headline — full width, poster-scale */}
         <h1 className="font-display text-[clamp(3rem,7vw,5.5rem)] leading-[1] tracking-[-0.03em] max-w-[900px] mb-8">

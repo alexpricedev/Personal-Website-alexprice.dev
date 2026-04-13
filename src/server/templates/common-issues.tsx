@@ -4,7 +4,7 @@ import { CONTACT_EMAIL } from "@server/config";
 const healthDimensions = [
   {
     name: "Security",
-    description: "Authentication, authorization, secrets, input validation",
+    description: "Authentication, authorisation, secrets, input validation",
   },
   {
     name: "Architecture",
@@ -87,14 +87,14 @@ const issueCards = [
     title: "Hardcoded configuration values",
     description:
       "URLs, feature flags, and limits scattered as string literals throughout the code. Works in development, breaks when you deploy.",
-    fix: "Centralize configuration in environment variables or a config module. Different values per environment.",
+    fix: "Centralise configuration in environment variables or a config module. Different values per environment.",
   },
   {
     category: "Maintainability",
     severity: "info",
     title: "500+ line components",
     description:
-      "AI tools generate everything in one file because they optimize for single-prompt output. The result is unmaintainable monoliths.",
+      "AI tools generate everything in one file because they optimise for single-prompt output. The result is unmaintainable monoliths.",
     fix: "Break components into focused pieces. If you can't describe what a component does in one sentence, it's doing too much.",
   },
   {
