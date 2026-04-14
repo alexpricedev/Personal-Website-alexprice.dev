@@ -50,7 +50,7 @@ export const Nav = ({ page }: { page: string }) => (
       <div className="flex items-center gap-4">
         <a
           href="/vibe-code-audit"
-          className="hidden min-[375px]:inline-flex items-center bg-accent text-white font-ui font-semibold text-sm px-5 py-2 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
+          className="hidden md:inline-flex items-center bg-accent text-white font-ui font-semibold text-sm px-5 py-2 rounded-full hover:bg-accent-dim hover:-translate-y-0.5 transition-all duration-200"
         >
           Get your code audited
         </a>
