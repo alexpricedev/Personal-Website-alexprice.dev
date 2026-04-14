@@ -37,7 +37,7 @@ const auditIncludes = [
 const faqs = [
   {
     q: "What kind of codebases do you audit?",
-    a: "Web applications, APIs, and SaaS products. Any language, any framework. I've worked across the stack for 12+ years. If you built it with Cursor, Bolt, Lovable, Replit, or similar AI tools, this audit is specifically designed for you.",
+    a: "Web applications, APIs, and SaaS products. Any language, any framework. I've worked across the stack for 12+ years. If you built it with Cursor, Claude Code, Codex, Lovable, Replit, or similar AI tools, this audit is specifically designed for you.",
   },
   {
     q: "How long does the audit take?",
@@ -69,15 +69,15 @@ export const VibeCodeAudit = () => (
       {/* Hero */}
       <header className="mb-20">
         <span className="inline-block font-mono text-[11px] tracking-[0.06em] uppercase text-accent bg-accent-subtle px-3.5 py-1.5 rounded-full mb-6">
-          Vibe Code Audit · £199
+          Vibe Code Audit
         </span>
         <h1 className="font-display text-[clamp(2.5rem,5vw,3.5rem)] tracking-[-0.02em] mb-4 max-w-[900px]">
-          Find out what AI missed.
+          The review your AI can't do itself.
         </h1>
         <p className="text-xl text-text-secondary leading-relaxed max-w-xl mb-6">
-          A professional code review for apps built with Cursor, Bolt, Lovable,
-          and other AI tools. Security, architecture, performance — everything
-          your AI can't evaluate about its own work.
+          A professional code review for apps built with Cursor, Claude Code,
+          Lovable, and other AI tools. Security, architecture, performance —
+          everything your AI can't evaluate about its own work.
         </p>
         <div className="flex items-baseline gap-4 mb-8">
           <span className="font-display text-[clamp(2rem,5vw,2.5rem)] leading-[1.15] tracking-[-0.02em] text-text-primary">
@@ -327,20 +327,20 @@ export const VibeCodeAudit = () => (
                   Warning
                 </span>
                 <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-text-muted">
-                  Performance
+                  Maintainability
                 </span>
               </div>
               <h4 className="font-semibold text-[16px] mb-2">
-                N+1 query in dashboard endpoint
+                No automated tests
               </h4>
               <p className="text-text-secondary text-sm leading-[1.65]">
-                The /api/dashboard endpoint makes a separate database query for
-                each user's projects. With 100 users, that's 101 queries per
-                request. Use a JOIN or batch query to reduce this to 2 queries.
+                The code works today, but there's no safety net. Change one
+                thing, silently break three others. Start with integration tests
+                for your critical paths: sign-up, checkout, data creation.
               </p>
             </div>
             <div className="border-t border-border" />
-            <p className="text-text-muted text-sm italic">
+            <p className="text-text-secondary text-sm italic">
               More findings with severity, category, and specific fix
               recommendations…
             </p>
@@ -359,19 +359,19 @@ export const VibeCodeAudit = () => (
       <section data-animate="section" className="mb-20">
         <div className="bg-surface-2 rounded-[12px] border border-border p-7 sm:p-9 max-w-[700px]">
           <h3 className="font-display text-[22px] leading-[1.3] mb-4">
-            What AI won't tell you about your code
+            What AI won't tell you about your architecture
           </h3>
           <p className="text-text-secondary leading-[1.7] mb-4">
-            AI tools are great at generating code. They're terrible at
-            evaluating it. Your AI assistant will never say "this authentication
-            pattern has a race condition" or "this database schema won't survive
-            1,000 concurrent users." It generated the code — it thinks it's
-            fine.
+            AI tools generate features, not architecture. They'll never tell you
+            that your services are tightly coupled, your data model won't
+            survive the next pivot, or that you're one bad deploy from a
+            cascading failure. Each prompt gets a local answer — no one's
+            looking at the big picture.
           </p>
           <p className="text-text-secondary leading-[1.7]">
-            I've spent 12 years building and breaking production systems. I know
-            what fails at scale because I've been the one fixing it at 2am. This
-            audit is the second opinion your AI can't give you.
+            I've spent 12 years designing systems that survive growth, team
+            changes, and the unexpected. This audit looks at the decisions
+            behind the code — the ones your AI made without telling you.
           </p>
         </div>
       </section>

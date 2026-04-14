@@ -34,7 +34,7 @@ type Frontmatter = {
   image?: string;
 };
 
-const CONTENT_DIR = join(process.cwd(), "content", "insights");
+const CONTENT_DIR = join(process.cwd(), "content", "writing");
 const WORDS_PER_MINUTE = 200;
 
 /**

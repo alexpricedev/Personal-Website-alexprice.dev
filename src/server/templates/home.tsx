@@ -4,7 +4,7 @@ import { CONTACT_EMAIL } from "@server/config";
 export const Home = () => (
   <Layout
     title="Home"
-    description="Alex Price, the Backseat CTO. Architecture reviews, vibe code audits, and technical guidance for founders building with AI. From £75/session."
+    description="Alex Price, the Backseat CTO. Architecture reviews, vibe code audits, and technical guidance for founders building with AI. From £75/live session."
     name="home"
   >
     {/* Hero */}
@@ -40,7 +40,7 @@ export const Home = () => (
             </p>
             <p className="text-lg lg:text-xl leading-relaxed mb-8">
               <strong className="text-text-primary">
-                From £75 per session. No retainer.
+                From £75 per live session. No retainer.
               </strong>
             </p>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
@@ -94,9 +94,9 @@ export const Home = () => (
       >
         <div className="space-y-6 text-lg lg:text-xl text-text-secondary leading-relaxed">
           <p>
-            You used Cursor or Bolt or Lovable and built something that actually
-            works. People signed up. Someone paid you. You're not prototyping
-            anymore — you're running a business.
+            You used Cursor or Claude Code or Lovable and built something that
+            actually works. People signed up. Someone paid you. You're not
+            prototyping anymore — you're running a business.
           </p>
           <p>
             And the code underneath? It was built to see if the idea worked. Now
