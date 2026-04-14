@@ -1,5 +1,5 @@
 ---
-title: "Restarred"
+title: "RE:STARRED"
 description: "Rediscover your forgotten GitHub stars. A free weekly email digest of 3 random repos from your starred collection."
 stack: ["Bun", "TypeScript", "PostgreSQL", "Resend"]
 liveUrl: "https://restarred.dev"

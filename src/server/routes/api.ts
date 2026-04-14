@@ -3,9 +3,8 @@ import { getAllArticles } from "../services/articles";
 
 const staticPages = [
   { path: "/", priority: "1.0", changefreq: "weekly" },
-  { path: "/insights", priority: "0.9", changefreq: "weekly" },
-  { path: "/projects", priority: "0.8", changefreq: "monthly" },
-  { path: "/how-it-works", priority: "0.8", changefreq: "monthly" },
+  { path: "/writing", priority: "0.9", changefreq: "weekly" },
+  { path: "/tools", priority: "0.8", changefreq: "monthly" },
 ];
 
 export const apiRoutes = {
@@ -27,7 +26,7 @@ export const apiRoutes = {
       .map(
         (article) => `
   <url>
-    <loc>${SITE_URL}/insights/${article.slug}</loc>
+    <loc>${SITE_URL}/writing/${article.slug}</loc>
     <lastmod>${article.isoDate.split("T")[0]}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

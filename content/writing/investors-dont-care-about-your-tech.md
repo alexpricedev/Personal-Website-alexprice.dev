@@ -3,7 +3,7 @@ title: "Investors Don't Care About Your Tech"
 date: 2026-01-21
 excerpt: "They care about your insight into the market. Your experience navigating it. Your judgment on where it's heading."
 pillar: fundraising
-image: /insights-images/investors-dont-care-about-your-tech.png
+image: /og/investors-dont-care-about-your-tech.png
 ---
 
 Investors don't care about your tech.
@@ -28,4 +28,4 @@ If you're a CEO prepping for a raise: stop polishing your technical deep-dive ap
 
 Let your CTO focus on making the thing actually work.
 
-If you're a technical founder struggling to separate "what investors want to hear" from "what I want to tell them," this is exactly the kind of positioning I help Series A founders work through.
+If you're a founder struggling to separate "what investors want to hear" from "what I want to tell them," this is exactly the kind of thinking I help with.

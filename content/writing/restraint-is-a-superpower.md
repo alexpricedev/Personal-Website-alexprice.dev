@@ -3,7 +3,7 @@ title: "Restraint Is a Superpower"
 date: 2026-02-14
 excerpt: "With the rise of AI coding the barrier to building is basically gone. That's made the skill of knowing what not to build more important than ever."
 pillar: startups
-image: /insights-images/restraint-is-a-superpower.png
+image: /og/restraint-is-a-superpower.png
 ---
 
 Just because you can build something doesn't mean you should.
@@ -22,4 +22,4 @@ What's actually worth solving? What should be bought, not built? What looks like
 
 If you're starting a software project or any business for that matter, dedicate time to training this muscle — because restraint is a superpower when everything is possible.
 
-If you're a founder trying to figure out what's worth building and what isn't, this is exactly the kind of strategic thinking I work through with early-stage teams.
+If you're a founder trying to figure out what's worth building and what isn't, this is exactly the kind of thinking I work through with founders. Sometimes the most valuable thing a technical advisor can say is "don't build that."

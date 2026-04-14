@@ -3,8 +3,8 @@
  *
  * Usage: bun run tools/generate-og-images.ts
  *
- * Reads frontmatter from content/insights/*.md, renders each as a branded
- * card using Puppeteer, and saves to public/insights-images/{slug}.png.
+ * Reads frontmatter from content/writing/*.md, renders each as a branded
+ * card using Puppeteer, and saves to public/og/{slug}.png.
  * Also updates the article frontmatter with the image path if missing.
  */
 
@@ -13,15 +13,26 @@ import { join } from "node:path";
 import matter from "gray-matter";
 import puppeteer from "puppeteer-core";
 
-const CONTENT_DIR = join(import.meta.dir, "../content/insights");
-const OUTPUT_DIR = join(import.meta.dir, "../public/insights-images");
+const CONTENT_DIR = join(import.meta.dir, "../content/writing");
+const OUTPUT_DIR = join(import.meta.dir, "../public/og");
 
 interface Article {
   slug: string;
   title: string;
   pillar: string;
+  description: string;
   filePath: string;
 }
+
+// Map pillars to accent variations for visual differentiation
+const pillarAccents: Record<string, { color: string; bg: string }> = {
+  startups: { color: "#BF5540", bg: "rgba(191, 85, 64, 0.08)" },
+  leadership: { color: "#8B6E4E", bg: "rgba(139, 110, 78, 0.08)" },
+  fundraising: { color: "#7B5E3B", bg: "rgba(123, 94, 59, 0.08)" },
+  engineering: { color: "#5E7A5E", bg: "rgba(94, 122, 94, 0.08)" },
+  ai: { color: "#6B6080", bg: "rgba(107, 96, 128, 0.08)" },
+  default: { color: "#BF5540", bg: "rgba(191, 85, 64, 0.08)" },
+};
 
 function getArticles(): Article[] {
   const files = readdirSync(CONTENT_DIR).filter((f) => f.endsWith(".md"));
@@ -33,6 +44,7 @@ function getArticles(): Article[] {
       slug: file.replace(".md", ""),
       title: data.title ?? file.replace(".md", "").replace(/-/g, " "),
       pillar: (data.pillar ?? "insights").toLowerCase(),
+      description: data.description ?? "",
       filePath,
     };
   });
@@ -40,41 +52,53 @@ function getArticles(): Article[] {
 
 function titleFontSize(title: string): number {
   const len = title.length;
-  if (len <= 25) return 92;
-  if (len <= 35) return 84;
-  if (len <= 45) return 72;
-  return 64;
+  if (len <= 20) return 80;
+  if (len <= 30) return 72;
+  if (len <= 40) return 64;
+  if (len <= 55) return 56;
+  return 48;
 }
 
 function buildHTML(articles: Article[]): string {
   const cards = articles
-    .map(
-      (a) => `
+    .map((a) => {
+      const accent =
+        pillarAccents[a.pillar] ?? pillarAccents["default"];
+      const fontSize = titleFontSize(a.title);
+
+      return `
     <div class="og" id="${a.slug}">
-      <div class="og-accent"></div>
-      <div class="og-pillar">${a.pillar}</div>
-      <div class="og-title" style="font-size: ${titleFontSize(a.title)}px">${a.title}</div>
+      <!-- Decorative accent elements -->
+      <div class="og-accent-top" style="background: linear-gradient(90deg, ${accent.color} 0%, transparent 60%);"></div>
+      <div class="og-accent-mark" style="color: ${accent.color};">\u201C</div>
+
+      <div class="og-pillar" style="color: ${accent.color}; background: ${accent.bg};">${a.pillar}</div>
+      <div class="og-title" style="font-size: ${fontSize}px">${a.title}</div>
       <div class="og-footer">
-        <span class="author">Alex Price</span>
-        <span class="sep"></span>
+        <div class="og-footer-left">
+          <span class="author">Alex Price</span>
+          <span class="role">The Backseat CTO</span>
+        </div>
         <span class="site">alexprice.dev</span>
       </div>
     </div>
-  `
-    )
+  `;
+    })
     .join("\n");
 
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700,800&display=swap" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Commit+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background: #1a1a1a;
+      background: #888;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -85,86 +109,96 @@ function buildHTML(articles: Article[]): string {
     .og {
       width: 1200px;
       height: 630px;
-      background: #0C0C0C;
+      background: #F4F0E8;
       position: relative;
       overflow: hidden;
       flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 48px 72px;
     }
 
-    .og::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 70% 50% at 30% 60%, rgba(201, 169, 110, 0.04) 0%, transparent 70%);
-    }
-
-    .og-accent {
+    .og-accent-top {
       position: absolute;
       top: 0;
       left: 0;
-      width: 5px;
-      height: 100%;
-      background: linear-gradient(180deg, #C9A96E 0%, transparent 80%);
-      opacity: 0.6;
+      right: 0;
+      height: 5px;
+    }
+
+    /* Large decorative opening quote */
+    .og-accent-mark {
+      position: absolute;
+      top: -30px;
+      right: 40px;
+      font-family: 'Lora', serif;
+      font-size: 400px;
+      font-weight: 400;
+      opacity: 0.05;
+      line-height: 1;
+      pointer-events: none;
     }
 
     .og-pillar {
-      position: absolute;
-      top: 48px;
-      left: 72px;
-      font-family: 'Geist Mono', monospace;
-      font-size: 24px;
+      font-family: 'Commit Mono', monospace;
+      font-size: 13px;
       font-weight: 500;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: #C9A96E;
-      background: rgba(201, 169, 110, 0.12);
-      padding: 12px 28px;
+      padding: 8px 20px;
       border-radius: 999px;
+      align-self: flex-start;
+      flex-shrink: 0;
     }
 
     .og-title {
-      position: absolute;
-      left: 72px;
-      right: 72px;
-      bottom: 130px;
-      font-family: 'Instrument Serif', serif;
-      font-size: 92px;
-      line-height: 1.05;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-right: 48px;
+      font-family: 'General Sans', sans-serif;
+      line-height: 1.1;
       letter-spacing: -0.02em;
-      color: #E8E3DD;
-      font-weight: 400;
+      color: #1A1714;
+      font-weight: 700;
     }
 
     .og-footer {
-      position: absolute;
-      left: 72px;
-      bottom: 48px;
       display: flex;
       align-items: center;
-      gap: 20px;
+      justify-content: space-between;
+      padding-top: 24px;
+      border-top: 1px solid rgba(26, 23, 20, 0.1);
+      flex-shrink: 0;
+    }
+
+    .og-footer-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
 
     .og-footer .author {
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 34px;
+      font-family: 'General Sans', sans-serif;
+      font-size: 22px;
       font-weight: 600;
-      color: #E8E3DD;
+      color: #1A1714;
     }
 
-    .og-footer .sep {
-      width: 2px;
-      height: 24px;
-      background: rgba(232, 227, 221, 0.15);
+    .og-footer .role {
+      font-family: 'Lora', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: #8A837A;
     }
 
     .og-footer .site {
-      font-family: 'Instrument Sans', sans-serif;
-      font-size: 32px;
-      font-weight: 600;
-      letter-spacing: 0.05em;
+      font-family: 'Commit Mono', monospace;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #C9A96E;
+      color: #8A837A;
     }
   </style>
 </head>
@@ -176,13 +210,13 @@ ${cards}
 
 function ensureImageFrontmatter(article: Article): void {
   const raw = readFileSync(article.filePath, "utf-8");
-  const imagePath = `/insights-images/${article.slug}.png`;
+  const imagePath = `/og/${article.slug}.png`;
   if (raw.includes(`image:`)) return;
 
   // Insert image field after the title line in frontmatter
   const updated = raw.replace(
     /^(---\n[\s\S]*?)(---)/m,
-    `$1image: ${imagePath}\n$2`
+    `$1image: ${imagePath}\n$2`,
   );
   writeFileSync(article.filePath, updated, "utf-8");
 }
@@ -209,7 +243,7 @@ async function main() {
           clearTimeout(timeout);
           resolve();
         });
-      })
+      }),
   );
   // Extra pause for font rendering
   await new Promise((r) => setTimeout(r, 1000));
