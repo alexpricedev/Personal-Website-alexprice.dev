@@ -2,11 +2,13 @@ import type { JSX } from "react";
 import { renderToString } from "react-dom/server";
 import { withTracking } from "../services/analytics";
 import { getAllArticles, getArticleBySlug } from "../services/articles";
+import { getAllProjects } from "../services/projects";
 import { About } from "../templates/about";
 import { CommonIssues } from "../templates/common-issues";
 import { Home } from "../templates/home";
 import { Insight } from "../templates/insight";
 import { Insights } from "../templates/insights";
+import { Tools } from "../templates/tools";
 import { VibeCodeAudit } from "../templates/vibe-code-audit";
 
 const render = (element: JSX.Element): Response =>
@@ -45,8 +47,12 @@ export const viewRoutes = {
     () => Response.redirect("/", 301),
     "work-with-me-redirect",
   ),
+  "/tools": withTracking(() => {
+    const projects = getAllProjects();
+    return render(<Tools projects={projects} />);
+  }),
   "/projects": withTracking(
-    () => Response.redirect("/", 301),
+    () => Response.redirect("/tools", 301),
     "projects-redirect",
   ),
   "/about": withTracking(() => render(<About />)),

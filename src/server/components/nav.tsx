@@ -1,6 +1,12 @@
 const navLinks = [
   { href: "/assessment", label: "Free Assessment", name: "assessment" },
   { href: "/writing", label: "Writing", name: "writing" },
+  {
+    href: "/tools",
+    label: "Tools & Projects",
+    shortLabel: "Tools",
+    name: "tools",
+  },
   { href: "/about", label: "About", name: "about" },
 ];
 
@@ -30,7 +36,7 @@ export const Nav = ({ page }: { page: string }) => (
 
       {/* Desktop links */}
       <div className="hidden md:flex items-center gap-8">
-        {navLinks.map(({ href, label, name }) => (
+        {navLinks.map(({ href, label, shortLabel, name }) => (
           <a
             key={name}
             href={href}
@@ -41,7 +47,14 @@ export const Nav = ({ page }: { page: string }) => (
             }`}
             aria-current={page === name ? "page" : undefined}
           >
-            {label}
+            {shortLabel ? (
+              <>
+                <span className="hidden min-[820px]:inline">{label}</span>
+                <span className="min-[820px]:hidden">{shortLabel}</span>
+              </>
+            ) : (
+              label
+            )}
           </a>
         ))}
       </div>
@@ -58,7 +71,7 @@ export const Nav = ({ page }: { page: string }) => (
         {/* Mobile burger */}
         <button
           type="button"
-          className="md:hidden p-2 text-text-secondary hover:text-text-primary bg-surface-1/60 rounded-lg transition-colors duration-200"
+          className="md:hidden p-2 text-text-secondary hover:text-text-primary bg-surface-1/60 rounded-lg transition-colors duration-200 cursor-pointer"
           aria-label="Toggle menu"
           data-menu-toggle
         >

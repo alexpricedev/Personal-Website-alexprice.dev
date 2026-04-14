@@ -4,8 +4,7 @@ import { getAllArticles } from "../services/articles";
 const staticPages = [
   { path: "/", priority: "1.0", changefreq: "weekly" },
   { path: "/writing", priority: "0.9", changefreq: "weekly" },
-  { path: "/projects", priority: "0.8", changefreq: "monthly" },
-  { path: "/how-it-works", priority: "0.8", changefreq: "monthly" },
+  { path: "/tools", priority: "0.8", changefreq: "monthly" },
 ];
 
 export const apiRoutes = {
