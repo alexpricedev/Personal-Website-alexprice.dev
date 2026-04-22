@@ -16,8 +16,6 @@ const render = (element: JSX.Element): Response =>
     headers: { "Content-Type": "text/html" },
   });
 
-const notFound = (): Response => new Response("Not found", { status: 404 });
-
 export const viewRoutes = {
   "/": withTracking(() => render(<Home />)),
   "/in": withTracking(() => Response.redirect("/", 302), "linkedin"),
@@ -30,7 +28,7 @@ export const viewRoutes = {
     const slug = url.pathname.replace("/writing/", "");
     const article = getArticleBySlug(slug);
     if (!article) {
-      return notFound();
+      return Response.redirect("/writing", 301);
     }
     return render(<Insight article={article} />);
   }),
