@@ -1,5 +1,6 @@
 import { runMigrations } from "./database/migrate";
 import { apiRoutes } from "./routes/api";
+import { dashboardRoutes } from "./routes/dashboard";
 import { viewRoutes } from "./routes/views";
 
 await runMigrations();
@@ -10,6 +11,7 @@ const server = Bun.serve({
   routes: {
     ...viewRoutes,
     ...apiRoutes,
+    ...dashboardRoutes,
   },
   async fetch(req) {
     const url = new URL(req.url);
