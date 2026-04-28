@@ -47,11 +47,11 @@ export function verifyPassword(submitted: string): boolean {
 export function buildAuthCookie(): string | null {
   const token = getExpectedToken();
   if (!token) return null;
-  return `${AUTH_COOKIE}=${token}; Path=/dashboard; Max-Age=${COOKIE_MAX_AGE}; HttpOnly; SameSite=Strict`;
+  return `${AUTH_COOKIE}=${token}; Path=/; Max-Age=${COOKIE_MAX_AGE}; HttpOnly; SameSite=Strict`;
 }
 
 export function buildClearAuthCookie(): string {
-  return `${AUTH_COOKIE}=; Path=/dashboard; Max-Age=0; HttpOnly; SameSite=Strict`;
+  return `${AUTH_COOKIE}=; Path=/; Max-Age=0; HttpOnly; SameSite=Strict`;
 }
 
 export function isDashboardConfigured(): boolean {
