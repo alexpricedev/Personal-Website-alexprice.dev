@@ -1,6 +1,5 @@
 import { SITE_URL } from "@server/config";
 import { getAllArticles } from "../services/articles";
-import { isBotRequest } from "../services/bot-detection";
 import { isDashboardAuthed } from "../services/dashboard-auth";
 import {
   type FeedbackInput,
@@ -159,10 +158,6 @@ ${articleUrls}
   "/api/8020/feedback": {
     OPTIONS: () => new Response(null, { status: 204, headers: corsHeaders }),
     POST: async (req: Request) => {
-      if (isBotRequest(req)) {
-        return new Response(null, { status: 204, headers: corsHeaders });
-      }
-
       const limit = checkRateLimit(
         `feedback-8020:${clientIp(req)}`,
         FEEDBACK_8020_RATE_LIMIT,
