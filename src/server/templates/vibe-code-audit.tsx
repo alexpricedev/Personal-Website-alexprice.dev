@@ -3,14 +3,19 @@ import { CONTACT_EMAIL } from "@server/config";
 
 const auditIncludes = [
   {
-    title: "Security review",
+    title: "Security & pen-test readiness",
     description:
-      "Authentication, input validation, secrets management, data exposure.",
+      "Authentication, input validation, secrets management, data exposure. Plus preliminary pen-test readiness checks if you're heading into enterprise security questionnaires.",
   },
   {
     title: "Architecture assessment",
     description:
       "Database design, API structure, will it scale past your first 1,000 users?",
+  },
+  {
+    title: "AI integration review",
+    description:
+      "Prompt structure, eval coverage, non-determinism risk. Safe ways to add features without silently breaking the ones that already work.",
   },
   {
     title: "Performance analysis",
@@ -23,14 +28,9 @@ const auditIncludes = [
       "Error handling, edge cases, the stuff AI generates but never tests.",
   },
   {
-    title: "Written report",
+    title: "Report + walkthrough",
     description:
-      "Prioritised findings with severity ratings and fix recommendations.",
-  },
-  {
-    title: "30-minute walkthrough",
-    description:
-      "We go through it together. You ask questions. You leave knowing exactly what to do.",
+      "Prioritised findings with severity ratings and fix recommendations, plus a 30-minute call where we go through it together so you leave knowing exactly what to do.",
   },
 ];
 
@@ -100,6 +100,44 @@ export const VibeCodeAudit = () => (
           </a>
         </div>
       </header>
+
+      {/* How it works */}
+      <section data-animate="section" className="mb-20">
+        <div data-animate="stagger" className="grid sm:grid-cols-3 gap-6">
+          {[
+            {
+              step: "01",
+              title: "Send your repo",
+              description:
+                "Read-only access plus a brief description of what the app does.",
+            },
+            {
+              step: "02",
+              title: "Report in 3 days",
+              description:
+                "Prioritised findings with severity ratings and specific fix recommendations.",
+            },
+            {
+              step: "03",
+              title: "Walkthrough call",
+              description:
+                "30 minutes together. You ask questions. You leave with a plan.",
+            },
+          ].map((item) => (
+            <div key={item.step}>
+              <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-text-muted block mb-3">
+                Step {item.step}
+              </span>
+              <h3 className="font-display text-[20px] leading-[1.3] tracking-[-0.01em] mb-2">
+                {item.title}
+              </h3>
+              <p className="text-text-secondary text-sm leading-[1.65]">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* What you get */}
       <section data-animate="section" className="mb-20">
@@ -190,6 +228,27 @@ export const VibeCodeAudit = () => (
                 </svg>
                 Investors are going to ask about your tech and you want honest
                 answers first
+              </li>
+              <li className="flex gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-accent shrink-0 mt-1"
+                  role="img"
+                  aria-label="Check"
+                >
+                  <path d="M18 6 7 17l-5-5" />
+                  <path d="m22 10-7.5 7.5L13 16" />
+                </svg>
+                You're selling B2B or into enterprise and security is a top
+                priority
               </li>
               <li className="flex gap-3">
                 <svg
@@ -390,6 +449,86 @@ export const VibeCodeAudit = () => (
               </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* From prototype to production */}
+      <section data-animate="section" className="mb-20">
+        <h2 className="font-display text-[28px] leading-[1.2] tracking-[-0.02em] mb-8">
+          From prototype to production
+        </h2>
+        <div className="bg-surface-1 rounded-[12px] border border-border p-7 sm:p-9 max-w-[700px]">
+          <ol className="space-y-5">
+            <li className="flex gap-4">
+              <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-text-muted shrink-0 w-10 mt-1">
+                01
+              </span>
+              <div>
+                <h3 className="font-semibold text-[15px] mb-1">
+                  <a
+                    href="/assessment"
+                    className="text-accent hover:text-accent-dim transition-colors duration-200"
+                  >
+                    Free self-assessment
+                  </a>
+                </h3>
+                <p className="text-text-secondary text-sm leading-[1.65]">
+                  15 common issues in AI-built apps with severity and fixes. Fix
+                  what you can yourself for free — book the audit for what's
+                  left.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-4">
+              <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-text-muted shrink-0 w-10 mt-1">
+                02
+              </span>
+              <div>
+                <h3 className="font-semibold text-[15px] mb-1">£199 audit</h3>
+                <p className="text-text-secondary text-sm leading-[1.65]">
+                  Written report and walkthrough call. The page you're on.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-4">
+              <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-text-muted shrink-0 w-10 mt-1">
+                03
+              </span>
+              <div>
+                <h3 className="font-semibold text-[15px] mb-1">
+                  £150/hr remediation
+                </h3>
+                <p className="text-text-secondary text-sm leading-[1.65]">
+                  Hands-on help with the findings AI tools can't fix —
+                  architectural rework, security holes the AI itself created,
+                  anything that needs judgment beyond a single prompt.
+                </p>
+              </div>
+            </li>
+            <li className="flex gap-4">
+              <span className="font-mono text-[11px] tracking-[0.08em] uppercase text-text-muted shrink-0 w-10 mt-1">
+                04
+              </span>
+              <div>
+                <h3 className="font-semibold text-[15px] mb-1">
+                  <a
+                    href="https://chptrs.tech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-accent hover:text-accent-dim transition-colors duration-200"
+                  >
+                    CHPTRS
+                  </a>{" "}
+                  for full builds
+                </h3>
+                <p className="text-text-secondary text-sm leading-[1.65]">
+                  Hand the build to a senior team so you can focus on selling.
+                  For scaling what works, rebuilding what the audit flagged, or
+                  getting engineering off your plate entirely.
+                </p>
+              </div>
+            </li>
+          </ol>
         </div>
       </section>
 
