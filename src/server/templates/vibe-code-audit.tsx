@@ -159,6 +159,40 @@ export const VibeCodeAudit = () => (
         </div>
       </section>
 
+      {/* Testimonial */}
+      <section data-animate="section" className="mb-20">
+        <blockquote className="bg-surface-1 rounded-[12px] border border-border p-8 sm:p-10 max-w-[820px]">
+          <p className="font-body text-[clamp(1.15rem,2.5vw,1.5rem)] leading-[1.6] italic text-text-secondary mb-8">
+            "I thought the audit service was great and really delivered on what
+            was promised. Alex was very approachable and generous both with time
+            and suggestions of how things could be improved — in addition to the
+            agreed scope. I'd definitely recommend."
+          </p>
+          <footer className="flex items-center gap-4">
+            <img
+              src="/matt-shaw.webp"
+              alt="Matt Shaw"
+              className="w-12 h-12 rounded-full object-cover shrink-0"
+            />
+            <div>
+              <p className="text-sm font-semibold text-text-primary">
+                Matt Shaw
+              </p>
+              <p className="font-mono text-[11px] tracking-[0.08em] uppercase text-text-muted">
+                <a
+                  href="https://www.proap.co.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-accent-dim transition-colors duration-200"
+                >
+                  Proap
+                </a>
+              </p>
+            </div>
+          </footer>
+        </blockquote>
+      </section>
+
       {/* Who this is for / isn't for */}
       <section data-animate="section" className="mb-20">
         <div className="grid md:grid-cols-2 gap-6">
